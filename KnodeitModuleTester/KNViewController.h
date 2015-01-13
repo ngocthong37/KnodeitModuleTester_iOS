@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//CoreData
+#import <CoreData/CoreData.h>
 @interface KNViewController : UIViewController
 
 @end

@@ -17,4 +17,6 @@
 - (IBAction)bt_signup_click:(id)sender;
 - (IBAction)bt_cancel_click:(id)sender;
 
+-(void)writefile:(NSString*)aString;
+-(NSString*)readfile;
 @end

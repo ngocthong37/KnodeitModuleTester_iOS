@@ -259,13 +259,13 @@
 			path = USER;
 			sourceTree = "<group>";
 		};
-		33A81D641A65202E00529EE7 /* Thong */ = {
+		33A81D641A65202E00529EE7 /* Thong_SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				33A81D651A65205800529EE7 /* SignUp.h */,
 				33A81D661A65205800529EE7 /* SignUp.m */,
 			);
-			path = Thong;
+			path = Thong_SignUp;
 			sourceTree = "<group>";
 		};
 		7C57A084195DA75C00F496E6 = {
@@ -406,7 +406,7 @@
 		7C57A0DA195DA7B800F496E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				33A81D641A65202E00529EE7 /* Thong */,
+				33A81D641A65202E00529EE7 /* Thong_SignUp */,
 				7C57A0DB195DA7B800F496E6 /* AuthenticationModule */,
 				7C57A0E9195DA7B800F496E6 /* BaseModule */,
 				7C57A102195DA7B800F496E6 /* readme.txt */,

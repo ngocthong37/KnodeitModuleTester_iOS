@@ -46,20 +46,31 @@
 */
 
 - (IBAction)bt_signup_click:(id)sender {
+    //code xu ly dien kien
     
+    // luu nguoi dung moi
+    NSString *aString=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
+    [self writefile:aString];
+    
+}
+- (IBAction)bt_cancel_click:(id)sender {
+
+}
+
+//ghi file
+-(void)writefile:(NSString*)aString{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"USERS.txt";
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
     if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
-            [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
-       }
-    
-    NSString *aString=@"thong2\tthong2";
-       [[aString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
-    
+        [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
+    }
+    NSString *addString=[NSString stringWithFormat:@"%@\n%@",self.readfile,aString];
+    [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
 }
 
-- (IBAction)bt_cancel_click:(id)sender {
+//doc file
+-(NSString*)readfile{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"USERS.txt";
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
@@ -67,9 +78,10 @@
     if(filePath)
     {
         textFromFile=[NSMutableString stringWithContentsOfFile:fileAtPath encoding:NSUTF8StringEncoding error:nil];
-        NSLog(@"%@",textFromFile);
+        return textFromFile;
     }
-
+    return @"";
 }
+
 
 @end

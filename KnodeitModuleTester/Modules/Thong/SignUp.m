@@ -7,9 +7,6 @@
 //
 
 #import "SignUp.h"
-#import "KNAppDelegate.h"
-#import <CoreData/CoreData.h>
-
 @interface SignUp ()
 
 @end
@@ -49,20 +46,30 @@
 */
 
 - (IBAction)bt_signup_click:(id)sender {
-
-    KNAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    NSManagedObject *newContact;
-    newContact = [NSEntityDescription
-                  insertNewObjectForEntityForName:@"USER"
-                  inManagedObjectContext:context];
-    [newContact setValue: tf_email.text forKey:@"email"];
-
-    //[newContact setValue: tf_password.text forKey:@"password"];
-
-    NSError *error;
-    [context save:&error];
     
-    lb.text=@"TC";
+    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* fileName = @"USERS.txt";
+    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
+            [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
+       }
+    
+    NSString *aString=@"thong2\tthong2";
+       [[aString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
+    
 }
+
+- (IBAction)bt_cancel_click:(id)sender {
+    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* fileName = @"USERS.txt";
+    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
+    NSMutableString *textFromFile;
+    if(filePath)
+    {
+        textFromFile=[NSMutableString stringWithContentsOfFile:fileAtPath encoding:NSUTF8StringEncoding error:nil];
+        NSLog(@"%@",textFromFile);
+    }
+
+}
+
 @end

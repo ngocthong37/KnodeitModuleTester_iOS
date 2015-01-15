@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334D58FA1A676123004219ED /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* List.m */; };
+		3373A0B21A6660F200A30400 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* Login.m */; };
 		33A81D151A651A6F00529EE7 /* USER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D131A651A6F00529EE7 /* USER.xcdatamodeld */; };
 		33A81D181A651AAE00529EE7 /* USER.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D171A651AAE00529EE7 /* USER.m */; };
 		33A81D671A65205800529EE7 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUp.m */; };
@@ -87,6 +89,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		334D58F81A676123004219ED /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		334D58F91A676123004219ED /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		3373A0B01A6660F200A30400 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		3373A0B11A6660F200A30400 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		33A81D141A651A6F00529EE7 /* USER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = USER.xcdatamodel; sourceTree = "<group>"; };
 		33A81D161A651AAD00529EE7 /* USER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USER.h; sourceTree = "<group>"; };
 		33A81D171A651AAE00529EE7 /* USER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USER.m; sourceTree = "<group>"; };
@@ -249,6 +255,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		334D58F71A6760F5004219ED /* Thong_List */ = {
+			isa = PBXGroup;
+			children = (
+				334D58F81A676123004219ED /* List.h */,
+				334D58F91A676123004219ED /* List.m */,
+			);
+			path = Thong_List;
+			sourceTree = "<group>";
+		};
+		3373A0AF1A6660A000A30400 /* Thong_Login */ = {
+			isa = PBXGroup;
+			children = (
+				3373A0B01A6660F200A30400 /* Login.h */,
+				3373A0B11A6660F200A30400 /* Login.m */,
+			);
+			path = Thong_Login;
+			sourceTree = "<group>";
+		};
 		33A81D121A6519FD00529EE7 /* USER */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +430,8 @@
 		7C57A0DA195DA7B800F496E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				334D58F71A6760F5004219ED /* Thong_List */,
+				3373A0AF1A6660A000A30400 /* Thong_Login */,
 				33A81D641A65202E00529EE7 /* Thong_SignUp */,
 				7C57A0DB195DA7B800F496E6 /* AuthenticationModule */,
 				7C57A0E9195DA7B800F496E6 /* BaseModule */,
@@ -849,6 +875,7 @@
 				33A81D181A651AAE00529EE7 /* USER.m in Sources */,
 				7C57A194195DA7B800F496E6 /* YDTextFieldWithDateTimePicker.m in Sources */,
 				7C57A1AB195DA7B800F496E6 /* UIImageView+WebCache.m in Sources */,
+				334D58FA1A676123004219ED /* List.m in Sources */,
 				7C57A188195DA7B800F496E6 /* KNStoryboardManager.m in Sources */,
 				7C57A187195DA7B800F496E6 /* KNCommunicationManager.m in Sources */,
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
@@ -875,6 +902,7 @@
 				7C57A18E195DA7B800F496E6 /* NSString+MD5.m in Sources */,
 				7C57A171195DA7B800F496E6 /* KNLoginTemplateViewController.m in Sources */,
 				7C57A1A7195DA7B800F496E6 /* UIButton+WebCache.m in Sources */,
+				3373A0B21A6660F200A30400 /* Login.m in Sources */,
 				7C57A199195DA7B800F496E6 /* YDRequest.m in Sources */,
 				7C57A1A3195DA7B800F496E6 /* SDWebImageDownloader.m in Sources */,
 				7C57A195195DA7B800F496E6 /* UIImage+BWImage.m in Sources */,

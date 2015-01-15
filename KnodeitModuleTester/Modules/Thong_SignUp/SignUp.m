@@ -8,7 +8,9 @@
 
 #import "SignUp.h"
 #import "NSString+Validator.h"
+#import "Data_Text.h"
 
+Data_Text *data_text;
 @interface SignUp ()
 
 @end
@@ -28,6 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    data_text=[[Data_Text alloc]init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +66,7 @@
     }
     else
     {
-        NSString *textFromFile=[self readfile];
+        NSString *textFromFile=[data_text readfile];
         NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
         for(int i=0;i<ArrayUsers.count;i++)
         {
@@ -84,7 +87,7 @@
     }
     else if(tf_password.text.length<5)
     {
-        [self Alert:@"inimal length 5"];
+        [self Alert:@"Minimal length 5"];
         return;
     }
     if(tf_confirm.text.length==0)
@@ -94,10 +97,10 @@
     }
     else if(tf_confirm.text.length<5)
     {
-        [self Alert:@"inimal length 5"];
+        [self Alert:@"Minimal length 5"];
         return;
     }
-    if([tf_confirm.text isEqualToString:tf_password.text])
+    if(![tf_confirm.text isEqualToString:tf_password.text])
     {
         [self Alert:@"Wrong Confirm"];
         return;
@@ -105,38 +108,16 @@
     
     // luu nguoi dung moi
     NSString *aString=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
-    [self writefile:aString];
+    [data_text writefile_addtext:aString];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 - (IBAction)bt_cancel_click:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//ghi file
--(void)writefile:(NSString*)aString{
-    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* fileName = @"USERS.txt";
-    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
-        [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
-    }
-    NSString *addString=[NSString stringWithFormat:@"%@\n%@",self.readfile,aString];
-    [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
-}
 
-//doc file
--(NSString*)readfile{
-    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* fileName = @"USERS.txt";
-    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
-    NSMutableString *textFromFile;
-    if(filePath)
-    {
-        textFromFile=[NSMutableString stringWithContentsOfFile:fileAtPath encoding:NSUTF8StringEncoding error:nil];
-        return textFromFile;
-    }
-    return @"";
-}
 
 -(void)Alert:(NSString*)message{
     UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"

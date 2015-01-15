@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KnodeitModuleTester/Modules/Thong_Login/Login.m"
-            timestampString = "442983667.475739"
+            timestampString = "443011059.723236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-bt_login_click:"
             landmarkType = "5">
          </BreakpointContent>

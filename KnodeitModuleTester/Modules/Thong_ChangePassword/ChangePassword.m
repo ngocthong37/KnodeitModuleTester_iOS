@@ -1,21 +1,20 @@
 //
-//  Login.m
+//  ChangePassword.m
 //  Demo
 //
-//  Created by Ngoc Thong on 1/14/15.
+//  Created by Ngoc Thong on 1/15/15.
 //
 //
 
-#import "Login.h"
-#import "NSString+Validator.h"
+#import "ChangePassword.h"
 #import "Data_Text.h"
 
 Data_Text *data_text;
-@interface Login ()
+@interface ChangePassword ()
 
 @end
 
-@implementation Login
+@implementation ChangePassword
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +29,7 @@ Data_Text *data_text;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    lb_email.text=[self.user componentsSeparatedByString:@"\t"][0];
     data_text=[[Data_Text alloc]init];
 }
 
@@ -50,43 +50,37 @@ Data_Text *data_text;
 }
 */
 
-- (IBAction)bt_login_click:(id)sender {
-    NSMutableString *textFromFile=[NSMutableString stringWithFormat:@"%@",data_text.readfile];
-    NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
-    bool flag=false;
-    
-    if(![tf_email.text validateEmail])
-    {
-        [self Alert:@"Wrong Email"];
+- (IBAction)bt_cancel_click:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)bt_change_click:(id)sender {
+    if (tf_oldpassword.text.length==0 || tf_newpassword.text.length==0 || tf_confirm.text.length==0) {
+        [self Alert:@"password is null"];
+        return;
+    } else if(tf_oldpassword.text.length<5 || tf_newpassword.text.length<5 || tf_confirm.text.length<5){
+        [self Alert:@"Minimal length 5"];
         return;
     }
-    NSString *uid_pwd=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
-    for(int i=0;i<ArrayUsers.count;i++)
+    
+    if(![tf_oldpassword.text isEqualToString:[self.user componentsSeparatedByString:@"\t"][1]])
     {
-        if([ArrayUsers[i] isEqualToString:uid_pwd])
-        {
-            flag=true;
-            break;
-        }
+        [self Alert:@"Wrong Old Password"];
+        return;
     }
     
-    
-    if(flag)
-    {
-        [self performSegueWithIdentifier:@"segue_login_list" sender:nil];
-    }
-    else
-    {
-        [self Alert:@"Wrong email or password"];
+    if(![tf_newpassword.text isEqualToString:tf_confirm.text]){
+        [self Alert:@"Wrong Confirm"];
+        return;
     }
     
+    NSString *aString=[data_text readfile];
+    aString=[aString stringByReplacingOccurrencesOfString:[self user] withString:[NSString stringWithFormat:@"%@\t%@",lb_email.text,tf_newpassword.text]];
+
+    [data_text writefile:aString];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
-- (IBAction)bt_signup_click:(id)sender {
-    
-}
 
 -(void)Alert:(NSString*)message{
     UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"

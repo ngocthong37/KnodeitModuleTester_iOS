@@ -17,6 +17,6 @@
 - (IBAction)bt_signup_click:(id)sender;
 
 
--(NSString*)readfile;
+
 -(void)Alert:(NSString*)message;
 @end

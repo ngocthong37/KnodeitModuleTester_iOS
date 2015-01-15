@@ -7,7 +7,10 @@
 //
 
 #import "List.h"
+#import "ChangePassword.h"
+#import "Data_Text.h"
 
+Data_Text *data_text;
 @interface List ()
 
 @end
@@ -15,6 +18,7 @@
 @implementation List
 {
 NSArray *data;
+NSInteger index;
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,8 +32,8 @@ NSArray *data;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    data=[[self readfile] componentsSeparatedByString:@"\n"];
+    data_text=[[Data_Text alloc]init];
+    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
     
 
 
@@ -72,10 +76,16 @@ NSArray *data;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [data objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"][0];
     return cell;
 }
 
+
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    index=indexPath.row;
+    [self performSegueWithIdentifier:@"segue_list_changepassword" sender:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -115,7 +125,8 @@ NSArray *data;
 }
 */
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -123,21 +134,11 @@ NSArray *data;
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    ChangePassword *cp=(ChangePassword*)[segue destinationViewController];
+        data=[[data_text readfile] componentsSeparatedByString:@"\n"];
+    cp.user=[data objectAtIndex:index];
 }
-*/
 
-//doc file
--(NSString*)readfile{
-    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* fileName = @"USERS.txt";
-    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
-    NSMutableString *textFromFile;
-    if(filePath)
-    {
-        textFromFile=[NSMutableString stringWithContentsOfFile:fileAtPath encoding:NSUTF8StringEncoding error:nil];
-        return textFromFile;
-    }
-    return @"";
-}
 
 @end

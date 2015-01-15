@@ -7,6 +7,8 @@
 //
 
 #import "SignUp.h"
+#import "NSString+Validator.h"
+
 @interface SignUp ()
 
 @end
@@ -48,13 +50,66 @@
 - (IBAction)bt_signup_click:(id)sender {
     //code xu ly dien kien
     
+    //xu ly email
+    if(tf_email.text.length==0)
+    {
+        [self Alert:@"Email is null"];
+        return;
+    }
+    else if(![tf_email.text validateEmail])
+    {
+        [self Alert:@"Wrong Email"];
+        return;
+    }
+    else
+    {
+        NSString *textFromFile=[self readfile];
+        NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
+        for(int i=0;i<ArrayUsers.count;i++)
+        {
+            NSString *email=[ArrayUsers[i] componentsSeparatedByString:@"\t"][0];
+            if([email isEqualToString:tf_email.text])
+            {
+                [self Alert:@"Email is exist"];
+                return;
+            }
+        }
+    }
+    
+    //xu ly password va confirm
+    if(tf_password.text.length==0)
+    {
+        [self Alert:@"Password is null"];
+        return;
+    }
+    else if(tf_password.text.length<5)
+    {
+        [self Alert:@"inimal length 5"];
+        return;
+    }
+    if(tf_confirm.text.length==0)
+    {
+        [self Alert:@"Confirm is null"];
+        return;
+    }
+    else if(tf_confirm.text.length<5)
+    {
+        [self Alert:@"inimal length 5"];
+        return;
+    }
+    if([tf_confirm.text isEqualToString:tf_password.text])
+    {
+        [self Alert:@"Wrong Confirm"];
+        return;
+    }
+    
     // luu nguoi dung moi
     NSString *aString=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
     [self writefile:aString];
     
 }
 - (IBAction)bt_cancel_click:(id)sender {
-
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //ghi file
@@ -82,6 +137,16 @@
     }
     return @"";
 }
+
+-(void)Alert:(NSString*)message{
+    UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil,nil];
+    [alert show];
+}
+
 
 
 @end

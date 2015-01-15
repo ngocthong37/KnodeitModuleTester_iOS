@@ -1,24 +1,22 @@
 //
-//  SignUp.h
+//  Login.h
 //  Demo
 //
-//  Created by Ngoc Thong on 1/13/15.
+//  Created by Ngoc Thong on 1/14/15.
 //
 //
 
 #import <UIKit/UIKit.h>
-@interface SignUp : UIViewController{
+
+@interface Login : UIViewController{
     
     __weak IBOutlet UITextField *tf_email;
     __weak IBOutlet UITextField *tf_password;
-    __weak IBOutlet UITextField *tf_confirm;
-
 }
+- (IBAction)bt_login_click:(id)sender;
 - (IBAction)bt_signup_click:(id)sender;
-- (IBAction)bt_cancel_click:(id)sender;
 
--(void)writefile:(NSString*)aString;
+
 -(NSString*)readfile;
 -(void)Alert:(NSString*)message;
-
 @end

@@ -31,7 +31,19 @@ Data_Text *data_text;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     data_text=[[Data_Text alloc]init];
+    //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
+    
+    UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
+    tapRecognizer.cancelsTouchesInView=NO;
+    [self.view addGestureRecognizer:tapRecognizer];
 }
+
+-(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
+    [tf_email resignFirstResponder];
+    [tf_password resignFirstResponder];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -55,7 +67,9 @@ Data_Text *data_text;
     NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
     bool flag=false;
     
-    if(![tf_email.text validateEmail])
+    
+    tf_email.isEmailField=true;
+    if(![tf_email validate])
     {
         [self Alert:@"Wrong Email"];
         return;
@@ -96,5 +110,21 @@ Data_Text *data_text;
                                           otherButtonTitles:nil,nil];
     [alert show];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if([textField.restorationIdentifier isEqualToString:@"tf_email"])
+        [self becomeActive:tf_password];
+    else if([textField.restorationIdentifier isEqualToString:@"tf_password"])
+        [self bt_login_click:nil];
+    return true;
+}
+
+- (void)becomeActive:(UITextField*)textField
+{
+    //[self setToolbarCommand:YES];
+    [self resignFirstResponder];
+    [textField becomeFirstResponder];
+}
+
 
 @end

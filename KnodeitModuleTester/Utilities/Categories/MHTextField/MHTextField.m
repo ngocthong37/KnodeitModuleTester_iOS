@@ -63,11 +63,16 @@
     
     [self setTintColor:[UIColor blackColor]];
     
+    
+    [self setTextAlignment:NSTextAlignmentCenter];
+    self.textColor=[UIColor colorWithRed:0 green:0 blue:1 alpha:1];
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidEndEditing:) name:UITextFieldTextDidEndEditingNotification object:self];
     
     toolbar = [[UIToolbar alloc] init];
-    toolbar.frame = CGRectMake(0, 0, self.window.frame.size.width, 44);
+    toolbar.frame = CGRectMake(0, 0, self.window.frame.size.width, 36);
     
     // set style
     [toolbar setBarStyle:UIBarStyleDefault];
@@ -256,6 +261,7 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
     }
 }
 
+
 - (void)datePickerValueChanged:(id)sender
 {
     UIDatePicker *datePicker = (UIDatePicker*)sender;
@@ -312,6 +318,7 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
     if (required && [self.text isEqualToString:@""]){
         return NO;
     }
+    //else if(_textField.keyboardType== UIKeyboardTypeEmailAddress){
     else if (_isEmailField){
         NSString *emailRegEx =
         @"(?:[A-Za-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%\\&'*+/=?\\^_`{|}"

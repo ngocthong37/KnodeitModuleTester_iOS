@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		331305001A67C96B00165AF9 /* USERS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 331304FF1A67C96B00165AF9 /* USERS.txt */; };
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
-		334D58FA1A676123004219ED /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* List.m */; };
-		3373A0B21A6660F200A30400 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* Login.m */; };
+		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
+		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		33A81D671A65205800529EE7 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUp.m */; };
 		33A81D691A65262600529EE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A81D681A65262600529EE7 /* CoreData.framework */; };
 		33CA27341A67A36600D85908 /* ChangePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CA27331A67A36600D85908 /* ChangePassword.m */; };
@@ -60,7 +59,6 @@
 		7C57A198195DA7B800F496E6 /* YDAsyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A13C195DA7B800F496E6 /* YDAsyncRequest.m */; };
 		7C57A199195DA7B800F496E6 /* YDRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A13F195DA7B800F496E6 /* YDRequest.m */; };
 		7C57A19B195DA7B800F496E6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A144195DA7B800F496E6 /* MBProgressHUD.m */; };
-		7C57A19C195DA7B800F496E6 /* MHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A147195DA7B800F496E6 /* MHTextField.m */; };
 		7C57A19E195DA7B800F496E6 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A14B195DA7B800F496E6 /* MKAnnotationView+WebCache.m */; };
 		7C57A19F195DA7B800F496E6 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A14D195DA7B800F496E6 /* NSData+ImageContentType.m */; };
 		7C57A1A0195DA7B800F496E6 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A14F195DA7B800F496E6 /* SDImageCache.m */; };
@@ -77,6 +75,8 @@
 		7C57A1AB195DA7B800F496E6 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A166195DA7B800F496E6 /* UIImageView+WebCache.m */; };
 		7C57A1B6195DA85800F496E6 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A1B3195DA85800F496E6 /* KeychainItemWrapper.m */; };
 		7C57A1B7195DA85800F496E6 /* libFlurry_5.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A1B4195DA85800F496E6 /* libFlurry_5.1.0.a */; };
+		A7BD506B1A68B186001D6E7E /* KNBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD506A1A68B186001D6E7E /* KNBaseTableViewController.m */; };
+		A7BD506F1A68B3A6001D6E7E /* MHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD506E1A68B3A6001D6E7E /* MHTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,13 +90,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		331304FF1A67C96B00165AF9 /* USERS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = USERS.txt; path = "../../../../../../../../../Library/Application Support/iPhone Simulator/7.1/Applications/9690B807-57F7-4A6B-978C-08C5B71C0637/Documents/USERS.txt"; sourceTree = "<group>"; };
 		331305011A67C99500165AF9 /* Data_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data_Text.h; sourceTree = "<group>"; };
 		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
-		334D58F81A676123004219ED /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
-		334D58F91A676123004219ED /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
-		3373A0B01A6660F200A30400 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
-		3373A0B11A6660F200A30400 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		334D58F81A676123004219ED /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3373A0B11A6660F200A30400 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		33A81D651A65205800529EE7 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
 		33A81D661A65205800529EE7 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
 		33A81D681A65262600529EE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -192,8 +191,6 @@
 		7C57A140195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		7C57A143195DA7B800F496E6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		7C57A144195DA7B800F496E6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		7C57A146195DA7B800F496E6 /* MHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTextField.h; sourceTree = "<group>"; };
-		7C57A147195DA7B800F496E6 /* MHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTextField.m; sourceTree = "<group>"; };
 		7C57A148195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		7C57A14A195DA7B800F496E6 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		7C57A14B195DA7B800F496E6 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -230,6 +227,10 @@
 		7C57A1B2195DA85800F496E6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		7C57A1B3195DA85800F496E6 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		7C57A1B4195DA85800F496E6 /* libFlurry_5.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.1.0.a; sourceTree = "<group>"; };
+		A7BD50691A68B186001D6E7E /* KNBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNBaseTableViewController.h; sourceTree = "<group>"; };
+		A7BD506A1A68B186001D6E7E /* KNBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNBaseTableViewController.m; sourceTree = "<group>"; };
+		A7BD506D1A68B3A6001D6E7E /* MHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTextField.h; sourceTree = "<group>"; };
+		A7BD506E1A68B3A6001D6E7E /* MHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +262,6 @@
 		331304FE1A67C91D00165AF9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				331304FF1A67C96B00165AF9 /* USERS.txt */,
 				331305011A67C99500165AF9 /* Data_Text.h */,
 				331305021A67C99500165AF9 /* Data_Text.m */,
 			);
@@ -271,8 +271,8 @@
 		334D58F71A6760F5004219ED /* Thong_List */ = {
 			isa = PBXGroup;
 			children = (
-				334D58F81A676123004219ED /* List.h */,
-				334D58F91A676123004219ED /* List.m */,
+				334D58F81A676123004219ED /* ListViewController.h */,
+				334D58F91A676123004219ED /* ListViewController.m */,
 			);
 			path = Thong_List;
 			sourceTree = "<group>";
@@ -280,8 +280,8 @@
 		3373A0AF1A6660A000A30400 /* Thong_Login */ = {
 			isa = PBXGroup;
 			children = (
-				3373A0B01A6660F200A30400 /* Login.h */,
-				3373A0B11A6660F200A30400 /* Login.m */,
+				3373A0B01A6660F200A30400 /* LoginViewController.h */,
+				3373A0B11A6660F200A30400 /* LoginViewController.m */,
 			);
 			path = Thong_Login;
 			sourceTree = "<group>";
@@ -507,6 +507,8 @@
 			children = (
 				7C57A0EA195DA7B800F496E6 /* KNBaseViewController.h */,
 				7C57A0EB195DA7B800F496E6 /* KNBaseViewController.m */,
+				A7BD50691A68B186001D6E7E /* KNBaseTableViewController.h */,
+				A7BD506A1A68B186001D6E7E /* KNBaseTableViewController.m */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -554,6 +556,7 @@
 		7C57A115195DA7B800F496E6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				A7BD506C1A68B3A6001D6E7E /* MHTextField */,
 				7C57A116195DA7B800F496E6 /* ButtonIndexed */,
 				7C57A119195DA7B800F496E6 /* KNActivity */,
 				7C57A11C195DA7B800F496E6 /* NSData */,
@@ -685,7 +688,6 @@
 			isa = PBXGroup;
 			children = (
 				7C57A142195DA7B800F496E6 /* MBProgressHUD */,
-				7C57A145195DA7B800F496E6 /* MHTextField */,
 				7C57A148195DA7B800F496E6 /* readme.txt */,
 				7C57A149195DA7B800F496E6 /* SDWebImage */,
 			);
@@ -699,15 +701,6 @@
 				7C57A144195DA7B800F496E6 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		7C57A145195DA7B800F496E6 /* MHTextField */ = {
-			isa = PBXGroup;
-			children = (
-				7C57A146195DA7B800F496E6 /* MHTextField.h */,
-				7C57A147195DA7B800F496E6 /* MHTextField.m */,
-			);
-			path = MHTextField;
 			sourceTree = "<group>";
 		};
 		7C57A149195DA7B800F496E6 /* SDWebImage */ = {
@@ -772,6 +765,15 @@
 				7C57A1B3195DA85800F496E6 /* KeychainItemWrapper.m */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		A7BD506C1A68B3A6001D6E7E /* MHTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A7BD506D1A68B3A6001D6E7E /* MHTextField.h */,
+				A7BD506E1A68B3A6001D6E7E /* MHTextField.m */,
+			);
+			path = MHTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -851,7 +853,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C57A172195DA7B800F496E6 /* Countries.plist in Resources */,
-				331305001A67C96B00165AF9 /* USERS.txt in Resources */,
 				7C57A0A7195DA75C00F496E6 /* Main_iPad.storyboard in Resources */,
 				7C57A0AC195DA75C00F496E6 /* Images.xcassets in Resources */,
 				7C57A0A4195DA75C00F496E6 /* Main_iPhone.storyboard in Resources */,
@@ -884,16 +885,17 @@
 				7C57A1A8195DA7B800F496E6 /* UIImage+GIF.m in Sources */,
 				7C57A16B195DA7B800F496E6 /* MyFeed.m in Sources */,
 				7C57A1A4195DA7B800F496E6 /* SDWebImageDownloaderOperation.m in Sources */,
-				7C57A19C195DA7B800F496E6 /* MHTextField.m in Sources */,
 				7C57A19F195DA7B800F496E6 /* NSData+ImageContentType.m in Sources */,
 				7C57A194195DA7B800F496E6 /* YDTextFieldWithDateTimePicker.m in Sources */,
 				7C57A1AB195DA7B800F496E6 /* UIImageView+WebCache.m in Sources */,
-				334D58FA1A676123004219ED /* List.m in Sources */,
+				334D58FA1A676123004219ED /* ListViewController.m in Sources */,
 				33CA27341A67A36600D85908 /* ChangePassword.m in Sources */,
+				A7BD506F1A68B3A6001D6E7E /* MHTextField.m in Sources */,
 				7C57A188195DA7B800F496E6 /* KNStoryboardManager.m in Sources */,
 				7C57A187195DA7B800F496E6 /* KNCommunicationManager.m in Sources */,
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
 				7C57A174195DA7B800F496E6 /* KNMobileRegisterationTemplateViewController.m in Sources */,
+				A7BD506B1A68B186001D6E7E /* KNBaseTableViewController.m in Sources */,
 				7C57A18D195DA7B800F496E6 /* NSData+Base64.m in Sources */,
 				7C57A192195DA7B800F496E6 /* KNPushTopSegue.m in Sources */,
 				7C57A1A1195DA7B800F496E6 /* SDWebImageCompat.m in Sources */,
@@ -917,7 +919,7 @@
 				7C57A171195DA7B800F496E6 /* KNLoginTemplateViewController.m in Sources */,
 				7C57A1A7195DA7B800F496E6 /* UIButton+WebCache.m in Sources */,
 				331305031A67C99500165AF9 /* Data_Text.m in Sources */,
-				3373A0B21A6660F200A30400 /* Login.m in Sources */,
+				3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */,
 				7C57A199195DA7B800F496E6 /* YDRequest.m in Sources */,
 				7C57A1A3195DA7B800F496E6 /* SDWebImageDownloader.m in Sources */,
 				7C57A195195DA7B800F496E6 /* UIImage+BWImage.m in Sources */,

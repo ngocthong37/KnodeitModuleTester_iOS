@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Login : UIViewController{
+@interface LoginViewController : KNBaseViewController{
     
-    __weak IBOutlet UITextField *tf_email;
-    __weak IBOutlet UITextField *tf_password;
+    __weak IBOutlet MHTextField *tf_email;
+    __weak IBOutlet MHTextField *tf_password;
 }
 - (IBAction)bt_login_click:(id)sender;
 - (IBAction)bt_signup_click:(id)sender;

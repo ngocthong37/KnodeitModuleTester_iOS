@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface List : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

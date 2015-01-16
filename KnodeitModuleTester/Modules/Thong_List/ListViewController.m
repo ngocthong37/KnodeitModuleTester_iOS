@@ -6,16 +6,16 @@
 //
 //
 
-#import "List.h"
+#import "ListViewController.h"
 #import "ChangePassword.h"
 #import "Data_Text.h"
 
 Data_Text *data_text;
-@interface List ()
+@interface ListViewController ()
 
 @end
 
-@implementation List
+@implementation ListViewController
 {
 NSArray *data;
 NSInteger index;
@@ -68,7 +68,7 @@ NSInteger index;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *simpleTableIdentifier = @"userCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     

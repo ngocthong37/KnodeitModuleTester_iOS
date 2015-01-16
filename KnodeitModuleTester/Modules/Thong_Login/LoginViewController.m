@@ -6,16 +6,16 @@
 //
 //
 
-#import "Login.h"
+#import "LoginViewController.h"
 #import "NSString+Validator.h"
 #import "Data_Text.h"
 
 Data_Text *data_text;
-@interface Login ()
+@interface LoginViewController ()
 
 @end
 
-@implementation Login
+@implementation LoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

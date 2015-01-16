@@ -15,6 +15,8 @@
 
 @property (nonatomic) BOOL keyboardIsShown;
 @property (nonatomic) CGSize keyboardSize;
+@property (nonatomic) BOOL isKeyboardHeightCalculated;
+
 @property (nonatomic) BOOL hasScrollView;
 @property (nonatomic) BOOL invalid;
 
@@ -35,6 +37,7 @@
 @synthesize toolbar;
 @synthesize keyboardIsShown;
 @synthesize keyboardSize;
+@synthesize isKeyboardHeightCalculated;
 @synthesize invalid;
 
 - (id)initWithFrame:(CGRect)frame
@@ -42,6 +45,7 @@
     self = [super initWithFrame:frame];
     
     if (self){
+        
         [self setup];
     }
     
@@ -50,11 +54,13 @@
 
 - (void) awakeFromNib{
     [super awakeFromNib];
+    
     [self setup];
 }
 
 - (void)setup
 {
+    
     [self setTintColor:[UIColor blackColor]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:self];
@@ -62,10 +68,13 @@
     
     toolbar = [[UIToolbar alloc] init];
     toolbar.frame = CGRectMake(0, 0, self.window.frame.size.width, 44);
+    
     // set style
     [toolbar setBarStyle:UIBarStyleDefault];
     
     self.previousBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(previousButtonIsClicked:)];
+    
+    
     self.nextBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(nextButtonIsClicked:)];
     
     UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -103,36 +112,80 @@
     [self setToolbarCommand:YES];
 }
 
+static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCurve curve)
+{
+    UIViewAnimationOptions opt = (UIViewAnimationOptions)curve;
+    return opt << 16;
+}
 -(void) keyboardDidShow:(NSNotification *) notification
 {
     if (_textField == nil) return;
-    if (keyboardIsShown) return;
+    
     if (![_textField isKindOfClass:[MHTextField class]]) return;
     
-    NSDictionary* info = [notification userInfo];
+    NSDictionary *notificationInfo = [notification userInfo];
+    CGRect finalKeyboardFrame = [[notificationInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSTimeInterval keyboardAnimationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
-    NSValue *aValue = [info objectForKey:UIKeyboardFrameBeginUserInfoKey];
-    keyboardSize = [aValue CGRectValue].size;
+    NSInteger keyboardAnimationCurveNumber = [[notificationInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    UIViewAnimationOptions animationOptions = animationOptionsWithCurve(keyboardAnimationCurveNumber);
     
-    [self scrollToField];
+    self.keyboardSize = finalKeyboardFrame.size;
     
-    self.keyboardIsShown = YES;
+    // resize frame for scroll view
+    if ([self getKeyboardIsShown] == false) {
+        
+        if ([self.superview isKindOfClass:[UIScrollView class]]) {
+            
+            [UIView animateWithDuration:keyboardAnimationDuration delay:0 options:animationOptions animations:^{
+                
+                [self calculateKeyboardHeightForScrollViewForStatus:true];
+                [self scrollToField:false];
+            } completion:nil];
+            
+        }
+    }else{
+        
+        if ([self.superview isKindOfClass:[UIScrollView class]]) {
+            
+            [self scrollToField:true];
+        }
+    }
     
+    [self setKeyboardStatusToHidden:true];
+    self.keyboardIsShown = true;
 }
 
 -(void) keyboardWillHide:(NSNotification *) notification
 {
-    NSTimeInterval duration = [[[notification userInfo] valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+ 
+    NSDictionary *info = [notification userInfo];
+    NSTimeInterval duration = [[info valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
     [UIView animateWithDuration:duration animations:^{
-        if (_isDoneCommand)
-             [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
-     }];
+        
+        if (self.isDoneCommand || true) {
+            
+            if ([self.superview isKindOfClass:[UIScrollView class]]) {
+                
+                [self.scrollView setContentOffset:CGPointMake(0, 0) animated:false];
+            }
+        }
+    }];
     
-    keyboardIsShown = NO;
+    // resize frame for scroll view
+    if ([self getKeyboardIsShown]) {
+        
+        if ([self.superview isKindOfClass:[UIScrollView class]]) {
+            
+            [self calculateKeyboardHeightForScrollViewForStatus:false];
+        }
+    }
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:self];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:self];
+    [self setKeyboardStatusToHidden:true];
+    self.keyboardIsShown = false;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:self];
 }
 
 
@@ -218,29 +271,43 @@
     [self validate];
 }
 
-- (void)scrollToField
+- (void)scrollToField:(BOOL)animated
 {
+    
+    if (_textField == nil) {
+        
+        return;
+    }
+    
     CGRect textFieldRect = _textField.frame;
     
     CGRect aRect = self.window.bounds;
     
     aRect.origin.y = -scrollView.contentOffset.y;
-    aRect.size.height -= keyboardSize.height + self.toolbar.frame.size.height + 22;
     
-    CGPoint textRectBoundary = CGPointMake(textFieldRect.origin.x, textFieldRect.origin.y + textFieldRect.size.height);
+    CGFloat toolbarHeight = self.toolbar.frame.size.height;
+    if  (self.toolbar.hidden) {
+        
+        toolbarHeight = 0;
+    }
+    
+    aRect.size.height -= self.keyboardSize.height + toolbarHeight;
+    
+    CGPoint textRectBoundary = CGPointMake(textFieldRect.origin.x, textFieldRect.origin.y + textFieldRect.size.height + 20);
    
-    if (!CGRectContainsPoint(aRect, textRectBoundary) || scrollView.contentOffset.y > 0) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.superview.frame.origin.y + _textField.frame.origin.y + _textField.frame.size.height - aRect.size.height);
+    if (!CGRectContainsPoint(aRect, textRectBoundary) || scrollView.contentOffset.y >= 0) {
+        
+        CGPoint scrollPoint = CGPointMake(0.0, self.superview.frame.origin.y + _textField.frame.origin.y + 20 - aRect.size.height);
         
         if (scrollPoint.y < 0) scrollPoint.y = 0;
         
-        [scrollView setContentOffset:scrollPoint animated:YES];
+        [scrollView setContentOffset:scrollPoint animated:animated];
     }
 }
 
 - (BOOL) validate
 {
-    self.backgroundColor = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];
+    //self.backgroundColor = [UIColor colorWithRed:255 green:0 blue:0 alpha:0.5];
     
     if (required && [self.text isEqualToString:@""]){
         return NO;
@@ -262,7 +329,7 @@
         }
     }
 
-    [self setBackgroundColor:[UIColor whiteColor]];
+    //[self setBackgroundColor:[UIColor whiteColor]];
     
     return YES;
 }
@@ -283,7 +350,7 @@
     
     _textField = textField;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self setBarButtonNeedsDisplayAtTag:(int)textField.tag];
@@ -315,4 +382,50 @@
     }
 }
 
+-(BOOL)getKeyboardIsShown{
+    
+    for (int i = 0; i < self.textFields.count; ++i) {
+        
+        MHTextField *tf = [self.textFields objectAtIndex:i];
+        if (tf.keyboardIsShown) {
+            
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+-(void)calculateKeyboardHeightForScrollViewForStatus:(BOOL)isShown{
+
+    if (isShown) {
+        
+        CGSize bkgndSize = self.scrollView.contentSize;
+        bkgndSize.height += self.keyboardSize.height;
+        self.scrollView.contentSize = bkgndSize;
+        self.isKeyboardHeightCalculated = true;
+    }else{
+    
+        for (int i = 0; i < self.textFields.count; ++i) {
+            
+            MHTextField *tf = [self.textFields objectAtIndex:i];
+            if (tf.isKeyboardHeightCalculated) {
+                
+                CGSize bkgndSize = self.scrollView.contentSize;
+                bkgndSize.height -= tf.keyboardSize.height;
+                self.scrollView.contentSize = bkgndSize;
+                tf.isKeyboardHeightCalculated = false;
+            }
+        }
+    }
+}
+
+-(void)setKeyboardStatusToHidden:(BOOL)isHidden{
+
+    for (int i = 0; i < self.textFields.count; ++i) {
+        
+        MHTextField *tf = [self.textFields objectAtIndex:i];
+        tf.keyboardIsShown = !isHidden;
+    }
+}
 @end

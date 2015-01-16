@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331305001A67C96B00165AF9 /* USERS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 331304FF1A67C96B00165AF9 /* USERS.txt */; };
+		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		334D58FA1A676123004219ED /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* List.m */; };
 		3373A0B21A6660F200A30400 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* Login.m */; };
-		33A81D151A651A6F00529EE7 /* USER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D131A651A6F00529EE7 /* USER.xcdatamodeld */; };
-		33A81D181A651AAE00529EE7 /* USER.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D171A651AAE00529EE7 /* USER.m */; };
 		33A81D671A65205800529EE7 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUp.m */; };
 		33A81D691A65262600529EE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A81D681A65262600529EE7 /* CoreData.framework */; };
+		33CA27341A67A36600D85908 /* ChangePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CA27331A67A36600D85908 /* ChangePassword.m */; };
 		7C57A091195DA75C00F496E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A090195DA75C00F496E6 /* Foundation.framework */; };
 		7C57A093195DA75C00F496E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A092195DA75C00F496E6 /* CoreGraphics.framework */; };
 		7C57A095195DA75C00F496E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A094195DA75C00F496E6 /* UIKit.framework */; };
@@ -89,16 +90,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331304FF1A67C96B00165AF9 /* USERS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = USERS.txt; path = "../../../../../../../../../Library/Application Support/iPhone Simulator/7.1/Applications/9690B807-57F7-4A6B-978C-08C5B71C0637/Documents/USERS.txt"; sourceTree = "<group>"; };
+		331305011A67C99500165AF9 /* Data_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data_Text.h; sourceTree = "<group>"; };
+		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
 		334D58F81A676123004219ED /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		334D58F91A676123004219ED /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		3373A0B11A6660F200A30400 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
-		33A81D141A651A6F00529EE7 /* USER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = USER.xcdatamodel; sourceTree = "<group>"; };
-		33A81D161A651AAD00529EE7 /* USER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USER.h; sourceTree = "<group>"; };
-		33A81D171A651AAE00529EE7 /* USER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USER.m; sourceTree = "<group>"; };
 		33A81D651A65205800529EE7 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
 		33A81D661A65205800529EE7 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
 		33A81D681A65262600529EE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		33CA27321A67A36600D85908 /* ChangePassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePassword.h; sourceTree = "<group>"; };
+		33CA27331A67A36600D85908 /* ChangePassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePassword.m; sourceTree = "<group>"; };
 		7C57A08D195DA75C00F496E6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C57A090195DA75C00F496E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C57A092195DA75C00F496E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -255,6 +258,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331304FE1A67C91D00165AF9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				331304FF1A67C96B00165AF9 /* USERS.txt */,
+				331305011A67C99500165AF9 /* Data_Text.h */,
+				331305021A67C99500165AF9 /* Data_Text.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		334D58F71A6760F5004219ED /* Thong_List */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,16 +286,6 @@
 			path = Thong_Login;
 			sourceTree = "<group>";
 		};
-		33A81D121A6519FD00529EE7 /* USER */ = {
-			isa = PBXGroup;
-			children = (
-				33A81D131A651A6F00529EE7 /* USER.xcdatamodeld */,
-				33A81D161A651AAD00529EE7 /* USER.h */,
-				33A81D171A651AAE00529EE7 /* USER.m */,
-			);
-			path = USER;
-			sourceTree = "<group>";
-		};
 		33A81D641A65202E00529EE7 /* Thong_SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +293,15 @@
 				33A81D661A65205800529EE7 /* SignUp.m */,
 			);
 			path = Thong_SignUp;
+			sourceTree = "<group>";
+		};
+		33CA27311A67A31500D85908 /* Thong_ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				33CA27321A67A36600D85908 /* ChangePassword.h */,
+				33CA27331A67A36600D85908 /* ChangePassword.m */,
+			);
+			path = Thong_ChangePassword;
 			sourceTree = "<group>";
 		};
 		7C57A084195DA75C00F496E6 = {
@@ -396,6 +408,7 @@
 		7C57A0CC195DA7B800F496E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				331304FE1A67C91D00165AF9 /* Data */,
 				7C57A0CD195DA7B800F496E6 /* Coredata */,
 				7C57A0D9195DA7B800F496E6 /* readme.txt */,
 			);
@@ -405,7 +418,6 @@
 		7C57A0CD195DA7B800F496E6 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				33A81D121A6519FD00529EE7 /* USER */,
 				7C57A0CE195DA7B800F496E6 /* Entities */,
 				7C57A0D6195DA7B800F496E6 /* EverAfter.xcdatamodeld */,
 				7C57A0D8195DA7B800F496E6 /* readme.txt */,
@@ -430,6 +442,7 @@
 		7C57A0DA195DA7B800F496E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				33CA27311A67A31500D85908 /* Thong_ChangePassword */,
 				334D58F71A6760F5004219ED /* Thong_List */,
 				3373A0AF1A6660A000A30400 /* Thong_Login */,
 				33A81D641A65202E00529EE7 /* Thong_SignUp */,
@@ -838,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C57A172195DA7B800F496E6 /* Countries.plist in Resources */,
+				331305001A67C96B00165AF9 /* USERS.txt in Resources */,
 				7C57A0A7195DA75C00F496E6 /* Main_iPad.storyboard in Resources */,
 				7C57A0AC195DA75C00F496E6 /* Images.xcassets in Resources */,
 				7C57A0A4195DA75C00F496E6 /* Main_iPhone.storyboard in Resources */,
@@ -872,10 +886,10 @@
 				7C57A1A4195DA7B800F496E6 /* SDWebImageDownloaderOperation.m in Sources */,
 				7C57A19C195DA7B800F496E6 /* MHTextField.m in Sources */,
 				7C57A19F195DA7B800F496E6 /* NSData+ImageContentType.m in Sources */,
-				33A81D181A651AAE00529EE7 /* USER.m in Sources */,
 				7C57A194195DA7B800F496E6 /* YDTextFieldWithDateTimePicker.m in Sources */,
 				7C57A1AB195DA7B800F496E6 /* UIImageView+WebCache.m in Sources */,
 				334D58FA1A676123004219ED /* List.m in Sources */,
+				33CA27341A67A36600D85908 /* ChangePassword.m in Sources */,
 				7C57A188195DA7B800F496E6 /* KNStoryboardManager.m in Sources */,
 				7C57A187195DA7B800F496E6 /* KNCommunicationManager.m in Sources */,
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
@@ -902,11 +916,11 @@
 				7C57A18E195DA7B800F496E6 /* NSString+MD5.m in Sources */,
 				7C57A171195DA7B800F496E6 /* KNLoginTemplateViewController.m in Sources */,
 				7C57A1A7195DA7B800F496E6 /* UIButton+WebCache.m in Sources */,
+				331305031A67C99500165AF9 /* Data_Text.m in Sources */,
 				3373A0B21A6660F200A30400 /* Login.m in Sources */,
 				7C57A199195DA7B800F496E6 /* YDRequest.m in Sources */,
 				7C57A1A3195DA7B800F496E6 /* SDWebImageDownloader.m in Sources */,
 				7C57A195195DA7B800F496E6 /* UIImage+BWImage.m in Sources */,
-				33A81D151A651A6F00529EE7 /* USER.xcdatamodeld in Sources */,
 				7C57A183195DA7B800F496E6 /* KNSplashTemplateViewController.m in Sources */,
 				7C57A18F195DA7B800F496E6 /* NSString+Trim.m in Sources */,
 				7C57A190195DA7B800F496E6 /* NSString+Validator.m in Sources */,
@@ -1156,16 +1170,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		33A81D131A651A6F00529EE7 /* USER.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				33A81D141A651A6F00529EE7 /* USER.xcdatamodel */,
-			);
-			currentVersion = 33A81D141A651A6F00529EE7 /* USER.xcdatamodel */;
-			path = USER.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		7C57A0D6195DA7B800F496E6 /* EverAfter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512074C71A68A2010031498C /* User.txt in Resources */ = {isa = PBXBuildFile; fileRef = 512074C51A68A2010031498C /* User.txt */; };
+		512074C81A68A2010031498C /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 512074C61A68A2010031498C /* TemplateIcon2x.png */; };
 		5153A3F51A66519F00D7155A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F41A66519F00D7155A /* main.m */; };
 		5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F71A66519F00D7155A /* AppDelegate.m */; };
 		5153A3FB1A66519F00D7155A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3FA1A66519F00D7155A /* ViewController.m */; };
@@ -16,6 +18,8 @@
 		5153A40F1A6651A000D7155A /* UserManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A40E1A6651A000D7155A /* UserManagementTests.m */; };
 		5153A41A1A6653E900D7155A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A4191A6653E900D7155A /* User.m */; };
 		5153A4231A665F8500D7155A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A4221A665F8500D7155A /* SignUpViewController.m */; };
+		51A0AE111A675B1000CED971 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0AE101A675B1000CED971 /* TableViewController.m */; };
+		51A0AE161A679CDE00CED971 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0AE151A679CDE00CED971 /* EditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		512074C51A68A2010031498C /* User.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.txt; sourceTree = "<group>"; };
+		512074C61A68A2010031498C /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		5153A3EF1A66519F00D7155A /* UserManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5153A3F31A66519F00D7155A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153A3F41A66519F00D7155A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +52,10 @@
 		5153A4191A6653E900D7155A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5153A4211A665F8500D7155A /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5153A4221A665F8500D7155A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		51A0AE0F1A675B1000CED971 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		51A0AE101A675B1000CED971 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		51A0AE141A679CDE00CED971 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		51A0AE151A679CDE00CED971 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +97,19 @@
 		5153A3F11A66519F00D7155A /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				5153A4251A6660E500D7155A /* SignUp */,
+				5153A41B1A6653FB00D7155A /* User */,
+				5153A4261A6661C500D7155A /* Login */,
+				51A0AE131A675B2400CED971 /* LIstUser */,
 				5153A3F61A66519F00D7155A /* AppDelegate.h */,
 				5153A3F71A66519F00D7155A /* AppDelegate.m */,
-				5153A4261A6661C500D7155A /* Login */,
 				5153A3FC1A66519F00D7155A /* Main.storyboard */,
 				5153A3FF1A66519F00D7155A /* Images.xcassets */,
 				5153A4011A66519F00D7155A /* LaunchScreen.xib */,
 				5153A3F21A66519F00D7155A /* Supporting Files */,
-				5153A41B1A6653FB00D7155A /* User */,
-				5153A4251A6660E500D7155A /* SignUp */,
+				51A0AE171A679CE700CED971 /* Edit */,
+				512074C51A68A2010031498C /* User.txt */,
+				512074C61A68A2010031498C /* TemplateIcon2x.png */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -151,6 +165,25 @@
 				5153A3FA1A66519F00D7155A /* ViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		51A0AE131A675B2400CED971 /* LIstUser */ = {
+			isa = PBXGroup;
+			children = (
+				51A0AE0F1A675B1000CED971 /* TableViewController.h */,
+				51A0AE101A675B1000CED971 /* TableViewController.m */,
+			);
+			name = LIstUser;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		51A0AE171A679CE700CED971 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				51A0AE141A679CDE00CED971 /* EditViewController.h */,
+				51A0AE151A679CDE00CED971 /* EditViewController.m */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +266,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				512074C81A68A2010031498C /* TemplateIcon2x.png in Resources */,
 				5153A3FE1A66519F00D7155A /* Main.storyboard in Resources */,
+				512074C71A68A2010031498C /* User.txt in Resources */,
 				5153A4031A66519F00D7155A /* LaunchScreen.xib in Resources */,
 				5153A4001A66519F00D7155A /* Images.xcassets in Resources */,
 			);
@@ -254,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5153A41A1A6653E900D7155A /* User.m in Sources */,
+				51A0AE111A675B1000CED971 /* TableViewController.m in Sources */,
 				5153A4231A665F8500D7155A /* SignUpViewController.m in Sources */,
+				51A0AE161A679CDE00CED971 /* EditViewController.m in Sources */,
 				5153A3FB1A66519F00D7155A /* ViewController.m in Sources */,
 				5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */,
 				5153A3F51A66519F00D7155A /* main.m in Sources */,
@@ -448,6 +485,7 @@
 				5153A4141A6651A000D7155A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5153A4151A6651A000D7155A /* Build configuration list for PBXNativeTarget "UserManagementTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +494,7 @@
 				5153A4171A6651A000D7155A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

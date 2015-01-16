@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 @property (strong, nonatomic) IBOutlet UIButton *btnLogin;
 @property (strong, nonatomic) IBOutlet UIButton *btnPassword;
+@property (strong, nonatomic) NSString *Account;
 
 - (IBAction)btnLogin_Click:(id)sender;
 - (IBAction)btnFgPass_Click:(id)sender;

@@ -9,7 +9,7 @@
 #import "CustomTableViewCell.h"
 
 @implementation CustomTableViewCell
-@synthesize image=_image;
+@synthesize imageview=_imageview;
 @synthesize lb_name=_name;
 @synthesize lb_gender=_gender;
 

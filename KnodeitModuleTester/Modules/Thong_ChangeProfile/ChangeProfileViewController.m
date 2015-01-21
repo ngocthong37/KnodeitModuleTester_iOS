@@ -15,6 +15,7 @@
 
 NSArray *profile;
 NSArray *dataPicker;
+NSString *imagePath;
 
 @implementation ChangeProfileViewController
 @synthesize data=_data;
@@ -22,24 +23,20 @@ NSArray *dataPicker;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    profile=[_data componentsSeparatedByString:@"\t"];
     
     [self load_profile];
     
-   dataPicker=@[@"Male", @"Female",@"Other"];
+    [self createPickerGender];
+    [self BackgroundTap];
+}
+-(void)createPickerGender{
+    dataPicker=@[@"Male", @"Female",@"Other"];
     UIPickerView *picker=[[UIPickerView alloc]init];
     picker.dataSource=self;
     picker.delegate=self;
     tf_gender.inputView=picker;
-    UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
-    tapRecognizer.cancelsTouchesInView=NO;
-    [self.view addGestureRecognizer:tapRecognizer];
 }
 
--(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
-    [tf_name resignFirstResponder];
-    [tf_gender resignFirstResponder];
-}
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return dataPicker.count;
 }
@@ -57,10 +54,23 @@ NSArray *dataPicker;
     [tf_gender resignFirstResponder];
 }
 
+-(void)BackgroundTap{
+    UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
+    tapRecognizer.cancelsTouchesInView=NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+}
+-(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
+    [tf_name resignFirstResponder];
+    [tf_gender resignFirstResponder];
+}
+
 -(void)load_profile{
+    profile=[_data componentsSeparatedByString:@"\t"];
     tf_name.text=profile[2];
     tf_gender.text=profile[3];
-    image.image=[UIImage imageNamed:profile[4]];
+    
+    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
+    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,12 +95,22 @@ NSArray *dataPicker;
 - (IBAction)bt_save_click:(id)sender {
     Data_Text *data_text=[[Data_Text alloc]init];
     NSString *aString=[data_text readfile];
-    NSArray *temp=[_data componentsSeparatedByString:@"\t"];
-    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@\t%@.jpeg",temp[0],temp[1],tf_name.text,tf_gender.text,tf_gender.text];
+    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
     aString=[aString stringByReplacingOccurrencesOfString:_data withString:cString];
     [data_text writefile:aString];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//    NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"ddMMyyyy-HHmmss"];
+//    NSString *ret = [formatter stringFromDate:[NSDate date]];
+//    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
+//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
+    
+    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
+    
 }
 
 - (IBAction)bt_changeimage_click:(id)sender {
@@ -104,7 +124,7 @@ NSArray *dataPicker;
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *img=[info objectForKey:UIImagePickerControllerOriginalImage];
-    image.image=img;
+    imageview.image=img;
     //    NSLog(@"%@",imageURL);
 }
 

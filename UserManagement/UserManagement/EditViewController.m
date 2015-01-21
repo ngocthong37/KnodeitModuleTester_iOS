@@ -40,13 +40,14 @@
     txtEmail.enabled=false;
     btnChangeImg.hidden=true;
     imgUser.image=[UIImage imageNamed:@"user-blue.png"];
-    imgUser.backgroundColor=[UIColor colorWithRed:160.0/255.0 green:160.0/255.0 blue:160.0/255.0 alpha:0.5];
+    imgUser.backgroundColor=[UIColor colorWithRed:0/255.0 green:178.0/255.0 blue:191.0/255.0 alpha:0.5];
     // Do any additional setup after loading the view.
     UIPickerView *picker = [[UIPickerView alloc] init];
     picker.dataSource = self;
     picker.delegate = self;
     txtGender.inputView = picker;
     self.listgender = @[@"Male",@"Female",@"Other"];
+    self.automaticallyAdjustsScrollViewInsets=NO;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -159,6 +160,7 @@
         }
     }
         [self writefile:savedata];
+        [self saveImage:imgUser.image];
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Success"
                                                       message:@"Change User Infomation Success"
                                                      delegate:self
@@ -168,9 +170,54 @@
     }
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo
+{
+    [picker dismissModalViewControllerAnimated:YES];
+    imgUser.image = image;
+}
+
+
+-(void)btnChangImage:(id)sender
+{
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate=self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentModalViewController:imagePickerController animated:YES];
+    
+}
+
+-(void)saveImage:(UIImage*)img
+{
+    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* fileName =[NSString stringWithFormat:@"%@.jpg",txtEmail.text];
+    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:fileAtPath error:&error];
+    if (error){
+        NSLog(@"%@", error);
+    }
+    NSString *imageName = self.txtEmail.text;
+    
+    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpg",imageName]];
+    [UIImageJPEGRepresentation(img, 0.5f) writeToFile:imagePath atomically:YES];
+    
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"segueCancelEdit"])
+    {
+        TableViewController *TBV=(TableViewController*)[segue destinationViewController];
+        TBV.email=txtEmail.text;
+        TBV.pass=txtPass.text;
+        TBV.fname=txtFName.text;
+        TBV.lname=txtLName.text;
+        TBV.gender=txtGender.text;
+        TBV.rowedit=self.rowid;
+    }
 }
 
 @end

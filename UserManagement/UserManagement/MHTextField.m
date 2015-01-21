@@ -279,7 +279,7 @@
     [super setEnabled:enabled];
     
     if (!enabled)
-        [self setBackgroundColor:[UIColor colorWithRed:160.0/255.0 green:160.0/255.0 blue:160.0/255.0 alpha:0.5]];
+        [self setBackgroundColor:[UIColor colorWithRed:0/255.0 green:178.0/255.0 blue:191.0/255.0 alpha:0.5]];
     else
         [self setBackgroundColor:[UIColor whiteColor]];
 }

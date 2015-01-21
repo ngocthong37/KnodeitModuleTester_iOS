@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtEmail;
 @property (strong, nonatomic) IBOutlet UITextField *txtPassword;
 @property (strong, nonatomic) IBOutlet UITextField *txtConfigPassword;
+@property (strong, nonatomic) IBOutlet UITextField *txtFName;
+@property (strong, nonatomic) IBOutlet UITextField *txtLName;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) IBOutlet BaseButton *btnSignUp;
 @property (strong, nonatomic) IBOutlet BaseButton *btnCancel;

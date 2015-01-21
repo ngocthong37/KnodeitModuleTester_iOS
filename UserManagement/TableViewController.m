@@ -7,7 +7,6 @@
 //
 
 #import "TableViewController.h"
-#import "User.h"
 #import "EditViewController.h"
 #import "CustomCellTableViewCell.h"
 
@@ -20,23 +19,7 @@
 int rowid=0;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.listuser = [[NSMutableArray alloc] init];
-    NSString* Account=[self readfile];
-    NSArray *Array=[Account componentsSeparatedByString:@"\n"];
-    for (NSString *ac in Array)
-    {
-        if(![ac isEqualToString:@""])
-        {
-            User*ur=[[User alloc] init];
-            ur.Email=[ac componentsSeparatedByString:@" "][0];
-            ur.Password=[ac componentsSeparatedByString:@" "][1];
-            ur.FName=[ac componentsSeparatedByString:@" "][2];
-            ur.LName=[ac componentsSeparatedByString:@" "][3];
-            ur.Gender=[ac componentsSeparatedByString:@" "][4];
-            [self.listuser addObject: ur];
-        }
-    }
-
+    self.rowedit=-1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,16 +56,38 @@ int rowid=0;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
     User *user=[listuser objectAtIndex:indexPath.row];
+    if(indexPath.row==[self rowedit])
+    {
+        User *edituser=[[User alloc] init];
+        edituser.Email=self.email;
+        edituser.Password=self.pass;
+        edituser.FName=self.fname;
+        edituser.LName=self.lname;
+        edituser.Gender=self.gender;
+        user=edituser;
+    }
     cell.lbFName.text =user.FName;
-    cell.imgUser.image=[UIImage imageNamed:@"user-blue.png"];
+    
+    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString* fileName =[NSString stringWithFormat:@"%@.jpg",user.Email];
+    NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
+    UIImage *img = [[UIImage alloc] initWithContentsOfFile: fileAtPath];
+    if(img!=nil)
+    {
+        cell.imgUser.image=img;
+    }
+    else
+    {
+        cell.imgUser.image=[UIImage imageNamed:@"user-blue.png"];
+    }
     cell.lbLName.text=user.LName;
     cell.lbGender.text=user.Gender;
     return cell;
 }
-
 - (IBAction)btnEditCancel_Click:(UIStoryboardSegue *)unwindSegue {
-    [self viewDidLoad];
+    if([unwindSegue.identifier isEqualToString:@"segueCancelEdit"])
     [self.tableView reloadData ];
 }
 
@@ -139,9 +144,12 @@ int rowid=0;
         VC.lname=user.LName;
         VC.fname=user.FName;
         VC.gender=user.Gender;
-        
+        VC.rowid=rowid;
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{ return 80;}
+
+
+
 
 @end

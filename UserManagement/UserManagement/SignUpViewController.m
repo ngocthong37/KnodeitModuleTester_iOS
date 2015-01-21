@@ -79,12 +79,22 @@
     imgUser.image = image;
 }
 
+
 -(void)btnChangeImage_Click:(id)sender
 {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController.delegate=self;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentModalViewController:imagePickerController animated:YES];
+
+}
+
+-(void)saveImage:(UIImage*)img
+{
+    NSString *imageName = self.txtEmail.text;
+    
+    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpg",imageName]];
+    [UIImageJPEGRepresentation(img, 0.5f) writeToFile:imagePath atomically:YES];
 
 }
 
@@ -100,6 +110,7 @@
     }
     return @"";
 }
+
 -(void)writefile:(NSString*)aString{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"DataUser.txt";
@@ -146,9 +157,13 @@
     {
         User *newUser;
         newUser.Email=self.txtEmail.text;
-        newUser.Password=self.txtEmail.text;
-        NSString* add=[NSString stringWithFormat:@"%@ %@",self.txtEmail.text,self.txtPassword.text];
+        newUser.Password=self.txtPassword.text;
+        newUser.FName=self.txtFName.text;
+        newUser.LName=self.txtLName.text;
+        newUser.Gender=self.txtGender.text;
+        NSString* add=[NSString stringWithFormat:@"%@ %@ %@ %@ %@",self.txtEmail.text,self.txtPassword.text,self.txtFName.text, self.txtLName.text, self.txtGender.text];
         [self writefile:add];
+        [self saveImage:imgUser.image];
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Success"
                                                       message:@"Sign Up Success"
                                                      delegate:self

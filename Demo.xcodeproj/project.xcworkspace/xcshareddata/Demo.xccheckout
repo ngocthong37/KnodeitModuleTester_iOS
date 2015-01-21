@@ -46,7 +46,11 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>4EE65B62B497CDC9C5F960F5F9E8599CE665863F</string>
 			<key>IDESourceControlWCCName</key>
+<<<<<<< HEAD
 			<string>Mac%20OS</string>
+=======
+			<string>UserManagement</string>
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		</dict>
 	</array>
 </dict>

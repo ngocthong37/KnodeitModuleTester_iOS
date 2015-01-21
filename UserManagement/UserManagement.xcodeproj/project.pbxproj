@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		512074D51A68F4A50031498C /* MHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 512074D41A68F4A50031498C /* MHTextField.m */; };
 		512074D91A68F7920031498C /* BaseViewControlClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 512074D81A68F7920031498C /* BaseViewControlClass.m */; };
 		512074DD1A691BDA0031498C /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 512074DC1A691BDA0031498C /* BaseButton.m */; };
 		5153A3F51A66519F00D7155A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F41A66519F00D7155A /* main.m */; };
 		5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F71A66519F00D7155A /* AppDelegate.m */; };
 		5153A3FB1A66519F00D7155A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3FA1A66519F00D7155A /* LoginViewController.m */; };
+=======
+		512074C71A68A2010031498C /* User.txt in Resources */ = {isa = PBXBuildFile; fileRef = 512074C51A68A2010031498C /* User.txt */; };
+		512074C81A68A2010031498C /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 512074C61A68A2010031498C /* TemplateIcon2x.png */; };
+		5153A3F51A66519F00D7155A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F41A66519F00D7155A /* main.m */; };
+		5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3F71A66519F00D7155A /* AppDelegate.m */; };
+		5153A3FB1A66519F00D7155A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A3FA1A66519F00D7155A /* ViewController.m */; };
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		5153A3FE1A66519F00D7155A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5153A3FC1A66519F00D7155A /* Main.storyboard */; };
 		5153A4001A66519F00D7155A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5153A3FF1A66519F00D7155A /* Images.xcassets */; };
 		5153A4031A66519F00D7155A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5153A4011A66519F00D7155A /* LaunchScreen.xib */; };
 		5153A40F1A6651A000D7155A /* UserManagementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A40E1A6651A000D7155A /* UserManagementTests.m */; };
 		5153A41A1A6653E900D7155A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A4191A6653E900D7155A /* User.m */; };
 		5153A4231A665F8500D7155A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5153A4221A665F8500D7155A /* SignUpViewController.m */; };
+<<<<<<< HEAD
 		515CD3E71A6CA5AE00165651 /* user-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 515CD3E61A6CA5AE00165651 /* user-blue.png */; };
 		515CD3F01A6CC3C900165651 /* camera-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 515CD3EF1A6CC3C900165651 /* camera-icon.png */; };
 		51759C1B1A6DFDD500AD6A39 /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51759C1A1A6DFDD500AD6A39 /* SimpleTableCell.xib */; };
 		51759C1E1A6DFE4200AD6A39 /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51759C1D1A6DFE4200AD6A39 /* SimpleTableCell.m */; };
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		51A0AE111A675B1000CED971 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0AE101A675B1000CED971 /* TableViewController.m */; };
 		51A0AE161A679CDE00CED971 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A0AE151A679CDE00CED971 /* EditViewController.m */; };
 /* End PBXBuildFile section */
@@ -38,19 +49,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		512074D31A68F4A50031498C /* MHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTextField.h; sourceTree = "<group>"; };
 		512074D41A68F4A50031498C /* MHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTextField.m; sourceTree = "<group>"; };
 		512074D71A68F7920031498C /* BaseViewControlClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewControlClass.h; sourceTree = "<group>"; };
 		512074D81A68F7920031498C /* BaseViewControlClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewControlClass.m; sourceTree = "<group>"; };
 		512074DB1A691BDA0031498C /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
 		512074DC1A691BDA0031498C /* BaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
+=======
+		512074C51A68A2010031498C /* User.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = User.txt; sourceTree = "<group>"; };
+		512074C61A68A2010031498C /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		5153A3EF1A66519F00D7155A /* UserManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5153A3F31A66519F00D7155A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5153A3F41A66519F00D7155A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5153A3F61A66519F00D7155A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5153A3F71A66519F00D7155A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		5153A3F91A66519F00D7155A /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5153A3FA1A66519F00D7155A /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+=======
+		5153A3F91A66519F00D7155A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5153A3FA1A66519F00D7155A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		5153A3FD1A66519F00D7155A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5153A3FF1A66519F00D7155A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5153A4021A66519F00D7155A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -61,11 +82,14 @@
 		5153A4191A6653E900D7155A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5153A4211A665F8500D7155A /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		5153A4221A665F8500D7155A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		515CD3E61A6CA5AE00165651 /* user-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-blue.png"; sourceTree = "<group>"; };
 		515CD3EF1A6CC3C900165651 /* camera-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon.png"; sourceTree = "<group>"; };
 		51759C1A1A6DFDD500AD6A39 /* SimpleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
 		51759C1C1A6DFE4200AD6A39 /* SimpleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCell.h; sourceTree = "<group>"; };
 		51759C1D1A6DFE4200AD6A39 /* SimpleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCell.m; sourceTree = "<group>"; };
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		51A0AE0F1A675B1000CED971 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		51A0AE101A675B1000CED971 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		51A0AE141A679CDE00CED971 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
@@ -90,6 +114,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		512074D61A68F4A90031498C /* TextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +138,11 @@
 			children = (
 				51759C191A6DF0C100AD6A39 /* CustomTableVIewCell */,
 				515CD3E81A6CA5B400165651 /* Image */,
+=======
+		5153A3E61A66519F00D7155A = {
+			isa = PBXGroup;
+			children = (
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 				5153A3F11A66519F00D7155A /* UserManagement */,
 				5153A40B1A6651A000D7155A /* UserManagementTests */,
 				5153A3F01A66519F00D7155A /* Products */,
@@ -142,9 +172,14 @@
 				5153A4011A66519F00D7155A /* LaunchScreen.xib */,
 				5153A3F21A66519F00D7155A /* Supporting Files */,
 				51A0AE171A679CE700CED971 /* Edit */,
+<<<<<<< HEAD
 				512074D61A68F4A90031498C /* TextField */,
 				512074DA1A691BB20031498C /* ViewControler */,
 				515CD3E51A6C9D6D00165651 /* Button */,
+=======
+				512074C51A68A2010031498C /* User.txt */,
+				512074C61A68A2010031498C /* TemplateIcon2x.png */,
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -196,12 +231,18 @@
 		5153A4261A6661C500D7155A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				5153A3F91A66519F00D7155A /* LoginViewController.h */,
 				5153A3FA1A66519F00D7155A /* LoginViewController.m */,
+=======
+				5153A3F91A66519F00D7155A /* ViewController.h */,
+				5153A3FA1A66519F00D7155A /* ViewController.m */,
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 			);
 			name = Login;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		515CD3E51A6C9D6D00165651 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +271,8 @@
 			name = CustomTableVIewCell;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 		51A0AE131A675B2400CED971 /* LIstUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,11 +372,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				515CD3E71A6CA5AE00165651 /* user-blue.png in Resources */,
 				5153A3FE1A66519F00D7155A /* Main.storyboard in Resources */,
 				515CD3F01A6CC3C900165651 /* camera-icon.png in Resources */,
 				5153A4031A66519F00D7155A /* LaunchScreen.xib in Resources */,
 				51759C1B1A6DFDD500AD6A39 /* SimpleTableCell.xib in Resources */,
+=======
+				512074C81A68A2010031498C /* TemplateIcon2x.png in Resources */,
+				5153A3FE1A66519F00D7155A /* Main.storyboard in Resources */,
+				512074C71A68A2010031498C /* User.txt in Resources */,
+				5153A4031A66519F00D7155A /* LaunchScreen.xib in Resources */,
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 				5153A4001A66519F00D7155A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,12 +406,17 @@
 				51A0AE111A675B1000CED971 /* TableViewController.m in Sources */,
 				5153A4231A665F8500D7155A /* SignUpViewController.m in Sources */,
 				51A0AE161A679CDE00CED971 /* EditViewController.m in Sources */,
+<<<<<<< HEAD
 				512074D91A68F7920031498C /* BaseViewControlClass.m in Sources */,
 				5153A3FB1A66519F00D7155A /* LoginViewController.m in Sources */,
 				51759C1E1A6DFE4200AD6A39 /* SimpleTableCell.m in Sources */,
 				5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */,
 				512074D51A68F4A50031498C /* MHTextField.m in Sources */,
 				512074DD1A691BDA0031498C /* BaseButton.m in Sources */,
+=======
+				5153A3FB1A66519F00D7155A /* ViewController.m in Sources */,
+				5153A3F81A66519F00D7155A /* AppDelegate.m in Sources */,
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 				5153A3F51A66519F00D7155A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

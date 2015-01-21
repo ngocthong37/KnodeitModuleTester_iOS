@@ -9,14 +9,18 @@
 #import "TableViewController.h"
 #import "User.h"
 #import "EditViewController.h"
+<<<<<<< HEAD
 #import "CustomCellTableViewCell.h"
 
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 @interface TableViewController ()
 
 @end
 
 @implementation TableViewController
 @synthesize listuser;
+<<<<<<< HEAD
 int rowid=0;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +41,11 @@ int rowid=0;
         }
     }
 
+=======
+int rowid=nil;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +53,7 @@ int rowid=0;
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 -(NSString*)readfile{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"DataUser.txt";
@@ -56,6 +66,8 @@ int rowid=0;
     }
     return @"";
 }
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -66,6 +78,7 @@ int rowid=0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+<<<<<<< HEAD
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     CustomCellTableViewCell *cell = (CustomCellTableViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -78,12 +91,26 @@ int rowid=0;
     cell.imgUser.image=[UIImage imageNamed:@"user-blue.png"];
     cell.lbLName.text=user.LName;
     cell.lbGender.text=user.Gender;
+=======
+    static NSString *simpleTableIdentifier = @"ListPrototypeCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    User *user=[listuser objectAtIndex:indexPath.row];
+    cell.textLabel.text =user.Email;
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
     return cell;
 }
 
 - (IBAction)btnEditCancel_Click:(UIStoryboardSegue *)unwindSegue {
+<<<<<<< HEAD
     [self viewDidLoad];
     [self.tableView reloadData ];
+=======
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 }
 
 /*
@@ -122,7 +149,11 @@ int rowid=0;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
     rowid=(int)indexPath.row;
+=======
+    rowid=indexPath.row;
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
     [self performSegueWithIdentifier:@"segueEdit" sender:nil];
 }
 
@@ -132,6 +163,7 @@ int rowid=0;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"segueEdit"])
     {
+<<<<<<< HEAD
         EditViewController* VC= (EditViewController* )[segue destinationViewController];
         User *user=[self.listuser objectAtIndex:rowid];
         VC.email=user.Email;
@@ -143,5 +175,15 @@ int rowid=0;
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{ return 80;}
+=======
+        EditViewController* VC= (EditViewController *)[segue destinationViewController];
+        User *user=[self.listuser objectAtIndex:rowid];
+        VC.email=user.Email;
+        VC.pass=user.Password;
+        
+    }
+}
+
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 
 @end

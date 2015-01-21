@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+<<<<<<< HEAD
 #import "BaseViewControlClass.h"
 @interface EditViewController :BaseClass <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (strong, nonatomic) IBOutlet UITextField *txtEmail;
@@ -28,4 +29,13 @@
 @property (strong, nonatomic) NSString *lname;
 @property (strong, nonatomic) NSString *gender;
 - (IBAction)btnEdit_Click:(id)sender;
+=======
+@interface EditViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *txtEmail;
+@property (strong, nonatomic) IBOutlet UITextField *txtConfigPass;
+@property (strong, nonatomic) IBOutlet UITextField *txtPass;
+@property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) NSString *pass;
+
+>>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 @end

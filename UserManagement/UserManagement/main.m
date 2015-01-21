@@ -12,11 +12,7 @@
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-<<<<<<< HEAD
         
     }
   
-=======
-    }
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 }

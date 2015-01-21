@@ -7,18 +7,13 @@
 //
 
 #import "SignUpViewController.h"
-<<<<<<< HEAD
 #import "LoginViewController.h"
-=======
-#import "ViewController.h"
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 #import "User.h"
 @interface SignUpViewController ()
 
 @end
 
 @implementation SignUpViewController
-<<<<<<< HEAD
 @synthesize btnCancel;
 @synthesize btnSignUp;
 @synthesize imgUser;
@@ -34,13 +29,6 @@
     picker.delegate = self;
     self.txtGender.inputView = picker;
     self.gender = @[@"Male",@"Female",@"Other"];
-=======
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.txtEmail.text = self.email;
-  
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,7 +47,6 @@
 }
 
 */
-<<<<<<< HEAD
 #pragma mark picker view datasource
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -104,11 +91,6 @@
 -(NSString*)readfile{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"DataUser.txt";
-=======
--(NSString*)readfile{
-    NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString* fileName = @"User.txt";
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
     NSMutableString *textFromFile;
     if(filePath)
@@ -120,27 +102,15 @@
 }
 -(void)writefile:(NSString*)aString{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-<<<<<<< HEAD
     NSString* fileName = @"DataUser.txt";
-=======
-    NSString* fileName = @"User.txt";
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
     if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
         [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
     }
-<<<<<<< HEAD
     NSString *addString=[NSString stringWithFormat:@"%@\n%@",self.readfile,aString];
     [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
 }
 
-=======
-    NSString *addString=[NSString stringWithFormat:@"%@\n%@",[self readfile],aString];
-    [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
-}
-
-
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 - (IBAction)btnSignUp_Click:(id)sender {
     int flag=0;
     for (User *ur in self.listuser) {
@@ -190,8 +160,5 @@
     
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 @end

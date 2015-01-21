@@ -7,18 +7,13 @@
 //
 
 #import "EditViewController.h"
-<<<<<<< HEAD
 #import "User.h"
 #import "TableViewController.h"
-=======
-
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 @interface EditViewController ()
 
 @end
 
 @implementation EditViewController
-<<<<<<< HEAD
 @synthesize txtEmail;
 @synthesize txtPass;
 @synthesize txtFName;
@@ -72,15 +67,6 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     txtGender.text = self.listgender[row];
     [txtGender resignFirstResponder];
-=======
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.txtEmail.text=self.email;
-    self.txtPass.text=self.pass;
-
-    // Do any additional setup after loading the view.
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,7 +75,6 @@
 }
 
 
-<<<<<<< HEAD
 -(NSString*)readfile{
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"DataUser.txt";
@@ -183,15 +168,9 @@
     }
 }
 
-=======
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6208a1dad6a6bc9c877abdf4eba71e4c1847defb
 @end

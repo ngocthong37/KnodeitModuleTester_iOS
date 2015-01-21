@@ -10,11 +10,15 @@
 #import "NSString+Validator.h"
 #import "Data_Text.h"
 
-Data_Text *data_text;
+
+
 @interface SignUpViewController ()
 
 @end
 
+Data_Text *data_text;
+NSArray *dataPicker;
+NSString *textFromFile;
 @implementation SignUpViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,21 +36,44 @@ Data_Text *data_text;
     // Do any additional setup after loading the view.
     data_text=[[Data_Text alloc]init];
     
+    [self createPickerGender];
+    [self BackgroundTap];
+    textFromFile=[data_text readfile];
+}
+
+-(void)createPickerGender{
+    dataPicker=@[@"Male", @"Female",@"Other"];
+    UIPickerView *picker=[[UIPickerView alloc]init];
+    picker.dataSource=self;
+    picker.delegate=self;
+    tf_gender.inputView=picker;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return dataPicker.count;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return  1;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return dataPicker[row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    tf_gender.text=dataPicker[row];
+    [tf_gender resignFirstResponder];
+}
+
+-(void)BackgroundTap{
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView=NO;
     [self.view addGestureRecognizer:tapRecognizer];
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-
-    [super viewDidAppear:animated];
-}
-
 -(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
+    [tf_name resignFirstResponder];
+    [tf_gender resignFirstResponder];
     [tf_email resignFirstResponder];
     [tf_password resignFirstResponder];
     [tf_confirm resignFirstResponder];
@@ -85,7 +112,6 @@ Data_Text *data_text;
     }
     else
     {
-        NSString *textFromFile=[data_text readfile];
         NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
         for(int i=0;i<ArrayUsers.count;i++)
         {
@@ -126,7 +152,10 @@ Data_Text *data_text;
     }
     
     // luu nguoi dung moi
-    NSString *aString=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
+    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",tf_email.text]];
+    [UIImageJPEGRepresentation(imgUser.image, 0.5f) writeToFile:imagePath atomically:YES];
+    
+    NSString *aString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",tf_email.text,tf_password.text,tf_name.text,tf_gender.text];
     [data_text writefile_addtext:aString];
     
     [self dismissViewControllerAnimated:YES completion:nil];

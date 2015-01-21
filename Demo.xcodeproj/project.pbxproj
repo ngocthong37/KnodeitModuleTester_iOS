@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
+		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
+		3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7691A6F549F00638A08 /* Male.jpeg */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
 		3385DECB1A6DF3D80057AF69 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3385DECA1A6DF3D80057AF69 /* CustomTableViewCell.m */; };
 		3385DECF1A6E17360057AF69 /* ChangeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3385DECE1A6E17360057AF69 /* ChangeProfileViewController.m */; };
-		3385DED21A6E5C6A0057AF69 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3385DED01A6E5C6A0057AF69 /* Male.jpeg */; };
-		3385DED31A6E5C6A0057AF69 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3385DED11A6E5C6A0057AF69 /* Female.jpeg */; };
 		339A411D1A6CA4520001CFFD /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 339A411C1A6CA4520001CFFD /* MHButton.m */; };
 		33A81D671A65205800529EE7 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUpViewController.m */; };
 		33A81D691A65262600529EE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A81D681A65262600529EE7 /* CoreData.framework */; };
@@ -98,6 +98,8 @@
 /* Begin PBXFileReference section */
 		331305011A67C99500165AF9 /* Data_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data_Text.h; sourceTree = "<group>"; };
 		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
+		3315F7681A6F549F00638A08 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Female.jpeg; sourceTree = "<group>"; };
+		3315F7691A6F549F00638A08 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Male.jpeg; sourceTree = "<group>"; };
 		334D58F81A676123004219ED /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; tabWidth = 3; };
@@ -107,8 +109,6 @@
 		3385DECA1A6DF3D80057AF69 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		3385DECD1A6E17360057AF69 /* ChangeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProfileViewController.h; path = Thong_ChangeProfile/ChangeProfileViewController.h; sourceTree = "<group>"; };
 		3385DECE1A6E17360057AF69 /* ChangeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeProfileViewController.m; path = Thong_ChangeProfile/ChangeProfileViewController.m; sourceTree = "<group>"; };
-		3385DED01A6E5C6A0057AF69 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Male.jpeg; path = "../../../../../../../Downloads/hinh anh/Male.jpeg"; sourceTree = "<group>"; };
-		3385DED11A6E5C6A0057AF69 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Female.jpeg; path = "../../../../../../../Downloads/hinh anh/Female.jpeg"; sourceTree = "<group>"; };
 		339A411B1A6CA4520001CFFD /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHButton.h; sourceTree = "<group>"; };
 		339A411C1A6CA4520001CFFD /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHButton.m; sourceTree = "<group>"; };
 		33A81D651A65205800529EE7 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -304,8 +304,8 @@
 		3385DEC11A6DE9C40057AF69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				3385DED01A6E5C6A0057AF69 /* Male.jpeg */,
-				3385DED11A6E5C6A0057AF69 /* Female.jpeg */,
+				3315F7681A6F549F00638A08 /* Female.jpeg */,
+				3315F7691A6F549F00638A08 /* Male.jpeg */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -909,10 +909,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3385DED21A6E5C6A0057AF69 /* Male.jpeg in Resources */,
+				3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */,
 				7C57A172195DA7B800F496E6 /* Countries.plist in Resources */,
+				3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */,
 				7C57A0A7195DA75C00F496E6 /* Main_iPad.storyboard in Resources */,
-				3385DED31A6E5C6A0057AF69 /* Female.jpeg in Resources */,
 				7C57A0AC195DA75C00F496E6 /* Images.xcassets in Resources */,
 				7C57A0A4195DA75C00F496E6 /* Main_iPhone.storyboard in Resources */,
 				7C57A170195DA7B800F496E6 /* AuthenticateImage.xcassets in Resources */,

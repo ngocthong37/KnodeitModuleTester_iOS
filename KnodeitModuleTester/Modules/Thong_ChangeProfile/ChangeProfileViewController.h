@@ -10,7 +10,7 @@
 
 @interface ChangeProfileViewController : KNBaseViewController <UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     
-    __weak IBOutlet UIImageView *image;
+    __weak IBOutlet UIImageView *imageview;
     __weak IBOutlet MHTextField *tf_gender;
     __weak IBOutlet MHTextField *tf_name;
 }

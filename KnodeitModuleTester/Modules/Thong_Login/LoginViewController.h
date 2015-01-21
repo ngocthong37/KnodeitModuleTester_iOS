@@ -18,8 +18,5 @@
 - (IBAction)bt_login_click:(id)sender;
 - (IBAction)bt_signup_click:(id)sender;
 
--(void)handleBackgroundTap:(UITapGestureRecognizer*)sender;
-
--(void)Alert:(NSString*)message;
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface SignUpViewController : KNBaseViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate >{
+@interface SignUpViewController : KNBaseViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
     
-    __weak IBOutlet UITextField *tf_email;
-    __weak IBOutlet UITextField *tf_password;
-    __weak IBOutlet UITextField *tf_confirm;
+    __weak IBOutlet MHTextField *tf_name;
+    __weak IBOutlet MHTextField *tf_gender;
+    __weak IBOutlet MHTextField *tf_email;
+    __weak IBOutlet MHTextField *tf_password;
+    __weak IBOutlet MHTextField *tf_confirm;
     __weak IBOutlet UIImageView *imgUser;
 
 }

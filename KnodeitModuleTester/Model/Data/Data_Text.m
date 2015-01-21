@@ -45,10 +45,23 @@
     NSString* fileName = @"USERS.txt";
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
     if (![[NSFileManager defaultManager] fileExistsAtPath:fileAtPath]) {
-        [[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
+        {
+            
+        //[[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
+        
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"USERS" ofType:@"txt"];
+//        NSData *userFileData = [[NSData alloc] initWithContentsOfFile:path];
+//        [[NSFileManager defaultManager] createFileAtPath:@"/Documents/UESRS.txt" contents:userFileData attributes:nil];
+            
+        NSString *addString=[NSString stringWithFormat:@"%@",aString];
+        [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
+
+        }
     }
+    else{
     NSString *addString=[NSString stringWithFormat:@"%@\n%@",self.readfile,aString];
     [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
+    }
 }
 
 @end

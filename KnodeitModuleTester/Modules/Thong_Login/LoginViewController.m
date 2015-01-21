@@ -32,12 +32,16 @@ Data_Text *data_text;
     // Do any additional setup after loading the view.
     data_text=[[Data_Text alloc]init];
     //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
+    [self BackgroundTap];
+    
+}
+
+-(void)BackgroundTap{
     
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView=NO;
     [self.view addGestureRecognizer:tapRecognizer];
 }
-
 -(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
     [tf_email resignFirstResponder];
     [tf_password resignFirstResponder];

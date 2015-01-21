@@ -10,6 +10,7 @@
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
 		3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7691A6F549F00638A08 /* Male.jpeg */; };
+		3315F76D1A6FB0E100638A08 /* USERS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3315F76C1A6FB0E100638A08 /* USERS.txt */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
@@ -100,6 +101,7 @@
 		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
 		3315F7681A6F549F00638A08 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Female.jpeg; sourceTree = "<group>"; };
 		3315F7691A6F549F00638A08 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Male.jpeg; sourceTree = "<group>"; };
+		3315F76C1A6FB0E100638A08 /* USERS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = USERS.txt; sourceTree = "<group>"; };
 		334D58F81A676123004219ED /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; tabWidth = 3; };
@@ -304,6 +306,7 @@
 		3385DEC11A6DE9C40057AF69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				3315F76C1A6FB0E100638A08 /* USERS.txt */,
 				3315F7681A6F549F00638A08 /* Female.jpeg */,
 				3315F7691A6F549F00638A08 /* Male.jpeg */,
 			);
@@ -918,6 +921,7 @@
 				7C57A170195DA7B800F496E6 /* AuthenticateImage.xcassets in Resources */,
 				7C57A09B195DA75C00F496E6 /* InfoPlist.strings in Resources */,
 				3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */,
+				3315F76D1A6FB0E100638A08 /* USERS.txt in Resources */,
 				7C57A173195DA7B800F496E6 /* DiallingCodes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

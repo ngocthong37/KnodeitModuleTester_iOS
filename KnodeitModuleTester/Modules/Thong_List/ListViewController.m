@@ -7,8 +7,9 @@
 //
 
 #import "ListViewController.h"
-#import "ChangePassword.h"
+#import "ChangeProfileViewController.h"
 #import "Data_Text.h"
+#import "CustomTableViewCell.h"
 
 Data_Text *data_text;
 @interface ListViewController ()
@@ -35,14 +36,13 @@ NSInteger index;
     data_text=[[Data_Text alloc]init];
     data=[[data_text readfile] componentsSeparatedByString:@"\n"];
     
-
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 
 - (void)didReceiveMemoryWarning
@@ -64,19 +64,28 @@ NSInteger index;
 {
     return [data count];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 58;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"userCell";
+    static NSString *simpleTableIdentifier = @"CustomTableCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    CustomTableViewCell *cell =(CustomTableViewCell*) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    cell.textLabel.text = [[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"][0];
+    NSArray *temp=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
+    cell.lb_name.text = temp[2];
+    cell.lb_gender.text=temp[3];
+    cell.image.image=[UIImage imageNamed:temp[4]];
+    
     return cell;
 }
 
@@ -84,7 +93,7 @@ NSInteger index;
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     index=indexPath.row;
-    [self performSegueWithIdentifier:@"segue_list_changepassword" sender:nil];
+    [self performSegueWithIdentifier:@"segue_list_profile" sender:nil];
 }
 
 /*
@@ -135,10 +144,15 @@ NSInteger index;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    ChangePassword *cp=(ChangePassword*)[segue destinationViewController];
-        data=[[data_text readfile] componentsSeparatedByString:@"\n"];
-    cp.user=[data objectAtIndex:index];
+    UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
+    ChangeProfileViewController *cp=(ChangeProfileViewController*)NaC.viewControllers[0];
+    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
+    cp.data=[data objectAtIndex:index];
 }
 
 
+
+- (IBAction)bt_logout_click:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

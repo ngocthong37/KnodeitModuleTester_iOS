@@ -18,4 +18,5 @@
     #import "KNBaseTableViewController.h"
 
     #import "MHTextField.h"
+    #import "MHButton.h"
 #endif

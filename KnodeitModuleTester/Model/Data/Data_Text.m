@@ -30,6 +30,7 @@
     NSString* filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* fileName = @"USERS.txt";
     NSString* fileAtPath = [filePath stringByAppendingPathComponent:fileName];
+    //NSLog(@"%@",fileAtPath);
     NSMutableString *textFromFile;
     if(filePath)
     {

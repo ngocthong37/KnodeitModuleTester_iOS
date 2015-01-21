@@ -10,4 +10,6 @@
 
 @interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate>
 
+- (IBAction)bt_logout_click:(id)sender;
+
 @end

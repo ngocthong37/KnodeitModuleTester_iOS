@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChangePassword : UIViewController{
+@interface ChangePassword : KNBaseViewController{
     __weak IBOutlet UILabel *lb_email;
     __weak IBOutlet UITextField *tf_oldpassword;
     __weak IBOutlet UITextField *tf_newpassword;

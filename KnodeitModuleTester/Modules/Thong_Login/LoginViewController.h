@@ -12,7 +12,9 @@
     
     __weak IBOutlet MHTextField *tf_email;
     __weak IBOutlet MHTextField *tf_password;
+    __weak IBOutlet MHButton *bt_login;
 }
+
 - (IBAction)bt_login_click:(id)sender;
 - (IBAction)bt_signup_click:(id)sender;
 

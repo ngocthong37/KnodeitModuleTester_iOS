@@ -67,6 +67,9 @@
     [self setTextAlignment:NSTextAlignmentCenter];
     self.textColor=[UIColor colorWithRed:0 green:0 blue:1 alpha:1];
     
+    //border
+    self.layer.borderWidth=1;
+    self.layer.borderColor=[[[UIColor colorWithRed:43.0f/255 green:173.0f/255 blue:213.0f/255 alpha:1]colorWithAlphaComponent:0.5]CGColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidEndEditing:) name:UITextFieldTextDidEndEditingNotification object:self];
@@ -93,6 +96,11 @@
     self.textFields = [[NSMutableArray alloc]init];
     
     [self markTextFieldsWithTagInView:self.superview];
+    
+    
+    //toolbar
+    toolbar.backgroundColor=[UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1];
+    
 }
 
 - (void)markTextFieldsWithTagInView:(UIView*)view

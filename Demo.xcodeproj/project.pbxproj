@@ -10,7 +10,13 @@
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
-		33A81D671A65205800529EE7 /* SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUp.m */; };
+		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
+		3385DECB1A6DF3D80057AF69 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3385DECA1A6DF3D80057AF69 /* CustomTableViewCell.m */; };
+		3385DECF1A6E17360057AF69 /* ChangeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3385DECE1A6E17360057AF69 /* ChangeProfileViewController.m */; };
+		3385DED21A6E5C6A0057AF69 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3385DED01A6E5C6A0057AF69 /* Male.jpeg */; };
+		3385DED31A6E5C6A0057AF69 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3385DED11A6E5C6A0057AF69 /* Female.jpeg */; };
+		339A411D1A6CA4520001CFFD /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 339A411C1A6CA4520001CFFD /* MHButton.m */; };
+		33A81D671A65205800529EE7 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUpViewController.m */; };
 		33A81D691A65262600529EE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A81D681A65262600529EE7 /* CoreData.framework */; };
 		33CA27341A67A36600D85908 /* ChangePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CA27331A67A36600D85908 /* ChangePassword.m */; };
 		7C57A091195DA75C00F496E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A090195DA75C00F496E6 /* Foundation.framework */; };
@@ -96,8 +102,17 @@
 		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; tabWidth = 3; };
 		3373A0B11A6660F200A30400 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		33A81D651A65205800529EE7 /* SignUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUp.h; sourceTree = "<group>"; };
-		33A81D661A65205800529EE7 /* SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUp.m; sourceTree = "<group>"; };
+		3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		3385DEC91A6DF3D80057AF69 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		3385DECA1A6DF3D80057AF69 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		3385DECD1A6E17360057AF69 /* ChangeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChangeProfileViewController.h; path = Thong_ChangeProfile/ChangeProfileViewController.h; sourceTree = "<group>"; };
+		3385DECE1A6E17360057AF69 /* ChangeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChangeProfileViewController.m; path = Thong_ChangeProfile/ChangeProfileViewController.m; sourceTree = "<group>"; };
+		3385DED01A6E5C6A0057AF69 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Male.jpeg; path = "../../../../../../../Downloads/hinh anh/Male.jpeg"; sourceTree = "<group>"; };
+		3385DED11A6E5C6A0057AF69 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Female.jpeg; path = "../../../../../../../Downloads/hinh anh/Female.jpeg"; sourceTree = "<group>"; };
+		339A411B1A6CA4520001CFFD /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHButton.h; sourceTree = "<group>"; };
+		339A411C1A6CA4520001CFFD /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHButton.m; sourceTree = "<group>"; };
+		33A81D651A65205800529EE7 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		33A81D661A65205800529EE7 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		33A81D681A65262600529EE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		33CA27321A67A36600D85908 /* ChangePassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePassword.h; sourceTree = "<group>"; };
 		33CA27331A67A36600D85908 /* ChangePassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePassword.m; sourceTree = "<group>"; };
@@ -286,11 +301,49 @@
 			path = Thong_Login;
 			sourceTree = "<group>";
 		};
+		3385DEC11A6DE9C40057AF69 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				3385DED01A6E5C6A0057AF69 /* Male.jpeg */,
+				3385DED11A6E5C6A0057AF69 /* Female.jpeg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		3385DEC61A6DF0CF0057AF69 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */,
+				3385DEC91A6DF3D80057AF69 /* CustomTableViewCell.h */,
+				3385DECA1A6DF3D80057AF69 /* CustomTableViewCell.m */,
+			);
+			name = CustomTableViewCell;
+			path = CustomTableViewCells;
+			sourceTree = "<group>";
+		};
+		3385DECC1A6E06B40057AF69 /* Thong_ChangeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3385DECD1A6E17360057AF69 /* ChangeProfileViewController.h */,
+				3385DECE1A6E17360057AF69 /* ChangeProfileViewController.m */,
+			);
+			name = Thong_ChangeProfile;
+			sourceTree = "<group>";
+		};
+		339A411A1A6CA3BD0001CFFD /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				339A411B1A6CA4520001CFFD /* MHButton.h */,
+				339A411C1A6CA4520001CFFD /* MHButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		33A81D641A65202E00529EE7 /* Thong_SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				33A81D651A65205800529EE7 /* SignUp.h */,
-				33A81D661A65205800529EE7 /* SignUp.m */,
+				33A81D651A65205800529EE7 /* SignUpViewController.h */,
+				33A81D661A65205800529EE7 /* SignUpViewController.m */,
 			);
 			path = Thong_SignUp;
 			sourceTree = "<group>";
@@ -307,6 +360,7 @@
 		7C57A084195DA75C00F496E6 = {
 			isa = PBXGroup;
 			children = (
+				3385DEC11A6DE9C40057AF69 /* Image */,
 				7C57A096195DA75C00F496E6 /* Demo */,
 				7C57A0B8195DA75C00F496E6 /* DemoTests */,
 				7C57A08F195DA75C00F496E6 /* Frameworks */,
@@ -442,6 +496,8 @@
 		7C57A0DA195DA7B800F496E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3385DECC1A6E06B40057AF69 /* Thong_ChangeProfile */,
+				3385DEC61A6DF0CF0057AF69 /* CustomTableViewCell */,
 				33CA27311A67A31500D85908 /* Thong_ChangePassword */,
 				334D58F71A6760F5004219ED /* Thong_List */,
 				3373A0AF1A6660A000A30400 /* Thong_Login */,
@@ -556,6 +612,7 @@
 		7C57A115195DA7B800F496E6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				339A411A1A6CA3BD0001CFFD /* Button */,
 				A7BD506C1A68B3A6001D6E7E /* MHTextField */,
 				7C57A116195DA7B800F496E6 /* ButtonIndexed */,
 				7C57A119195DA7B800F496E6 /* KNActivity */,
@@ -852,12 +909,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3385DED21A6E5C6A0057AF69 /* Male.jpeg in Resources */,
 				7C57A172195DA7B800F496E6 /* Countries.plist in Resources */,
 				7C57A0A7195DA75C00F496E6 /* Main_iPad.storyboard in Resources */,
+				3385DED31A6E5C6A0057AF69 /* Female.jpeg in Resources */,
 				7C57A0AC195DA75C00F496E6 /* Images.xcassets in Resources */,
 				7C57A0A4195DA75C00F496E6 /* Main_iPhone.storyboard in Resources */,
 				7C57A170195DA7B800F496E6 /* AuthenticateImage.xcassets in Resources */,
 				7C57A09B195DA75C00F496E6 /* InfoPlist.strings in Resources */,
+				3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */,
 				7C57A173195DA7B800F496E6 /* DiallingCodes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,6 +953,7 @@
 				A7BD506F1A68B3A6001D6E7E /* MHTextField.m in Sources */,
 				7C57A188195DA7B800F496E6 /* KNStoryboardManager.m in Sources */,
 				7C57A187195DA7B800F496E6 /* KNCommunicationManager.m in Sources */,
+				339A411D1A6CA4520001CFFD /* MHButton.m in Sources */,
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
 				7C57A174195DA7B800F496E6 /* KNMobileRegisterationTemplateViewController.m in Sources */,
 				A7BD506B1A68B186001D6E7E /* KNBaseTableViewController.m in Sources */,
@@ -906,7 +967,7 @@
 				7C57A1A5195DA7B800F496E6 /* SDWebImageManager.m in Sources */,
 				7C57A1A0195DA7B800F496E6 /* SDImageCache.m in Sources */,
 				7C57A169195DA7B800F496E6 /* Friend.m in Sources */,
-				33A81D671A65205800529EE7 /* SignUp.m in Sources */,
+				33A81D671A65205800529EE7 /* SignUpViewController.m in Sources */,
 				7C57A1A6195DA7B800F496E6 /* SDWebImagePrefetcher.m in Sources */,
 				7C57A18C195DA7B800F496E6 /* KNActivityView.m in Sources */,
 				7C57A19E195DA7B800F496E6 /* MKAnnotationView+WebCache.m in Sources */,
@@ -914,6 +975,7 @@
 				7C57A184195DA7B800F496E6 /* CoreDataManager.m in Sources */,
 				7C57A186195DA7B800F496E6 /* KNAppControlManager.m in Sources */,
 				7C57A1A2195DA7B800F496E6 /* SDWebImageDecoder.m in Sources */,
+				3385DECB1A6DF3D80057AF69 /* CustomTableViewCell.m in Sources */,
 				7C57A175195DA7B800F496E6 /* KNRegisterTemplateViewController.m in Sources */,
 				7C57A18E195DA7B800F496E6 /* NSString+MD5.m in Sources */,
 				7C57A171195DA7B800F496E6 /* KNLoginTemplateViewController.m in Sources */,
@@ -921,6 +983,7 @@
 				331305031A67C99500165AF9 /* Data_Text.m in Sources */,
 				3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */,
 				7C57A199195DA7B800F496E6 /* YDRequest.m in Sources */,
+				3385DECF1A6E17360057AF69 /* ChangeProfileViewController.m in Sources */,
 				7C57A1A3195DA7B800F496E6 /* SDWebImageDownloader.m in Sources */,
 				7C57A195195DA7B800F496E6 /* UIImage+BWImage.m in Sources */,
 				7C57A183195DA7B800F496E6 /* KNSplashTemplateViewController.m in Sources */,
@@ -1066,10 +1129,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KnodeitModuleTester/Demo-Prefix.pch";
 				INFOPLIST_FILE = "KnodeitModuleTester/Demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KnodeitModuleTester/External-Frameworks",
@@ -1085,10 +1149,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KnodeitModuleTester/Demo-Prefix.pch";
 				INFOPLIST_FILE = "KnodeitModuleTester/Demo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KnodeitModuleTester/External-Frameworks",

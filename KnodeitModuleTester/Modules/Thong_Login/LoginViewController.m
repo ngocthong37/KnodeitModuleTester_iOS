@@ -77,7 +77,8 @@ Data_Text *data_text;
     NSString *uid_pwd=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
     for(int i=0;i<ArrayUsers.count;i++)
     {
-        if([ArrayUsers[i] isEqualToString:uid_pwd])
+        //if([ArrayUsers[i] isEqualToString:uid_pwd])
+        if([ArrayUsers[i] hasPrefix:uid_pwd])
         {
             flag=true;
             break;
@@ -88,6 +89,8 @@ Data_Text *data_text;
     if(flag)
     {
         [self performSegueWithIdentifier:@"segue_login_list" sender:nil];
+        tf_email.text=@"";
+        tf_password.text=@"";
     }
     else
     {
@@ -115,7 +118,8 @@ Data_Text *data_text;
     if([textField.restorationIdentifier isEqualToString:@"tf_email"])
         [self becomeActive:tf_password];
     else if([textField.restorationIdentifier isEqualToString:@"tf_password"])
-        [self bt_login_click:nil];
+        //[self bt_login_click:nil];
+        [self handleBackgroundTap:nil];
     return true;
 }
 

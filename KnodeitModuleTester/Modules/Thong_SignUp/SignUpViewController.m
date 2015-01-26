@@ -9,7 +9,7 @@
 #import "SignUpViewController.h"
 #import "NSString+Validator.h"
 #import "Data_Text.h"
-
+#import "User+Helper.h"
 
 
 @interface SignUpViewController ()
@@ -112,15 +112,21 @@ NSString *textFromFile;
     }
     else
     {
-        NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
-        for(int i=0;i<ArrayUsers.count;i++)
+//        NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
+//        for(int i=0;i<ArrayUsers.count;i++)
+//        {
+//            NSString *email=[ArrayUsers[i] componentsSeparatedByString:@"\t"][0];
+//            if([email isEqualToString:tf_email.text])
+//            {
+//                [self Alert:@"Email is exist"];
+//                return;
+//            }
+//        }
+        
+        if([User userAlreadyExistInDB:tf_email.text])
         {
-            NSString *email=[ArrayUsers[i] componentsSeparatedByString:@"\t"][0];
-            if([email isEqualToString:tf_email.text])
-            {
-                [self Alert:@"Email is exist"];
-                return;
-            }
+            [self Alert:@"Email is exist"];
+            return;
         }
     }
     
@@ -152,15 +158,30 @@ NSString *textFromFile;
     }
     
     // luu nguoi dung moi
-    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",tf_email.text]];
-    [UIImageJPEGRepresentation(imgUser.image, 0.5f) writeToFile:imagePath atomically:YES];
+//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",tf_email.text]];
+//    [UIImageJPEGRepresentation(imgUser.image, 0.5f) writeToFile:imagePath atomically:YES];
+//    
+//    NSString *aString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",tf_email.text,tf_password.text,tf_name.text,tf_gender.text];
+//    [data_text writefile_addtext:aString];
+//
     
-    NSString *aString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",tf_email.text,tf_password.text,tf_name.text,tf_gender.text];
-    [data_text writefile_addtext:aString];
+    [self save_user:tf_email.text :tf_password.text :tf_name.text :tf_gender.text ];
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
+
+-(void)save_user:(NSString*)email :(NSString*)password :(NSString*)fullName :(NSString*)gender{
+    User *user=[[User alloc]init];
+    user.email=email;
+    user.password=password;
+    user.fullName=fullName;
+    user.gender=gender;
+    NSArray *users=[[NSArray alloc]initWithObjects:user, nil];
+    [user parseUser:users];
+}
+
+
 - (IBAction)bt_cancel_click:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

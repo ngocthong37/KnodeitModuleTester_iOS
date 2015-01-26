@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
 @interface ChangeProfileViewController : KNBaseViewController <UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     
@@ -20,5 +21,7 @@
 - (IBAction)bt_save_click:(id)sender;
 - (IBAction)bt_changeimage_click:(id)sender;
 
-@property NSString *data;
+
+@property id<UserDelegate>delegate;
+
 @end

@@ -18,7 +18,7 @@ NSArray *dataPicker;
 NSString *imagePath;
 
 @implementation ChangeProfileViewController
-@synthesize data=_data;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,7 +65,8 @@ NSString *imagePath;
 }
 
 -(void)load_profile{
-    profile=[_data componentsSeparatedByString:@"\t"];
+
+    profile=[self.delegate.profile componentsSeparatedByString:@"\t"];
     tf_name.text=profile[2];
     tf_gender.text=profile[3];
     
@@ -89,14 +90,14 @@ NSString *imagePath;
 */
 
 - (IBAction)bt_close_click:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
 }
 
 - (IBAction)bt_save_click:(id)sender {
     Data_Text *data_text=[[Data_Text alloc]init];
     NSString *aString=[data_text readfile];
     NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
-    aString=[aString stringByReplacingOccurrencesOfString:_data withString:cString];
+    aString=[aString stringByReplacingOccurrencesOfString:self.delegate.profile withString:cString];
     [data_text writefile:aString];
     
     
@@ -108,7 +109,8 @@ NSString *imagePath;
     
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
     
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate reload];
+    
     [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
     
 }

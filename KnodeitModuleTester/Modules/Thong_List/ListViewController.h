@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate>
+@protocol UserDelegate <NSObject>
+
+-(void)reload;
+@property NSString* profile;
+
+@end
+@interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
 
 - (IBAction)bt_logout_click:(id)sender;
 

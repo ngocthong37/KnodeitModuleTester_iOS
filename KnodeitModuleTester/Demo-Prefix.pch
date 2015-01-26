@@ -19,4 +19,8 @@
 
     #import "MHTextField.h"
     #import "MHButton.h"
+
+#import "CoreDataManager.h"
+#import "User.h"
+#import "User+Helper.h"
 #endif

@@ -49,10 +49,6 @@
             
         //[[NSFileManager defaultManager] createFileAtPath:fileAtPath contents:nil attributes:nil];
         
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"USERS" ofType:@"txt"];
-//        NSData *userFileData = [[NSData alloc] initWithContentsOfFile:path];
-//        [[NSFileManager defaultManager] createFileAtPath:@"/Documents/UESRS.txt" contents:userFileData attributes:nil];
-            
         NSString *addString=[NSString stringWithFormat:@"%@",aString];
         [[addString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:fileAtPath atomically:NO];
 

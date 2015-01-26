@@ -11,6 +11,8 @@
 		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
 		3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7691A6F549F00638A08 /* Male.jpeg */; };
 		3315F76D1A6FB0E100638A08 /* USERS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3315F76C1A6FB0E100638A08 /* USERS.txt */; };
+		333504121A75E7A800A3CEA0 /* User+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 333504111A75E7A800A3CEA0 /* User+Helper.m */; };
+		333504181A761D0300A3CEA0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 333504171A761D0300A3CEA0 /* User.m */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
@@ -102,6 +104,10 @@
 		3315F7681A6F549F00638A08 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Female.jpeg; sourceTree = "<group>"; };
 		3315F7691A6F549F00638A08 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Male.jpeg; sourceTree = "<group>"; };
 		3315F76C1A6FB0E100638A08 /* USERS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = USERS.txt; sourceTree = "<group>"; };
+		333504101A75E7A800A3CEA0 /* User+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helper.h"; path = "KnodeitModuleTester/Model/Coredata/User+Helper.h"; sourceTree = SOURCE_ROOT; };
+		333504111A75E7A800A3CEA0 /* User+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Helper.m"; path = "KnodeitModuleTester/Model/Coredata/User+Helper.m"; sourceTree = SOURCE_ROOT; };
+		333504161A761D0300A3CEA0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		333504171A761D0300A3CEA0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		334D58F81A676123004219ED /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; tabWidth = 3; };
@@ -485,6 +491,8 @@
 		7C57A0CE195DA7B800F496E6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				333504161A761D0300A3CEA0 /* User.h */,
+				333504171A761D0300A3CEA0 /* User.m */,
 				7C57A0CF195DA7B800F496E6 /* Friend.h */,
 				7C57A0D0195DA7B800F496E6 /* Friend.m */,
 				7C57A0D1195DA7B800F496E6 /* Message.h */,
@@ -492,6 +500,8 @@
 				7C57A0D3195DA7B800F496E6 /* MyFeed.h */,
 				7C57A0D4195DA7B800F496E6 /* MyFeed.m */,
 				7C57A0D5195DA7B800F496E6 /* readme.txt */,
+				333504101A75E7A800A3CEA0 /* User+Helper.h */,
+				333504111A75E7A800A3CEA0 /* User+Helper.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -961,9 +971,11 @@
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
 				7C57A174195DA7B800F496E6 /* KNMobileRegisterationTemplateViewController.m in Sources */,
 				A7BD506B1A68B186001D6E7E /* KNBaseTableViewController.m in Sources */,
+				333504121A75E7A800A3CEA0 /* User+Helper.m in Sources */,
 				7C57A18D195DA7B800F496E6 /* NSData+Base64.m in Sources */,
 				7C57A192195DA7B800F496E6 /* KNPushTopSegue.m in Sources */,
 				7C57A1A1195DA7B800F496E6 /* SDWebImageCompat.m in Sources */,
+				333504181A761D0300A3CEA0 /* User.m in Sources */,
 				7C57A1A9195DA7B800F496E6 /* UIImage+MultiFormat.m in Sources */,
 				7C57A18A195DA7B800F496E6 /* UserManager.m in Sources */,
 				7C57A16D195DA7B800F496E6 /* EverAfter.xcdatamodeld in Sources */,

@@ -21,6 +21,10 @@ Data_Text *data_text;
 NSArray *data;
 NSInteger index;
 }
+@synthesize profile=_profile;
+-(void)reload{
+    
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -109,7 +113,7 @@ NSInteger index;
     
     //UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
     ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
-    cp.data=[data objectAtIndex:index];
+    //cp.data=[data objectAtIndex:index];
 }
 
 

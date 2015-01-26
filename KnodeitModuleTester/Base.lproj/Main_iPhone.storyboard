@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="-501"/>
+            <point key="canvasLocation" x="347" y="-501"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Xux-jo-0Qg">
@@ -363,7 +363,7 @@
                     <navigationItem key="navigationItem" id="zNk-IV-2mP">
                         <barButtonItem key="leftBarButtonItem" title="&lt;" id="ECX-AV-v1q">
                             <connections>
-                                <action selector="bt_close_click:" destination="38W-Py-554" id="nBj-5P-dkO"/>
+                                <action selector="bt_close_click:" destination="38W-Py-554" id="VFI-q7-EpC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="UYp-vn-dTf">

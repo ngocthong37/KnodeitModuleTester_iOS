@@ -34,7 +34,17 @@ Data_Text *data_text;
     //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
     [self BackgroundTap];
     
+    //[self file];
+
 }
+
+//-(void)file{
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"USERS" ofType:@"txt"];
+//    NSData *userFileData = [[NSData alloc] initWithContentsOfFile:path];
+//    [userFileData writeToFile:@"USERS.txt" atomically:YES];
+//     //[[NSFileManager defaultManager] createFileAtPath:@"/Documents/UESRS.txt" contents:userFileData attributes:nil];
+//
+//}
 
 -(void)BackgroundTap{
     
@@ -66,18 +76,25 @@ Data_Text *data_text;
 }
 */
 
+-(Boolean)login:(NSString*)email :(NSString*)password{
+
+    User *user=[User userAlreadyExistInDB:tf_email.text];
+    NSLog(@"%@",user);
+    if(!user)
+        return false;
+    else if(![user.password isEqualToString:password])
+            return false;
+    else
+        return true;
+}
+
+
 - (IBAction)bt_login_click:(id)sender {
+    /*
     NSMutableString *textFromFile=[NSMutableString stringWithFormat:@"%@",data_text.readfile];
     NSArray *ArrayUsers=[textFromFile componentsSeparatedByString:@"\n"];
     bool flag=false;
     
-    
-    tf_email.isEmailField=true;
-    if(![tf_email validate])
-    {
-        [self Alert:@"Wrong Email"];
-        return;
-    }
     NSString *uid_pwd=[NSString stringWithFormat:@"%@\t%@",tf_email.text,tf_password.text];
     for(int i=0;i<ArrayUsers.count;i++)
     {
@@ -100,7 +117,26 @@ Data_Text *data_text;
     {
         [self Alert:@"Wrong email or password"];
     }
+     */
     
+    tf_email.isEmailField=true;
+    if(![tf_email validate])
+    {
+        [self Alert:@"Wrong Email"];
+        return;
+    }
+    
+    bool b=[self login:tf_email.text :tf_password.text];
+    if(b)
+    {
+        [self performSegueWithIdentifier:@"segue_login_list" sender:nil];
+        tf_email.text=@"";
+        tf_password.text=@"";
+    }
+    else
+    {
+        [self Alert:@"Wrong email or password"];
+    }
 }
 
 

@@ -27,6 +27,8 @@
 // Save context
 - (void)saveContext;
 
+- (id)intitializeAnEntityObjectByEntityName:(NSString *)name withClass:(Class)class withIsForSaving:(BOOL)forSaving;
+
 // Get singleton instance
 + (CoreDataManager*)sharedInstance;
 

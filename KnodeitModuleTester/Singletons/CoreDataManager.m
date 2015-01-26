@@ -48,6 +48,20 @@
     if (![self.managedObjectContext  save:&error]){ }
 }
 
+- (id)intitializeAnEntityObjectByEntityName:(NSString *)name withClass:(Class)class withIsForSaving:(BOOL)forSaving{
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:name inManagedObjectContext:self.managedObjectContext];
+    
+    id object;
+    if (forSaving) {
+        object = [[class alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+    }else{
+        object = [[class alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    }
+    
+    return object;
+}
+
 #pragma mark CoreData stack
 
 - (void)saveContext

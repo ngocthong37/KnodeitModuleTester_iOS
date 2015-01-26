@@ -158,15 +158,14 @@ NSString *textFromFile;
     }
     
     // luu nguoi dung moi
-//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",tf_email.text]];
-//    [UIImageJPEGRepresentation(imgUser.image, 0.5f) writeToFile:imagePath atomically:YES];
-//    
 //    NSString *aString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",tf_email.text,tf_password.text,tf_name.text,tf_gender.text];
 //    [data_text writefile_addtext:aString];
 //
+    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",tf_email.text]];
+    [UIImageJPEGRepresentation(imgUser.image, 0.5f) writeToFile:imagePath atomically:YES];
+    
     
     [self save_user:tf_email.text :tf_password.text :tf_name.text :tf_gender.text ];
-    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

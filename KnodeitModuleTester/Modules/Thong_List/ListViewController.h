@@ -11,7 +11,7 @@
 @protocol UserDelegate <NSObject>
 
 -(void)reload;
-@property NSString* profile;
+@property User* user;
 
 @end
 @interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>

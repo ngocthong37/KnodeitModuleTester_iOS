@@ -34,8 +34,8 @@ Data_Text *data_text;
     //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
     [self BackgroundTap];
     
-    //[self file];
-
+    tf_email.text=@"thong@gmail.com";
+    tf_password.text=@"thong";
 }
 
 //-(void)file{
@@ -78,7 +78,7 @@ Data_Text *data_text;
 
 -(Boolean)login:(NSString*)email :(NSString*)password{
 
-    User *user=[User userAlreadyExistInDB:tf_email.text];
+    User *user=[User userAlreadyExistInDB:email];
     NSLog(@"%@",user);
     if(!user)
         return false;

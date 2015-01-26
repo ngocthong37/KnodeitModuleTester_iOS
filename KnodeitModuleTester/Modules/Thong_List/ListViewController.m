@@ -10,6 +10,7 @@
 #import "ChangeProfileViewController.h"
 #import "Data_Text.h"
 #import "CustomTableViewCell.h"
+#import "User+Helper.h"
 
 Data_Text *data_text;
 @interface ListViewController ()
@@ -20,10 +21,13 @@ Data_Text *data_text;
 {
 NSArray *data;
 NSInteger index;
-}
-@synthesize profile=_profile;
--(void)reload{
     
+    NSMutableArray *Data_Users;
+}
+@synthesize user=_user;
+-(void)reload{
+    [self load_data];
+    [self.tableView reloadData];
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,8 +50,11 @@ NSInteger index;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 -(void)load_data{
-    data_text=[[Data_Text alloc]init];
-    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
+//    data_text=[[Data_Text alloc]init];
+//    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
+    
+    User *user=[User userAlreadyExistInDB:@"thong@gmail.com"];
+    Data_Users=[user fetchAllUsers];
 }
 
 
@@ -68,7 +75,7 @@ NSInteger index;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [data count];
+    return [Data_Users count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -87,11 +94,16 @@ NSInteger index;
         cell = [nib objectAtIndex:0];
     }
     
-    NSArray *profile=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
-    cell.lb_name.text = profile[2];
-    cell.lb_gender.text=profile[3];
+//    NSArray *profile=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
+//    cell.lb_name.text = profile[2];
+//    cell.lb_gender.text=profile[3];
+
     
-    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
+    cell.lb_name.text=((User*) Data_Users[indexPath.row]).fullName;
+    cell.lb_gender.text=((User*) Data_Users[indexPath.row]).gender;
+    
+    NSString *imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",((User*) Data_Users[indexPath.row]).email]];
+    
     cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     return cell;
 }
@@ -112,14 +124,15 @@ NSInteger index;
     // Pass the selected object to the new view controller.
     
     //UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
+    
     ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
-    //cp.data=[data objectAtIndex:index];
+    self.user=Data_Users[index];
+    cp.delegate=self;
 }
 
 
 - (IBAction)unwindToListViewController:(UIStoryboardSegue *)unwindSegue{
-    [self load_data];
-    [self.tableView reloadData];
+
 }
 
 - (IBAction)bt_logout_click:(id)sender {

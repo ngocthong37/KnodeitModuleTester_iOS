@@ -8,12 +8,14 @@
 
 #import "ChangeProfileViewController.h"
 #import "Data_Text.h"
+#import "User+Helper.h"
 
 @interface ChangeProfileViewController ()
 
 @end
 
-NSArray *profile;
+//NSArray *profile;
+User *user;
 NSArray *dataPicker;
 NSString *imagePath;
 
@@ -23,6 +25,7 @@ NSString *imagePath;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    user=[self.delegate user];
     
     [self load_profile];
     
@@ -66,11 +69,15 @@ NSString *imagePath;
 
 -(void)load_profile{
 
-    profile=[self.delegate.profile componentsSeparatedByString:@"\t"];
-    tf_name.text=profile[2];
-    tf_gender.text=profile[3];
+    //profile=[self.delegate.user componentsSeparatedByString:@"\t"];
+//    tf_name.text=profile[2];
+//    tf_gender.text=profile[3];
+//    
+//    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
     
-    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
+    tf_name.text=user.fullName;
+    tf_gender.text=user.gender;
+    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
     imageview.image=[UIImage imageWithContentsOfFile:imagePath];
 }
 
@@ -94,18 +101,24 @@ NSString *imagePath;
 }
 
 - (IBAction)bt_save_click:(id)sender {
-    Data_Text *data_text=[[Data_Text alloc]init];
-    NSString *aString=[data_text readfile];
-    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
-    aString=[aString stringByReplacingOccurrencesOfString:self.delegate.profile withString:cString];
-    [data_text writefile:aString];
-    
-    
+//    Data_Text *data_text=[[Data_Text alloc]init];
+//    NSString *aString=[data_text readfile];
+//    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
+//    aString=[aString stringByReplacingOccurrencesOfString:self.delegate.profile withString:cString];
+//    [data_text writefile:aString];
+//    
+//    
 //    NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
 //    [formatter setDateFormat:@"ddMMyyyy-HHmmss"];
 //    NSString *ret = [formatter stringFromDate:[NSDate date]];
 //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
 //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
+    
+    user.fullName=tf_name.text;
+    user.gender=tf_gender.text;
+    
+    NSArray* users=[[NSArray alloc]initWithObjects:user, nil];
+    [user parseUser:users];
     
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
     

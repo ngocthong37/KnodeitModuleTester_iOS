@@ -10,6 +10,7 @@
 #import "CoreDataManager.h"
 
 @implementation User (Help)
+
 -(id)init{
     
     self = [[CoreDataManager sharedInstance] intitializeAnEntityObjectByEntityName:@"User" withClass:[User class] withIsForSaving:false];

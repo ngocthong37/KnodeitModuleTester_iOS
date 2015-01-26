@@ -21,5 +21,8 @@
 //+ (UIImage*)getImageFromURL:(NSString*)URL;
 
 -(NSArray *) parseUser:(NSArray*) users;
+- (NSMutableArray*)fetchAllUsers;
+- (NSArray*) deleteUsers:(NSArray*) users;
+
 +(User *)userAlreadyExistInDB:(NSString *)recordid;
 @end

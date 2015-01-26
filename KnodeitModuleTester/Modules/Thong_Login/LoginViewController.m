@@ -79,7 +79,6 @@ Data_Text *data_text;
 -(Boolean)login:(NSString*)email :(NSString*)password{
 
     User *user=[User userAlreadyExistInDB:email];
-    NSLog(@"%@",user);
     if(!user)
         return false;
     else if(![user.password isEqualToString:password])

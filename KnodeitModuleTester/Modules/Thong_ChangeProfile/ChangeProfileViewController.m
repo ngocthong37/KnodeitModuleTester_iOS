@@ -118,7 +118,7 @@ NSString *imagePath;
     user.gender=tf_gender.text;
     
     NSArray* users=[[NSArray alloc]initWithObjects:user, nil];
-    [user parseUser:users];
+    [User parseUser:users];
     
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
     

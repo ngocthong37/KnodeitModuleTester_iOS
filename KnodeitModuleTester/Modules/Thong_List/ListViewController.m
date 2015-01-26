@@ -53,8 +53,7 @@ NSInteger index;
 //    data_text=[[Data_Text alloc]init];
 //    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
     
-    User *user=[User userAlreadyExistInDB:@"thong@gmail.com"];
-    Data_Users=[user fetchAllUsers];
+    Data_Users=[User fetchAllUsers];
 }
 
 

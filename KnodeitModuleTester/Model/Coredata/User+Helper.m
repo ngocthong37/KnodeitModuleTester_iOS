@@ -42,16 +42,18 @@
     }
 }
 
-- (NSMutableArray*)fetchAllUsers{
++ (NSMutableArray*)fetchAllUsers{
+    
+    NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
     NSMutableArray * allUsers = [NSMutableArray arrayWithCapacity:0];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"User"
-                                   inManagedObjectContext:self.managedObjectContext];
+                                   inManagedObjectContext:context];
     
     [fetchRequest setEntity:entity];
     NSError *error=nil;
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     if(fetchedObjects){
         for (NSManagedObject *obj in fetchedObjects){
             
@@ -65,7 +67,7 @@
     return allUsers;
 }
 
-- (NSArray *) parseUser:(NSArray*) users{
++ (NSArray *) parseUser:(NSArray*) users{
     NSMutableArray * usersList =[NSMutableArray arrayWithCapacity:0];
     NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
     
@@ -93,7 +95,7 @@
     return usersList;
 }
 
-- (NSArray*) deleteUsers:(NSArray*) users{
++ (NSArray*) deleteUsers:(NSArray*) users{
     
     NSMutableArray * usersList =[NSMutableArray arrayWithCapacity:0];
     NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
@@ -117,17 +119,17 @@
     return usersList;
 }
 
-- (BOOL) deleteAllUsers{
-    
++ (BOOL) deleteAllUsers{
+        NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
     NSMutableArray *users = [self fetchAllUsers];
     
     for (User *item in users) {
         
-        [self.managedObjectContext deleteObject:item];
+        [context deleteObject:item];
     }
     
     NSError *error = nil;
-    if (![self.managedObjectContext  save:&error]){
+    if (![context  save:&error]){
         
     }
     

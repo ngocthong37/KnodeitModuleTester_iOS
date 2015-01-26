@@ -177,7 +177,7 @@ NSString *textFromFile;
     user.fullName=fullName;
     user.gender=gender;
     NSArray *users=[[NSArray alloc]initWithObjects:user, nil];
-    [user parseUser:users];
+    [User parseUser:users];
 }
 
 

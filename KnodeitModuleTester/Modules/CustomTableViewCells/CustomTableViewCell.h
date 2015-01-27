@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageview;
 @property (weak, nonatomic) IBOutlet UILabel *lb_name;
-@property (weak, nonatomic) IBOutlet UILabel *lb_gender;
+@property (weak, nonatomic) IBOutlet UILabel *lb_2;
+@property (weak, nonatomic) IBOutlet UILabel *lb_1;
 
 @end

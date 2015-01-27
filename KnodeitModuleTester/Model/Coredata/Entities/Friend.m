@@ -1,12 +1,13 @@
 //
 //  Friend.m
-//  POC
+//  Demo
 //
-//  Created by Peter van de Put on 25/05/2014.
-//  Copyright (c) 2014 Yourdeveloper. All rights reserved.
+//  Created by Ngoc Thong on 1/27/15.
+//
 //
 
 #import "Friend.h"
+#import "User.h"
 
 
 @implementation Friend
@@ -15,8 +16,7 @@
 @dynamic fullName;
 @dynamic lastName;
 @dynamic mobile;
-@dynamic userID;
-@dynamic userName;
-@dynamic recordID;
 @dynamic photo;
+@dynamic user;
+
 @end

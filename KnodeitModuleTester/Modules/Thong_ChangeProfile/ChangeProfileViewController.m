@@ -9,6 +9,7 @@
 #import "ChangeProfileViewController.h"
 #import "Data_Text.h"
 #import "User+Helper.h"
+#import "Friend+Helper.h"
 
 @interface ChangeProfileViewController ()
 
@@ -16,6 +17,7 @@
 
 //NSArray *profile;
 User *user;
+Friend *friend;
 NSArray *dataPicker;
 NSString *imagePath;
 
@@ -26,7 +28,7 @@ NSString *imagePath;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     user=[self.delegate user];
-    
+    friend=[self.delegate friend];
     [self load_profile];
     
     [self createPickerGender];
@@ -75,9 +77,13 @@ NSString *imagePath;
 //    
 //    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
     
-    tf_name.text=user.fullName;
-    tf_gender.text=user.gender;
-    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
+//    tf_name.text=user.fullName;
+//    tf_gender.text=user.gender;
+//    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
+//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    
+    tf_name.text=friend.fullName;
+    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
     imageview.image=[UIImage imageWithContentsOfFile:imagePath];
 }
 

@@ -8,9 +8,12 @@
 
 #import "ListViewController.h"
 #import "ChangeProfileViewController.h"
+#import "AddFriendViewController.h"
+
 #import "Data_Text.h"
 #import "CustomTableViewCell.h"
 #import "User+Helper.h"
+#import "Friend+Helper.h"
 
 Data_Text *data_text;
 @interface ListViewController ()
@@ -23,8 +26,11 @@ NSArray *data;
 NSInteger index;
     
     NSMutableArray *Data_Users;
+    NSMutableArray *Data_Friends;
 }
 @synthesize user=_user;
+@synthesize friend=_friend;
+
 -(void)reload{
     [self load_data];
     [self.tableView reloadData];
@@ -53,7 +59,9 @@ NSInteger index;
 //    data_text=[[Data_Text alloc]init];
 //    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
     
-    Data_Users=[User fetchAllUsers];
+    //Data_Users=[User fetchAllUsers];
+    
+    Data_Friends=[Friend fetchAllFriends:self.user.email];
 }
 
 
@@ -74,7 +82,7 @@ NSInteger index;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [Data_Users count];
+    return [Data_Friends count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -98,10 +106,10 @@ NSInteger index;
 //    cell.lb_gender.text=profile[3];
 
     
-    cell.lb_name.text=((User*) Data_Users[indexPath.row]).fullName;
-    cell.lb_gender.text=((User*) Data_Users[indexPath.row]).gender;
+    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
+    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
     
-    NSString *imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",((User*) Data_Users[indexPath.row]).email]];
+    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
     
     cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     return cell;
@@ -123,10 +131,18 @@ NSInteger index;
     // Pass the selected object to the new view controller.
     
     //UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
-    
+    if([[segue identifier] isEqualToString:@"segue_list_profile"]){
     ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
-    self.user=Data_Users[index];
-    cp.delegate=self;
+    //self.user=Data_Users[index];
+        self.friend=Data_Friends[index];
+        cp.delegate=self;
+    }
+    else
+    {
+        AddFriendViewController *af=(AddFriendViewController*)[segue destinationViewController];
+        af.delegate=self;
+    }
+    
 }
 
 
@@ -136,5 +152,10 @@ NSInteger index;
 
 - (IBAction)bt_logout_click:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)bt_add_click:(id)sender {
+    
+    [self performSegueWithIdentifier:@"segue_list_add" sender:nil];
 }
 @end

@@ -11,8 +11,11 @@
 		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
 		3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7691A6F549F00638A08 /* Male.jpeg */; };
 		3315F76D1A6FB0E100638A08 /* USERS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3315F76C1A6FB0E100638A08 /* USERS.txt */; };
+		33246B1B1A773E7200269287 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B1A1A773E7200269287 /* AddFriendViewController.m */; };
+		33246B1E1A77466500269287 /* Friend+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B1D1A77466500269287 /* Friend+Helper.m */; };
+		33246B211A7777B700269287 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B201A7777B700269287 /* Friend.m */; };
+		33246B241A7777B800269287 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B231A7777B800269287 /* User.m */; };
 		333504121A75E7A800A3CEA0 /* User+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 333504111A75E7A800A3CEA0 /* User+Helper.m */; };
-		333504181A761D0300A3CEA0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 333504171A761D0300A3CEA0 /* User.m */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
@@ -37,7 +40,6 @@
 		7C57A0B5195DA75C00F496E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A094195DA75C00F496E6 /* UIKit.framework */; };
 		7C57A0BD195DA75C00F496E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C57A0BB195DA75C00F496E6 /* InfoPlist.strings */; };
 		7C57A0BF195DA75C00F496E6 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0BE195DA75C00F496E6 /* DemoTests.m */; };
-		7C57A169195DA7B800F496E6 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D0195DA7B800F496E6 /* Friend.m */; };
 		7C57A16A195DA7B800F496E6 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D2195DA7B800F496E6 /* Message.m */; };
 		7C57A16B195DA7B800F496E6 /* MyFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D4195DA7B800F496E6 /* MyFeed.m */; };
 		7C57A16D195DA7B800F496E6 /* EverAfter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D6195DA7B800F496E6 /* EverAfter.xcdatamodeld */; };
@@ -104,10 +106,16 @@
 		3315F7681A6F549F00638A08 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Female.jpeg; sourceTree = "<group>"; };
 		3315F7691A6F549F00638A08 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Male.jpeg; sourceTree = "<group>"; };
 		3315F76C1A6FB0E100638A08 /* USERS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = USERS.txt; sourceTree = "<group>"; };
+		33246B191A773E7200269287 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		33246B1A1A773E7200269287 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		33246B1C1A77466500269287 /* Friend+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+Helper.h"; sourceTree = "<group>"; };
+		33246B1D1A77466500269287 /* Friend+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friend+Helper.m"; sourceTree = "<group>"; };
+		33246B1F1A7777B700269287 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		33246B201A7777B700269287 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		33246B221A7777B800269287 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		33246B231A7777B800269287 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		333504101A75E7A800A3CEA0 /* User+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helper.h"; path = "KnodeitModuleTester/Model/Coredata/User+Helper.h"; sourceTree = SOURCE_ROOT; };
 		333504111A75E7A800A3CEA0 /* User+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Helper.m"; path = "KnodeitModuleTester/Model/Coredata/User+Helper.m"; sourceTree = SOURCE_ROOT; };
-		333504161A761D0300A3CEA0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		333504171A761D0300A3CEA0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		334D58F81A676123004219ED /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		334D58F91A676123004219ED /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		3373A0B01A6660F200A30400 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; tabWidth = 3; };
@@ -146,8 +154,6 @@
 		7C57A0BE195DA75C00F496E6 /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		7C57A0C9195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		7C57A0CB195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		7C57A0CF195DA7B800F496E6 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		7C57A0D0195DA7B800F496E6 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		7C57A0D1195DA7B800F496E6 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		7C57A0D2195DA7B800F496E6 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		7C57A0D3195DA7B800F496E6 /* MyFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFeed.h; sourceTree = "<group>"; };
@@ -289,6 +295,15 @@
 				331305021A67C99500165AF9 /* Data_Text.m */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		33246B181A773E3900269287 /* Thong_AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				33246B191A773E7200269287 /* AddFriendViewController.h */,
+				33246B1A1A773E7200269287 /* AddFriendViewController.m */,
+			);
+			path = Thong_AddFriend;
 			sourceTree = "<group>";
 		};
 		334D58F71A6760F5004219ED /* Thong_List */ = {
@@ -482,6 +497,10 @@
 			isa = PBXGroup;
 			children = (
 				7C57A0CE195DA7B800F496E6 /* Entities */,
+				33246B1C1A77466500269287 /* Friend+Helper.h */,
+				33246B1D1A77466500269287 /* Friend+Helper.m */,
+				333504101A75E7A800A3CEA0 /* User+Helper.h */,
+				333504111A75E7A800A3CEA0 /* User+Helper.m */,
 				7C57A0D6195DA7B800F496E6 /* EverAfter.xcdatamodeld */,
 				7C57A0D8195DA7B800F496E6 /* readme.txt */,
 			);
@@ -491,17 +510,15 @@
 		7C57A0CE195DA7B800F496E6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				333504161A761D0300A3CEA0 /* User.h */,
-				333504171A761D0300A3CEA0 /* User.m */,
-				7C57A0CF195DA7B800F496E6 /* Friend.h */,
-				7C57A0D0195DA7B800F496E6 /* Friend.m */,
+				33246B221A7777B800269287 /* User.h */,
+				33246B231A7777B800269287 /* User.m */,
+				33246B1F1A7777B700269287 /* Friend.h */,
+				33246B201A7777B700269287 /* Friend.m */,
 				7C57A0D1195DA7B800F496E6 /* Message.h */,
 				7C57A0D2195DA7B800F496E6 /* Message.m */,
 				7C57A0D3195DA7B800F496E6 /* MyFeed.h */,
 				7C57A0D4195DA7B800F496E6 /* MyFeed.m */,
 				7C57A0D5195DA7B800F496E6 /* readme.txt */,
-				333504101A75E7A800A3CEA0 /* User+Helper.h */,
-				333504111A75E7A800A3CEA0 /* User+Helper.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -509,6 +526,7 @@
 		7C57A0DA195DA7B800F496E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				33246B181A773E3900269287 /* Thong_AddFriend */,
 				3385DECC1A6E06B40057AF69 /* Thong_ChangeProfile */,
 				3385DEC61A6DF0CF0057AF69 /* CustomTableViewCell */,
 				33CA27311A67A31500D85908 /* Thong_ChangePassword */,
@@ -971,24 +989,25 @@
 				7C57A0A1195DA75C00F496E6 /* KNAppDelegate.m in Sources */,
 				7C57A174195DA7B800F496E6 /* KNMobileRegisterationTemplateViewController.m in Sources */,
 				A7BD506B1A68B186001D6E7E /* KNBaseTableViewController.m in Sources */,
+				33246B241A7777B800269287 /* User.m in Sources */,
 				333504121A75E7A800A3CEA0 /* User+Helper.m in Sources */,
 				7C57A18D195DA7B800F496E6 /* NSData+Base64.m in Sources */,
 				7C57A192195DA7B800F496E6 /* KNPushTopSegue.m in Sources */,
+				33246B1E1A77466500269287 /* Friend+Helper.m in Sources */,
 				7C57A1A1195DA7B800F496E6 /* SDWebImageCompat.m in Sources */,
-				333504181A761D0300A3CEA0 /* User.m in Sources */,
 				7C57A1A9195DA7B800F496E6 /* UIImage+MultiFormat.m in Sources */,
 				7C57A18A195DA7B800F496E6 /* UserManager.m in Sources */,
 				7C57A16D195DA7B800F496E6 /* EverAfter.xcdatamodeld in Sources */,
 				7C57A1AA195DA7B800F496E6 /* UIImage+WebP.m in Sources */,
 				7C57A1A5195DA7B800F496E6 /* SDWebImageManager.m in Sources */,
 				7C57A1A0195DA7B800F496E6 /* SDImageCache.m in Sources */,
-				7C57A169195DA7B800F496E6 /* Friend.m in Sources */,
 				33A81D671A65205800529EE7 /* SignUpViewController.m in Sources */,
 				7C57A1A6195DA7B800F496E6 /* SDWebImagePrefetcher.m in Sources */,
 				7C57A18C195DA7B800F496E6 /* KNActivityView.m in Sources */,
 				7C57A19E195DA7B800F496E6 /* MKAnnotationView+WebCache.m in Sources */,
 				7C57A19B195DA7B800F496E6 /* MBProgressHUD.m in Sources */,
 				7C57A184195DA7B800F496E6 /* CoreDataManager.m in Sources */,
+				33246B211A7777B700269287 /* Friend.m in Sources */,
 				7C57A186195DA7B800F496E6 /* KNAppControlManager.m in Sources */,
 				7C57A1A2195DA7B800F496E6 /* SDWebImageDecoder.m in Sources */,
 				3385DECB1A6DF3D80057AF69 /* CustomTableViewCell.m in Sources */,
@@ -1008,6 +1027,7 @@
 				7C57A176195DA7B800F496E6 /* KNBaseViewController.m in Sources */,
 				7C57A193195DA7B800F496E6 /* KNTextFieldWithColored.m in Sources */,
 				7C57A18B195DA7B800F496E6 /* ButtonIndexed.m in Sources */,
+				33246B1B1A773E7200269287 /* AddFriendViewController.m in Sources */,
 				7C57A1B6195DA85800F496E6 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

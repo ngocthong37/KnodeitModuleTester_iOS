@@ -12,10 +12,11 @@
 
 -(void)reload;
 @property User* user;
-
+@property Friend* friend;
 @end
 @interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
 
 - (IBAction)bt_logout_click:(id)sender;
+- (IBAction)bt_add_click:(id)sender;
 
 @end

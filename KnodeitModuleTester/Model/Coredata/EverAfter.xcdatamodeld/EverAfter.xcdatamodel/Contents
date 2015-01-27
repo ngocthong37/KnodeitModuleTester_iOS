@@ -6,9 +6,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES">
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,11 +25,12 @@
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Friend" inverseName="user" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Friend" positionX="-27" positionY="54" width="128" height="165"/>
-        <element name="Message" positionX="196" positionY="117" width="128" height="88"/>
+        <element name="Friend" positionX="81" positionY="243" width="128" height="133"/>
+        <element name="Message" positionX="7" positionY="72" width="128" height="88"/>
         <element name="MyFeed" positionX="7" positionY="-72" width="128" height="118"/>
-        <element name="User" positionX="-20" positionY="288" width="128" height="103"/>
+        <element name="User" positionX="-99" positionY="260" width="128" height="118"/>
     </elements>
 </model>

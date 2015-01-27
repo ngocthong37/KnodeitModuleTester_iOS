@@ -8,10 +8,16 @@
 
 #import "LoginViewController.h"
 #import "NSString+Validator.h"
+#import "ListViewController.h"
+#import "User+Helper.h"
+
 #import "Data_Text.h"
 
 Data_Text *data_text;
-@interface LoginViewController ()
+
+@interface LoginViewController (){
+    User *user;
+}
 
 @end
 
@@ -78,7 +84,7 @@ Data_Text *data_text;
 
 -(Boolean)login:(NSString*)email :(NSString*)password{
 
-    User *user=[User userAlreadyExistInDB:email];
+    user=[User userAlreadyExistInDB:email];
     if(!user)
         return false;
     else if(![user.password isEqualToString:password])
@@ -128,7 +134,7 @@ Data_Text *data_text;
     bool b=[self login:tf_email.text :tf_password.text];
     if(b)
     {
-        [self performSegueWithIdentifier:@"segue_login_list" sender:nil];
+        [self performSegueWithIdentifier:@"segue_login_tabbar" sender:nil];
         tf_email.text=@"";
         tf_password.text=@"";
     }
@@ -138,10 +144,23 @@ Data_Text *data_text;
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"segue_login_tabbar"])
+        {
+            UITabBarController *TBC=(UITabBarController*)[segue destinationViewController];
+            UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
+            ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
+            LVC.user=user;
+        }
+    else{
+        
+    }
+    
+}
 
 
 - (IBAction)bt_signup_click:(id)sender {
-    
+    [self performSegueWithIdentifier:@"segue_login_signup" sender:nil];
 }
 
 -(void)Alert:(NSString*)message{

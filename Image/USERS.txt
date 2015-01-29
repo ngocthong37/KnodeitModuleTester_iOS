@@ -1,3 +1,0 @@
-thong@gmail.com	thong	NgocThong	Male
-thong1@gmail.com	thong	THONG	Other
-thong2@gmail.com	thong	N T	Male

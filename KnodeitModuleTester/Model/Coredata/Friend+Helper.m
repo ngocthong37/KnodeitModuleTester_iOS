@@ -50,6 +50,9 @@
     
 
     [fetchRequest setEntity:entity];
+    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"user.email LIKE %@",email];
+    [fetchRequest setPredicate:predicate];
+
     NSError *error=nil;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     if(fetchedObjects){
@@ -57,8 +60,7 @@
             
             //strong typecast
             Friend *friend = (Friend *)obj;
-            if([friend.user.email isEqualToString:email])
-                [allFriends addObject:friend];
+            [allFriends addObject:friend];
         }
     }
     

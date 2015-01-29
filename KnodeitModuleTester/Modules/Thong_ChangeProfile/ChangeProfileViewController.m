@@ -29,34 +29,9 @@ NSString *imagePath;
     // Do any additional setup after loading the view.
     user=[self.delegate user];
     friend=[self.delegate friend];
-    [self load_profile];
     
-    [self createPickerGender];
+    [self load_profile];
     [self BackgroundTap];
-}
--(void)createPickerGender{
-    dataPicker=@[@"Male", @"Female",@"Other"];
-    UIPickerView *picker=[[UIPickerView alloc]init];
-    picker.dataSource=self;
-    picker.delegate=self;
-    tf_gender.inputView=picker;
-}
-
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return dataPicker.count;
-}
-
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return  1;
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return dataPicker[row];
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    tf_gender.text=dataPicker[row];
-    [tf_gender resignFirstResponder];
 }
 
 -(void)BackgroundTap{
@@ -65,8 +40,10 @@ NSString *imagePath;
     [self.view addGestureRecognizer:tapRecognizer];
 }
 -(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
-    [tf_name resignFirstResponder];
-    [tf_gender resignFirstResponder];
+    [tf_firstName resignFirstResponder];
+    [tf_mobile resignFirstResponder];
+    [tf_lastName resignFirstResponder];
+    [tf_fullName resignFirstResponder];
 }
 
 -(void)load_profile{
@@ -82,7 +59,10 @@ NSString *imagePath;
 //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
 //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
-    tf_name.text=friend.fullName;
+    tf_firstName.text=friend.firstName;
+    tf_mobile.text=friend.mobile;
+    tf_lastName.text=friend.lastName;
+    tf_fullName.text=friend.fullName;
     imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
     imageview.image=[UIImage imageWithContentsOfFile:imagePath];
 }
@@ -119,12 +99,13 @@ NSString *imagePath;
 //    NSString *ret = [formatter stringFromDate:[NSDate date]];
 //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
 //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
-    
-    user.fullName=tf_name.text;
-    user.gender=tf_gender.text;
-    
-    NSArray* users=[[NSArray alloc]initWithObjects:user, nil];
-    [User parseUser:users];
+
+    friend.fullName=tf_fullName.text;
+    friend.mobile=tf_mobile.text;
+    friend.lastName=tf_lastName.text;
+    friend.firstName=tf_firstName.text;
+    NSArray* friends=[[NSArray alloc]initWithObjects:friend, nil];
+    [Friend parseFriend:friends forUser:user];
     
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
     

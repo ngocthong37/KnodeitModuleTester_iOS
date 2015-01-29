@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "NSString+Validator.h"
 #import "ListViewController.h"
+#import "DetailViewController.h"
 #import "User+Helper.h"
 
 #import "Data_Text.h"
@@ -149,8 +150,11 @@ Data_Text *data_text;
         {
             UITabBarController *TBC=(UITabBarController*)[segue destinationViewController];
             UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
+            DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
             ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
+            
             LVC.user=user;
+            DVC.delegate=LVC;
         }
     else{
         

@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ListViewController.h"
 
-@interface ChangeProfileViewController : KNBaseViewController <UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
+@interface ChangeProfileViewController : KNBaseViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     
     __weak IBOutlet UIImageView *imageview;
-    __weak IBOutlet MHTextField *tf_gender;
-    __weak IBOutlet MHTextField *tf_name;
+    __weak IBOutlet MHTextField *tf_mobile;
+    __weak IBOutlet MHTextField *tf_firstName;
+    __weak IBOutlet MHTextField *tf_lastName;
+    __weak IBOutlet MHTextField *tf_fullName;
 }
 
 - (IBAction)bt_close_click:(id)sender;

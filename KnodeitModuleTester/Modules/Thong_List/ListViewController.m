@@ -107,6 +107,7 @@ NSInteger index;
 
     
     cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
+    cell.lb_1.text=@"Mobile: ";
     cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
     
     NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];

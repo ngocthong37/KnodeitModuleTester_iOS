@@ -30,9 +30,11 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
-    
-    //can thiet de bo khoang trong giua Navigation Bar va Scroll View
-    self.automaticallyAdjustsScrollViewInsets=NO;
+
+//**********************************************************************//
+//    can thiet de bo khoang trong giua Navigation Bar va Scroll View   //
+    self.automaticallyAdjustsScrollViewInsets=NO;                       //
+//**********************************************************************//
 }
 
 - (void)didReceiveMemoryWarning

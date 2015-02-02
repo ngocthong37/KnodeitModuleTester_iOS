@@ -22,12 +22,12 @@
 }
 
 #pragma mark - Friend
-+(Friend *)friendAlreadyExistInDB:(NSString *)recordid{
++(Friend *)friendAlreadyExistInDB:(NSString *)recordid :(User*)user{
     NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Friend" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
-    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"fullName LIKE %@",recordid];
+    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"fullName LIKE %@ and user.email like %@",recordid,user.email];
     [fetchRequest setPredicate:predicate];
     NSError *error;
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
@@ -38,6 +38,24 @@
         return nil;
     }
 }
+
++(Friend *)friendAlreadyExistInDB:(NSString *)recordid{
+    NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Friend" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate =[NSPredicate predicateWithFormat:@"fullName LIKE %@ ",recordid];
+    [fetchRequest setPredicate:predicate];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    if([fetchedObjects count]==1){
+        return  (Friend *)[fetchedObjects objectAtIndex:0];
+    }
+    else{
+        return nil;
+    }
+}
+
 
 + (NSMutableArray*)fetchAllFriends:(NSString*)email{
     
@@ -97,7 +115,7 @@
     NSManagedObjectContext *context = [CoreDataManager sharedInstance].managedObjectContext;
     
     for ( Friend * friendRecord in friends ){
-        Friend *friend = [Friend friendAlreadyExistInDB:friendRecord.fullName];
+        Friend *friend = [Friend friendAlreadyExistInDB:friendRecord.fullName :user];
         
         if (!friend) {
             

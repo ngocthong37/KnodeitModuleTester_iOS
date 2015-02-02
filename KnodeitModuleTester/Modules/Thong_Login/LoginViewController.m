@@ -153,6 +153,7 @@ Data_Text *data_text;
             DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
             ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
             
+
             LVC.user=user;
             DVC.delegate=LVC;
         }

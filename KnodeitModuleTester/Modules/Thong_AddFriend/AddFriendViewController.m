@@ -53,13 +53,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)Alert:(NSString*)message{
+    UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil,nil];
+    [alert show];
+}
+
 
 - (IBAction)bt_cancel_click:(id)sender {
     [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
 }
 
 - (IBAction)bt_save_click:(id)sender {
-    Friend *friend=[[Friend alloc]init];
+    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+    if(friend)
+    {
+        [self Alert:@"Friend is exist"];
+        return;
+    }
+    friend=[[Friend alloc]init];
     friend.firstName=tf_firstName.text;
     friend.fullName=tf_fullName.text;
     friend.lastName=tf_lastName.text;

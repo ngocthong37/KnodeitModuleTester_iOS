@@ -34,6 +34,9 @@ NSString *imagePath;
     [self BackgroundTap];
 }
 
+
+
+
 -(void)BackgroundTap{
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView=NO;
@@ -86,6 +89,15 @@ NSString *imagePath;
     [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
 }
 
+-(void)Alert:(NSString*)message{
+    UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil,nil];
+    [alert show];
+}
+
 - (IBAction)bt_save_click:(id)sender {
 //    Data_Text *data_text=[[Data_Text alloc]init];
 //    NSString *aString=[data_text readfile];
@@ -99,12 +111,26 @@ NSString *imagePath;
 //    NSString *ret = [formatter stringFromDate:[NSDate date]];
 //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
 //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
-
+    
+    NSString *imageName=[self.delegate friend].photo;
+    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
+    [Friend deleteFriends:friends];
+    
+    friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+    if(friend)
+    {
+        [self Alert:@"Full name is exist"];
+        return;
+    }
+    friend=[[Friend alloc]init];
     friend.fullName=tf_fullName.text;
     friend.mobile=tf_mobile.text;
     friend.lastName=tf_lastName.text;
     friend.firstName=tf_firstName.text;
-    NSArray* friends=[[NSArray alloc]initWithObjects:friend, nil];
+    friend.photo=imageName;
+
+    
+    friends=[[NSArray alloc]initWithObjects:friend, nil];
     [Friend parseFriend:friends forUser:user];
     
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];

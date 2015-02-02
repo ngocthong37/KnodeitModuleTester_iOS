@@ -350,7 +350,7 @@
                                             <constraint firstAttribute="height" constant="30" id="yn3-WA-mPw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-RS-7Lz" customClass="MHTextField">
                                         <rect key="frame" x="70" y="272" width="180" height="30"/>
@@ -587,7 +587,7 @@
             </objects>
             <point key="canvasLocation" x="1269" y="-212"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Profile-->
         <scene sceneID="dAO-Of-wgA">
             <objects>
                 <viewController id="m9a-b3-Hyt" customClass="DetailViewController" sceneMemberID="viewController">
@@ -655,7 +655,7 @@
                                             <constraint firstAttribute="width" constant="78" id="VeM-Xy-8KT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWs-J6-dSq" customClass="MHTextField">
@@ -674,7 +674,7 @@
                                             <constraint firstAttribute="width" constant="78" id="thZ-Ff-KxG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -709,7 +709,7 @@
                             <constraint firstAttribute="centerX" secondItem="T0j-iq-snY" secondAttribute="centerX" id="ZAN-Kb-z1Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ltb-HJ-64g"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="Ltb-HJ-64g"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -722,11 +722,11 @@
             </objects>
             <point key="canvasLocation" x="413" y="603"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Friend-->
         <scene sceneID="Bt4-yI-XtA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Q7-3k-prw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Gw4-aG-8lb"/>
+                    <tabBarItem key="tabBarItem" title="Friend" image="Friend" id="Gw4-aG-8lb"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bx4-ai-ggT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MTx-OS-z1B">
@@ -778,11 +778,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YE-Os-kLv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="247"/>
+            <point key="canvasLocation" x="-22" y="234"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Friend" width="40" height="40"/>
         <image name="Male.jpeg" width="128" height="128"/>
+        <image name="profile" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

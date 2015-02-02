@@ -14,5 +14,5 @@
 + (NSMutableArray*)fetchAllFriends:(NSString*)email;
 + (NSArray*) deleteFriends:(NSArray*) friends;
 
-+(Friend *)friendAlreadyExistInDB:(NSString *)recordid;
++(Friend *)friendAlreadyExistInDB:(NSString *)recordid :(User*)user;
 @end

@@ -10,6 +10,8 @@
 #import "NSString+Validator.h"
 #import "ListViewController.h"
 #import "DetailViewController.h"
+#import "KNStoryboardManager.h"
+
 #import "User+Helper.h"
 
 #import "Data_Text.h"
@@ -135,9 +137,21 @@ Data_Text *data_text;
     bool b=[self login:tf_email.text :tf_password.text];
     if(b)
     {
-        [self performSegueWithIdentifier:@"segue_login_tabbar" sender:nil];
-        tf_email.text=@"";
-        tf_password.text=@"";
+//        [self performSegueWithIdentifier:@"segue_login_tabbar" sender:nil];
+//        tf_email.text=@"";
+//        tf_password.text=@"";
+        
+        UIViewController *VC=[KNStoryboardManager getViewControllerInitial:@"Main_iPhone"];
+        
+        UITabBarController *TBC=(UITabBarController*)VC;
+        UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
+        DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
+        ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
+        
+        LVC.user=user;
+        DVC.delegate=LVC;
+        
+        [self showViewController:VC sender:nil];
     }
     else
     {
@@ -145,6 +159,7 @@ Data_Text *data_text;
     }
 }
 
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"segue_login_tabbar"])
         {
@@ -153,16 +168,14 @@ Data_Text *data_text;
             DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
             ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
             
-
             LVC.user=user;
             DVC.delegate=LVC;
         }
     else{
         
     }
-    
 }
-
+*/
 
 - (IBAction)bt_signup_click:(id)sender {
     [self performSegueWithIdentifier:@"segue_login_signup" sender:nil];

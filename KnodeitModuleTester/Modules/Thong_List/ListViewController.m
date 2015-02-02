@@ -56,9 +56,6 @@ NSInteger index;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-
-}
 
 -(void)load_data{
 //    data_text=[[Data_Text alloc]init];

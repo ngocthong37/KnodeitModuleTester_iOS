@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330FB0A91A7F2418000FC86D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330FB0A81A7F2418000FC86D /* Login.storyboard */; };
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		33144C0A1A79F4C100C2B7BE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144C081A79F4C100C2B7BE /* DetailViewController.m */; };
 		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
@@ -100,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330FB0A81A7F2418000FC86D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		331305011A67C99500165AF9 /* Data_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data_Text.h; sourceTree = "<group>"; };
 		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
 		33144C081A79F4C100C2B7BE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -286,6 +288,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330FB0A71A7F23A4000FC86D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7C57A0A2195DA75C00F496E6 /* Main_iPhone.storyboard */,
+				330FB0A81A7F2418000FC86D /* Login.storyboard */,
+			);
+			name = Storyboard;
+			path = KnodeitModuleTester/Storyboard;
+			sourceTree = "<group>";
+		};
 		331304FE1A67C91D00165AF9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +393,7 @@
 		7C57A084195DA75C00F496E6 = {
 			isa = PBXGroup;
 			children = (
+				330FB0A71A7F23A4000FC86D /* Storyboard */,
 				3385DEC11A6DE9C40057AF69 /* Image */,
 				7C57A096195DA75C00F496E6 /* Demo */,
 				7C57A0B8195DA75C00F496E6 /* DemoTests */,
@@ -422,7 +435,6 @@
 				7C57A141195DA7B800F496E6 /* Vendor */,
 				7C57A09F195DA75C00F496E6 /* KNAppDelegate.h */,
 				7C57A0A0195DA75C00F496E6 /* KNAppDelegate.m */,
-				7C57A0A2195DA75C00F496E6 /* Main_iPhone.storyboard */,
 				7C57A0A5195DA75C00F496E6 /* Main_iPad.storyboard */,
 				7C57A0A8195DA75C00F496E6 /* KNViewController.h */,
 				7C57A0A9195DA75C00F496E6 /* KNViewController.m */,
@@ -947,6 +959,7 @@
 				7C57A09B195DA75C00F496E6 /* InfoPlist.strings in Resources */,
 				3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */,
 				7C57A173195DA7B800F496E6 /* DiallingCodes.plist in Resources */,
+				330FB0A91A7F2418000FC86D /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,6 +1074,7 @@
 				7C57A0A3195DA75C00F496E6 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		7C57A0A5195DA75C00F496E6 /* Main_iPad.storyboard */ = {

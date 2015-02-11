@@ -13,6 +13,8 @@
 -(void)reload;
 @property User* user;
 @property Friend* friend;
+
+@property NSMutableDictionary *current_user;
 @end
 @interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
 

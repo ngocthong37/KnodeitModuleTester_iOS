@@ -21,7 +21,10 @@
     #import "MHButton.h"
 
 #import "CoreDataManager.h"
-#import "User.h"
+
 #import "User+Helper.h"
 #import "KNStoryboardManager.h"
+
+#import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 #endif

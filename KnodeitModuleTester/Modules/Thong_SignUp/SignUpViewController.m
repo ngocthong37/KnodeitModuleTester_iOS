@@ -9,7 +9,7 @@
 #import "SignUpViewController.h"
 #import "NSString+Validator.h"
 #import "Data_Text.h"
-#import "User+Helper.h"
+
 
 
 @interface SignUpViewController ()
@@ -98,7 +98,7 @@ NSString *textFromFile;
 
 - (IBAction)bt_signup_click:(id)sender {
     //code xu ly dien kien
-    
+    /*
     //xu ly email
     if(tf_email.text.length==0)
     {
@@ -168,7 +168,53 @@ NSString *textFromFile;
     [self save_user:tf_email.text :tf_password.text :tf_name.text :tf_gender.text ];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    */
+    
+    [self sign_up_webservice:tf_email.text :tf_password.text :tf_confirm.text];
 }
+
+-(void)sign_up_webservice:(NSString*)email :(NSString*)password :(NSString*)confirm_password{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"user[email]": email,
+                             @"user[password]": password,
+                             @"user[password_confirmation]":confirm_password};
+    
+    [manager POST:kAPISignUp parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        
+        NSError *err;
+        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
+        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
+        if([dic[@"success"]boolValue])
+            [self dismissViewControllerAnimated:YES completion:nil];
+        else
+            [self Alert:[self string_error:[dic[@"error_code"] integerValue]]];
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         //NSLog(@"Error: %@", error);
+         [self Alert:[NSString stringWithFormat:@"%@",error]];
+
+     }];
+}
+
+-(NSString*)string_error:(int)error_code{
+    NSString *string=@"error";
+    switch (error_code) {
+        case 102:
+            string=@"Email has already been taken";
+            break;
+        case 103:
+            string=@"Login with email or password is wrong";
+            break;
+            
+        default:
+            break;
+    }
+    return string;
+}
+
 
 -(void)save_user:(NSString*)email :(NSString*)password :(NSString*)fullName :(NSString*)gender{
     User *user=[[User alloc]init];

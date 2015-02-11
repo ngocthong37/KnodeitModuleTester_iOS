@@ -10,13 +10,14 @@
 #import "NSString+Validator.h"
 #import "ListViewController.h"
 #import "DetailViewController.h"
-#import "KNStoryboardManager.h"
 
-#import "User+Helper.h"
+#import "KNConstants.h"
+#import "Manager.h"
+#import "KeychainItemWrapper.h"
 
 #import "Data_Text.h"
-
 Data_Text *data_text;
+
 
 @interface LoginViewController (){
     User *user;
@@ -39,12 +40,13 @@ Data_Text *data_text;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    data_text=[[Data_Text alloc]init];
+//    data_text=[[Data_Text alloc]init];
     //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
+    
     [self BackgroundTap];
     
-    tf_email.text=@"thong@gmail.com";
-    tf_password.text=@"thong";
+    tf_email.text=@"test1@gmail.com";
+    tf_password.text=@"thong123";
 }
 
 //-(void)file{
@@ -133,31 +135,76 @@ Data_Text *data_text;
         [self Alert:@"Wrong Email"];
         return;
     }
-    
-    bool b=[self login:tf_email.text :tf_password.text];
-    if(b)
-    {
+    /*login bang core data*/
+//    bool b=[self login:tf_email.text :tf_password.text];
+//    if(b)
+//    {
 //        [self performSegueWithIdentifier:@"segue_login_tabbar" sender:nil];
 //        tf_email.text=@"";
 //        tf_password.text=@"";
-        
-        UIViewController *VC=[KNStoryboardManager getViewControllerInitial:@"Main_iPhone"];
-        
-        UITabBarController *TBC=(UITabBarController*)VC;
-        UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
-        DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
-        ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
-        
-        LVC.user=user;
-        DVC.delegate=LVC;
-        
-        [self showViewController:VC sender:nil];
-    }
-    else
-    {
-        [self Alert:@"Wrong email or password"];
-    }
+//
+//
+//        UIViewController *VC=[KNStoryboardManager getViewControllerInitial:@"Main_iPhone"];
+//        
+//        UITabBarController *TBC=(UITabBarController*)VC;
+//        UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
+//        DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
+//        ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
+//        
+//        LVC.user=user;
+//        DVC.delegate=LVC;
+//        
+//        [self showViewController:VC sender:nil];
+//        
+//        NSLog(@"Login success");
+//    }
+//    else
+//    {
+//        [self Alert:@"Wrong email or password"];
+//    }
+
+    
+    [self login_webservice:tf_email.text :tf_password.text];
 }
+
+
+-(void)login_webservice:(NSString*)email :(NSString*)password{
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"email": email,
+                             @"password": password};
+    [manager POST:kAPILogin parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        
+        NSError *err;
+        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
+        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
+        
+        if([dic[@"success"] boolValue]){
+            
+            UIViewController *VC=[KNStoryboardManager getViewControllerInitial:@"Main_iPhone"];
+            UITabBarController *TBC=(UITabBarController*)VC;
+            UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
+            DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
+            ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
+            
+//            NSLog(@"%@",dic[@"user"]);
+            LVC.current_user=dic[@"user"];
+            DVC.delegate=LVC;
+                            
+            [self showViewController:VC sender:nil];
+        }
+        else
+            NSLog(@"login fail");
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"Error: %@", error);
+        [self Alert:[NSString stringWithFormat:@"%@",error]];
+    }];
+
+}
+
+
 
 /*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

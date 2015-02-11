@@ -14,6 +14,14 @@
     __weak IBOutlet UIImageView *imageview;
     __weak IBOutlet MHTextField *tf_fullName;
     __weak IBOutlet MHTextField *tf_gender;
+    __weak IBOutlet UIButton *bt_img;
+    __weak IBOutlet UIBarButtonItem *bt_save;
+    
+    //dung cho webservice
+    __weak IBOutlet UILabel *lb1;
+    __weak IBOutlet UILabel *lb2;
+    __weak IBOutlet MHTextField *tf_1;
+    __weak IBOutlet MHTextField *tf_2;
 }
 - (IBAction)bt_img_click:(id)sender;
 - (IBAction)bt_save_click:(id)sender;

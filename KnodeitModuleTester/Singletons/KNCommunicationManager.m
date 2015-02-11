@@ -16,23 +16,23 @@
 + (void) actionLoginUser:(NSString*)userName withPassword:(NSString*)password completion:CompleteBlock blockComplete
 {
     YDRequest *urlRequest = [[YDRequest alloc] initWithURL:[NSURL URLWithString:kAPILogin]
-                                            withJSONDict:[NSDictionary dictionaryWithObjectsAndKeys:userName,@"username", password, @"password", nil]];
+                                            withJSONDict:[NSDictionary dictionaryWithObjectsAndKeys:userName,@"email", password, @"password", nil]];
     
     [urlRequest startWithCompletion:^(YDRequest *request, NSData *data, BOOL success) {
-        if ( blockComplete )
-            blockComplete(data,success);
-        
-        if ( success )
-        {
-            if ( [UserManager sharedInstance].currentUser )
-            {
-                NSString * devToken = [[NSUserDefaults standardUserDefaults] stringForKey:kDeviceTokenKeyname];
-                if ( devToken )
-                {
-                    [KNCommunicationManager actionUpdateWithStringToken:devToken comletion:nil];
-                }
-            }
-        }
+//        if ( blockComplete )
+//            blockComplete(data,success);
+//        
+//        if ( success )
+//        {
+//            if ( [UserManager sharedInstance].currentUser )
+//            {
+//                NSString * devToken = [[NSUserDefaults standardUserDefaults] stringForKey:kDeviceTokenKeyname];
+//                if ( devToken )
+//                {
+//                    [KNCommunicationManager actionUpdateWithStringToken:devToken comletion:nil];
+//                }
+//            }
+//        }
     }];
 
 }

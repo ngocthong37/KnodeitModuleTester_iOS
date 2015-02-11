@@ -12,7 +12,6 @@
 
 #import "Data_Text.h"
 #import "CustomTableViewCell.h"
-#import "User+Helper.h"
 #import "Friend+Helper.h"
 
 Data_Text *data_text;
@@ -24,12 +23,15 @@ Data_Text *data_text;
 {
 NSArray *data;
 NSInteger index;
-    
+    //load tu core data
     NSMutableArray *Data_Users;
     NSMutableArray *Data_Friends;
+    //load tu webservice
+    NSMutableArray *Data_Profile;
 }
 @synthesize user=_user;
 @synthesize friend=_friend;
+@synthesize current_user=_current_user;
 
 -(void)reload{
     [self load_data];
@@ -63,7 +65,11 @@ NSInteger index;
     
     //Data_Users=[User fetchAllUsers];
     
-    Data_Friends=[Friend fetchAllFriends:self.user.email];
+    //load tu code data
+//    Data_Friends=[Friend fetchAllFriends:self.user.email];
+    
+    //load tu webservice
+    Data_Profile=self.current_user[@"profiles"];
 }
 
 
@@ -84,7 +90,10 @@ NSInteger index;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [Data_Friends count];
+    //load danh sach friend tu coredata
+//    return [Data_Friends count];
+    //load danh sach tu webservice
+    return [Data_Profile count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -107,14 +116,21 @@ NSInteger index;
 //    cell.lb_name.text = profile[2];
 //    cell.lb_gender.text=profile[3];
 
+    //load du lieu tu coredata
+//    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
+//    cell.lb_1.text=@"Mobile: ";
+//    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
+//    
+//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
+//    
+//    cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
-    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
-    cell.lb_1.text=@"Mobile: ";
-    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
+    //load du lieu tu webservice
+    cell.lb_1.text=@"id";
+    cell.lb_2.text=[Data_Profile[indexPath.row][@"id"]stringValue];
+    cell.imageview.hidden=true;
+    cell.lb_name.hidden=true;
     
-    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
-    
-    cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     return cell;
 }
 
@@ -136,8 +152,12 @@ NSInteger index;
     //UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
     if([[segue identifier] isEqualToString:@"segue_list_profile"]){
     ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
-    //self.user=Data_Users[index];
-        self.friend=Data_Friends[index];
+        //load tu Coredata
+//        self.friend=Data_Friends[index];
+        //load tu webservice
+        cp.profile_id=[Data_Profile[index][@"id"]integerValue];
+        
+        
         cp.delegate=self;
     }
     else

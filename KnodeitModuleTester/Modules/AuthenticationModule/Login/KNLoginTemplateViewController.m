@@ -68,7 +68,6 @@
         
     } else {
         
-        
         //try login
         
         [KNCommunicationManager actionLoginUser:self.tfUsername.text withPassword:self.tfPassword.text completion:^(NSData *data, BOOL success) {

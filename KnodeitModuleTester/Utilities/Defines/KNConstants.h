@@ -11,14 +11,27 @@
 
 // Constants for API
 
-#define kBaseURL                    "http://poc.yourdeveloper.net/api"
+//#define kBaseURL                    "http://poc.yourdeveloper.net/api"
+//
+//#define kAPIRegisterMobile          @kBaseURL"/user/mobile"
+//#define kAPILogin                   @kBaseURL"/user/login"
+#define kAPIRegister                kBaseURL"/user/register"
+//#define kAPICheckExistance          @kBaseURL"/mobile/existance"
+//#define kAPIRegisterDeviceToken     @kBaseURL"/user/token"
+//#define kAPIUpload                  @kBaseURL"/feed/upload"
 
-#define kAPIRegisterMobile          @kBaseURL"/user/mobile"
-#define kAPILogin                   @kBaseURL"/user/login"
-#define kAPIRegister                @kBaseURL"/user/register"
-#define kAPICheckExistance          @kBaseURL"/mobile/existance"
-#define kAPIRegisterDeviceToken     @kBaseURL"/user/token"
-#define kAPIUpload                  @kBaseURL"/feed/upload"
+#define kWebURL                     "http://192.168.1.26:4000"
+#define kBaseURL                    @kWebURL"/api/v1"
+
+#define kAPIRegisterMobile          kBaseURL"/user/mobile"
+#define kAPILogin                   kBaseURL"/auth/sign_in"
+#define kAPISignUp                  kBaseURL"/auth/sign_up"
+#define kAPICheckExistance          kBaseURL"/mobile/existance"
+#define kAPIRegisterDeviceToken     kBaseURL"/user/token"
+#define kAPIUpload                  kBaseURL"/feed/upload"
+
+#define kAPIProfile                 kBaseURL"/profiles"
+
 
 
 #define kNetworkError               @"Network connection error"

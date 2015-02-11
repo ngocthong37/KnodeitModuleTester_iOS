@@ -13,6 +13,7 @@
     NSString *email;
     NSArray *dataPicker;
     User *currentUser;
+    NSMutableDictionary *user;
 }
 
 @end
@@ -22,20 +23,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    email=[self.delegate user].email;
+//    email=[self.delegate user].email;
     
-    [self createPickerGender];
+    //[self createPickerGender];
     [self load];
     [self BackgroundTap];
 }
 -(void)load{
-    currentUser=[User userAlreadyExistInDB:email];
-    tf_fullName.text=currentUser.fullName;
-    tf_gender.text=currentUser.gender;
+//    currentUser=[User userAlreadyExistInDB:email];
+//    tf_fullName.text=currentUser.fullName;
+//    tf_gender.text=currentUser.gender;
+
+//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
+//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
-    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
-    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    
+    [self load_profile];
 }
+
+-(void)load_profile{
+    lb1.text=@"token";
+    lb2.text=@"id";
+    
+    user=[self.delegate current_user];
+    tf_1.text=user[@"authentication_token"];
+    tf_2.text=[user[@"id"]stringValue];
+    tf_1.enabled=false;
+    tf_2.enabled=false;
+    imageview.hidden=true;
+    bt_img.hidden=true;
+    bt_save.enabled=false;
+   }
+
 
 -(void)BackgroundTap{
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];

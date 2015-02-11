@@ -162,6 +162,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="BT_IMG" destination="ftX-Du-k1U" id="fxK-MT-lxC"/>
                         <outlet property="bt_save" destination="UYp-vn-dTf" id="u58-eE-BT9"/>
                         <outlet property="imageview" destination="ao4-DT-SEk" id="N2A-F1-ZjP"/>
                         <outlet property="tf_firstName" destination="hrH-5c-54D" id="CTV-FB-mkU"/>
@@ -348,7 +349,7 @@
             </objects>
             <point key="canvasLocation" x="1269" y="-212"/>
         </scene>
-        <!--Profile-->
+        <!--User-->
         <scene sceneID="dAO-Of-wgA">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="m9a-b3-Hyt" customClass="DetailViewController" sceneMemberID="viewController">
@@ -380,15 +381,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPX-sA-JLU">
                                 <rect key="frame" x="0.0" y="64" width="320" height="266"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-Sk-x90" customClass="MHTextField">
-                                        <rect key="frame" x="103" y="207" width="170" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="949-cr-ffa"/>
-                                            <constraint firstAttribute="width" constant="170" id="O23-xP-UxW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axH-eM-Nit">
                                         <rect key="frame" x="110" y="131" width="100" height="30"/>
                                         <constraints>
@@ -438,6 +430,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-Sk-x90" customClass="MHTextField">
+                                        <rect key="frame" x="103" y="207" width="170" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="949-cr-ffa"/>
+                                            <constraint firstAttribute="width" constant="170" id="O23-xP-UxW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="axH-eM-Nit" secondAttribute="centerX" id="5yh-E1-Sxl"/>
@@ -470,11 +471,17 @@
                             <constraint firstAttribute="centerX" secondItem="T0j-iq-snY" secondAttribute="centerX" id="ZAN-Kb-z1Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="Ltb-HJ-64g"/>
+                    <tabBarItem key="tabBarItem" title="User" image="profile" id="Ltb-HJ-64g"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bt_img" destination="axH-eM-Nit" id="Z5W-GL-Xjd"/>
+                        <outlet property="bt_save" destination="vHe-Lu-3wf" id="92U-O3-2Se"/>
                         <outlet property="imageview" destination="iZ1-Wd-rQf" id="gJs-42-iPn"/>
+                        <outlet property="lb1" destination="FfX-9p-IVT" id="JYf-Z9-cJD"/>
+                        <outlet property="lb2" destination="itJ-M9-cC8" id="u8z-Pq-Enl"/>
+                        <outlet property="tf_1" destination="pWs-J6-dSq" id="85K-ut-fUK"/>
+                        <outlet property="tf_2" destination="QeL-Sk-x90" id="hi7-hI-HTE"/>
                         <outlet property="tf_fullName" destination="pWs-J6-dSq" id="Zug-76-NRe"/>
                         <outlet property="tf_gender" destination="QeL-Sk-x90" id="PMf-Ix-FTU"/>
                     </connections>
@@ -483,11 +490,11 @@
             </objects>
             <point key="canvasLocation" x="413" y="603"/>
         </scene>
-        <!--Friend-->
+        <!--List-->
         <scene sceneID="Bt4-yI-XtA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Q7-3k-prw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friend" image="Friend" id="Gw4-aG-8lb"/>
+                    <tabBarItem key="tabBarItem" title="List" image="Friend" id="Gw4-aG-8lb"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bx4-ai-ggT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MTx-OS-z1B">

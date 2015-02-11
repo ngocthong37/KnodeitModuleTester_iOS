@@ -8,7 +8,7 @@
 
 #import "ChangeProfileViewController.h"
 #import "Data_Text.h"
-#import "User+Helper.h"
+
 #import "Friend+Helper.h"
 
 @interface ChangeProfileViewController ()
@@ -20,6 +20,7 @@ User *user;
 Friend *friend;
 NSArray *dataPicker;
 NSString *imagePath;
+NSMutableDictionary *data_profile;
 
 @implementation ChangeProfileViewController
 
@@ -27,10 +28,11 @@ NSString *imagePath;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //load du lieu tu core data
     user=[self.delegate user];
     friend=[self.delegate friend];
     
-    [self load_profile];
+    [self load];
     [self BackgroundTap];
 }
 
@@ -49,7 +51,7 @@ NSString *imagePath;
     [tf_fullName resignFirstResponder];
 }
 
--(void)load_profile{
+-(void)load{
 
     //profile=[self.delegate.user componentsSeparatedByString:@"\t"];
 //    tf_name.text=profile[2];
@@ -62,13 +64,57 @@ NSString *imagePath;
 //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
 //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
-    tf_firstName.text=friend.firstName;
-    tf_mobile.text=friend.mobile;
-    tf_lastName.text=friend.lastName;
-    tf_fullName.text=friend.fullName;
-    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
-    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    //load tu CoreData
+//    tf_firstName.text=friend.firstName;
+//    tf_mobile.text=friend.mobile;
+//    tf_lastName.text=friend.lastName;
+//    tf_fullName.text=friend.fullName;
+//    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
+//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    
+    //load tu webservice
+    [self load_profile_id];
 }
+
+
+-(void)load_profile_id{
+    tf_fullName.placeholder=@"middle name";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"email": [self.delegate current_user][@"email"],
+                             @"auth_token":[self.delegate current_user][@"authentication_token"]
+                             };
+//    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
+    
+    NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
+    
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        
+        NSError *err;
+        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
+        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
+        
+        NSMutableDictionary *profile=dic[@"profile"];
+        
+        if(profile[@"first_name"]!=(id)[NSNull null])
+            tf_firstName.text=profile[@"first_name"];
+        if(profile[@"last_name"]!=(id)[NSNull null])
+            tf_lastName.text=profile[@"last_name"];
+        if(profile[@"middle_name"]!=(id)[NSNull null])
+            tf_fullName.text=profile[@"middle_name"];
+        if(profile[@"person"][@"phone_number"]!=(id)[NSNull null])
+            tf_mobile.text=profile[@"person"][@"phone_number"];
+        if(profile[@"person"][@"image_url"][@"thumb"]!=(id)[NSNull null]){
+            NSURL *image_url=[NSURL URLWithString:[NSString stringWithFormat:@"%s%@",kWebURL,profile[@"person"][@"image_url"][@"thumb"]]];
+            [imageview setImageWithURL:image_url];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"Error: %@", error);
+        [self Alert:[NSString stringWithFormat:@"%@",error]];
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -112,33 +158,68 @@ NSString *imagePath;
 //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
 //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
     
-    NSString *imageName=[self.delegate friend].photo;
-    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
-    [Friend deleteFriends:friends];
     
-    friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
-    if(friend)
-    {
-        [self Alert:@"Full name is exist"];
-        return;
-    }
-    friend=[[Friend alloc]init];
-    friend.fullName=tf_fullName.text;
-    friend.mobile=tf_mobile.text;
-    friend.lastName=tf_lastName.text;
-    friend.firstName=tf_firstName.text;
-    friend.photo=imageName;
+    //luu voi CoreData
+//    NSString *imageName=[self.delegate friend].photo;
+//    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
+//    [Friend deleteFriends:friends];
+//    
+//    friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+//    if(friend)
+//    {
+//        [self Alert:@"Full name is exist"];
+//        return;
+//    }
+//    friend=[[Friend alloc]init];
+//    friend.fullName=tf_fullName.text;
+//    friend.mobile=tf_mobile.text;
+//    friend.lastName=tf_lastName.text;
+//    friend.firstName=tf_firstName.text;
+//    friend.photo=imageName;
+//
+//    
+//    friends=[[NSArray alloc]initWithObjects:friend, nil];
+//    [Friend parseFriend:friends forUser:user];
+//    
+//    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
+//    
+//    [self.delegate reload];
+//    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
+    
+    //luu voi webservice
+    
+    [self save_profile_webservice];
+    
 
     
-    friends=[[NSArray alloc]initWithObjects:friend, nil];
-    [Friend parseFriend:friends forUser:user];
+}
+-(void)save_profile_webservice{
+    NSData *image_data=UIImageJPEGRepresentation(imageview.image, 0.5);
+    NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"email": [self.delegate current_user][@"email"],
+                             @"auth_token":[self.delegate current_user][@"authentication_token"],
+                             @"profile[first_name]":tf_firstName.text,
+                             @"profile[last_name]":tf_lastName.text,
+                             @"profile[middle_name]":tf_fullName.text,
+                             };
+    //    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
     
-    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
-    
-    [self.delegate reload];
-    
-    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
-    
+    [manager PUT:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        
+        NSError *err;
+        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
+        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
+        
+        if([dic[@"success"]boolValue])
+            [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
+     
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"Error: %@", error);
+        [self Alert:[NSString stringWithFormat:@"%@",error]];
+    }];
+
 }
 
 - (IBAction)bt_changeimage_click:(id)sender {
@@ -148,6 +229,7 @@ NSString *imagePath;
     [self presentViewController:imagePickerController animated:YES completion:nil];
     
 }
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     [picker dismissViewControllerAnimated:YES completion:nil];

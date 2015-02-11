@@ -32,10 +32,11 @@ NSInteger index;
 @synthesize user=_user;
 @synthesize friend=_friend;
 @synthesize current_user=_current_user;
+@synthesize password=_password;
 
 -(void)reload{
     [self load_data];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,7 +50,7 @@ NSInteger index;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self load_data];
+    Data_Profile=self.current_user[@"profiles"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +70,27 @@ NSInteger index;
 //    Data_Friends=[Friend fetchAllFriends:self.user.email];
     
     //load tu webservice
-    Data_Profile=self.current_user[@"profiles"];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"email":self.current_user[@"email"] ,
+                             @"password":self.password
+                             };
+    [manager POST:kAPILogin parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //NSLog(@"JSON: %@", responseObject);
+        
+        NSError *err;
+        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
+        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
+        
+        if([dic[@"success"] boolValue]){
+            self.current_user=dic[@"user"];
+            Data_Profile=self.current_user[@"profiles"];
+            [self.tableView reloadData];
+        }
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              
+    }];
 }
 
 

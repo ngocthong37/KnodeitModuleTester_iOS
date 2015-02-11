@@ -23,8 +23,8 @@
     // Do any additional setup after loading the view.
     [self BackgroundTap];
 
+    [self load_webservice];
 }
-
 -(void)BackgroundTap{
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView=NO;
@@ -68,30 +68,63 @@
 }
 
 - (IBAction)bt_save_click:(id)sender {
-    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
-    if(friend)
-    {
-        [self Alert:@"Friend is exist"];
-        return;
-    }
-    friend=[[Friend alloc]init];
-    friend.firstName=tf_firstName.text;
-    friend.fullName=tf_fullName.text;
-    friend.lastName=tf_lastName.text;
-    friend.mobile=tf_mobile.text;
+//    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+//    if(friend)
+//    {
+//        [self Alert:@"Friend is exist"];
+//        return;
+//    }
+//    friend=[[Friend alloc]init];
+//    friend.firstName=tf_firstName.text;
+//    friend.fullName=tf_fullName.text;
+//    friend.lastName=tf_lastName.text;
+//    friend.mobile=tf_mobile.text;
+//    
+//    int temp=random(100, 1000);
+//    friend.photo=[NSString stringWithFormat:@"%d.jpeg",temp];
+//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%d.jpeg",temp]];
+//    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
+//    
+//    User *currentUser = [self.delegate user];
+//    NSArray *friends=[[NSArray alloc]initWithObjects:friend, nil];
+//    [Friend parseFriend:friends forUser:currentUser];
+//    
+//    [self.delegate reload];
+//    [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
     
-    int temp=random(100, 1000);
-    friend.photo=[NSString stringWithFormat:@"%d.jpeg",temp];
-    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%d.jpeg",temp]];
-    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
-    
-    User *currentUser = [self.delegate user];
-    NSArray *friends=[[NSArray alloc]initWithObjects:friend, nil];
-    [Friend parseFriend:friends forUser:currentUser];
-    
-    [self.delegate reload];
-    [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
+    [self add_profile_webservice];
 }
+-(void)load_webservice{
+    lb_1.text=@"first name";
+    lb_2.text=@"last name";
+    lb_3.text=@"gender";
+    lb_4.text=@"birth day";
+    
+    tf_3.text=@"male";
+    tf_4.text=@"2015-01-01";
+}
+-(void)add_profile_webservice{
+    NSString *url=[NSString stringWithFormat:@"%@?email=%@&auth_token=%@",kAPIProfile,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSData *imageData = UIImageJPEGRepresentation(imageview.image, 0.5);
+    NSDictionary *parameters = @{@"profile[first_name]": tf_1.text,
+                                 @"profile[last_name]" : tf_2.text,
+                                 @"profile[gender]":tf_3.text,
+                                 @"profile[birth_date]":tf_4.text
+                                 };
+   [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //do not put image inside parameters dictionary as I did, but append it!
+        [formData appendPartWithFileData:imageData name:@"profile[image]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [self.delegate reload];
+        [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@ ***** %@", operation.responseString, error);
+    }];
+}
+
 
 - (IBAction)bt_img:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];

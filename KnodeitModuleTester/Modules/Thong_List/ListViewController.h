@@ -15,6 +15,7 @@
 @property Friend* friend;
 
 @property NSMutableDictionary *current_user;
+@property NSString* password;
 @end
 @interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
 

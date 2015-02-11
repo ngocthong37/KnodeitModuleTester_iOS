@@ -337,6 +337,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageview" destination="zUV-Sm-yTR" id="G9w-GG-NL7"/>
+                        <outlet property="lb_1" destination="rkc-bZ-xK8" id="emB-bX-VF1"/>
+                        <outlet property="lb_2" destination="LD8-cZ-cCa" id="pEc-zu-OAk"/>
+                        <outlet property="lb_3" destination="71j-Nh-6sF" id="wZV-fX-hAj"/>
+                        <outlet property="lb_4" destination="PPr-q8-WAU" id="Idk-IF-CHa"/>
+                        <outlet property="tf_1" destination="fZB-a9-pxf" id="JhP-ro-Su1"/>
+                        <outlet property="tf_2" destination="EBz-O7-OO1" id="Afj-mV-l7z"/>
+                        <outlet property="tf_3" destination="xWj-gF-G7B" id="Egq-jp-1HG"/>
+                        <outlet property="tf_4" destination="Qlh-ve-lKj" id="BDf-yg-iAo"/>
                         <outlet property="tf_firstName" destination="fZB-a9-pxf" id="6zu-aq-GGq"/>
                         <outlet property="tf_fullName" destination="EBz-O7-OO1" id="a8x-XD-gff"/>
                         <outlet property="tf_lastName" destination="xWj-gF-G7B" id="9DE-BG-9d6"/>

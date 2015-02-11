@@ -189,11 +189,11 @@ NSMutableDictionary *data_profile;
     //luu voi webservice
     
     [self save_profile_webservice];
-    
-
-    
 }
+
 -(void)save_profile_webservice{
+    int temp=rand();
+    NSString *filename=[NSString stringWithFormat:@"%d.jpg",temp];
     NSData *image_data=UIImageJPEGRepresentation(imageview.image, 0.5);
     NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -201,25 +201,27 @@ NSMutableDictionary *data_profile;
                              @"auth_token":[self.delegate current_user][@"authentication_token"],
                              @"profile[first_name]":tf_firstName.text,
                              @"profile[last_name]":tf_lastName.text,
-                             @"profile[middle_name]":tf_fullName.text,
+                             @"profile[middle_name]":tf_fullName.text
                              };
     //    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
     
-    [manager PUT:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"JSON: %@", responseObject);
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"PUT" URLString:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         
-        NSError *err;
-        NSData *dataJSon=[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:&err];
-        NSMutableDictionary *dic=[NSJSONSerialization JSONObjectWithData:dataJSon options:0 error:&err];
-        
-        if([dic[@"success"]boolValue])
+        [formData appendPartWithFileData:image_data name:@"profile[image]" fileName:filename mimeType:@"image/jpeg"];
+    } error:nil];
+                                    
+    AFHTTPRequestOperation *op = [manager HTTPRequestOperationWithRequest:request success: ^(AFHTTPRequestOperation *operation, id responseObject) {
+        if([responseObject[@"success"]boolValue]){
+            [self.delegate reload];
             [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
-     
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //NSLog(@"Error: %@", error);
-        [self Alert:[NSString stringWithFormat:@"%@",error]];
+        NSLog(@"Error: %@", error);
     }];
-
+    
+    op.responseSerializer = [AFJSONResponseSerializer serializer];
+    [[NSOperationQueue mainQueue] addOperation:op];
 }
 
 - (IBAction)bt_changeimage_click:(id)sender {

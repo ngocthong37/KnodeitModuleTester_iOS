@@ -190,6 +190,7 @@ Data_Text *data_text;
             
 //            NSLog(@"%@",dic[@"user"]);
             LVC.current_user=dic[@"user"];
+            LVC.password=tf_password.text;
             DVC.delegate=LVC;
                             
             [self showViewController:VC sender:nil];

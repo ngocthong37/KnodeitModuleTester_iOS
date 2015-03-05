@@ -1,5 +1,5 @@
 //
-//  Login.h
+//  LoginViewController.h
 //  Demo
 //
 //  Created by Ngoc Thong on 1/14/15.

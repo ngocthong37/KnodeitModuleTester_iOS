@@ -34,8 +34,15 @@ NSMutableDictionary *data_profile;
     
     [self load];
     [self BackgroundTap];
+    [self textfiled];
 }
 
+-(void)textfiled{
+    [tf_firstName setleft:10];
+    [tf_fullName setleft:10];
+    [tf_lastName setleft:10];
+    [tf_mobile setleft:10];
+}
 
 
 
@@ -52,25 +59,25 @@ NSMutableDictionary *data_profile;
 }
 
 -(void)load{
-
-    //profile=[self.delegate.user componentsSeparatedByString:@"\t"];
-//    tf_name.text=profile[2];
-//    tf_gender.text=profile[3];
-//    
-//    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
     
-//    tf_name.text=user.fullName;
-//    tf_gender.text=user.gender;
-//    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
-//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    //profile=[self.delegate.user componentsSeparatedByString:@"\t"];
+    //    tf_name.text=profile[2];
+    //    tf_gender.text=profile[3];
+    //
+    //    imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",profile[0]]];
+    
+    //    tf_name.text=user.fullName;
+    //    tf_gender.text=user.gender;
+    //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
+    //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
     //load tu CoreData
-//    tf_firstName.text=friend.firstName;
-//    tf_mobile.text=friend.mobile;
-//    tf_lastName.text=friend.lastName;
-//    tf_fullName.text=friend.fullName;
-//    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
-//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    //    tf_firstName.text=friend.firstName;
+    //    tf_mobile.text=friend.mobile;
+    //    tf_lastName.text=friend.lastName;
+    //    tf_fullName.text=friend.fullName;
+    //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
+    //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
     //load tu webservice
     [self load_profile_id];
@@ -83,7 +90,7 @@ NSMutableDictionary *data_profile;
     NSDictionary *params = @{@"email": [self.delegate current_user][@"email"],
                              @"auth_token":[self.delegate current_user][@"authentication_token"]
                              };
-//    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
+    //    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
     
     NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
     
@@ -105,7 +112,7 @@ NSMutableDictionary *data_profile;
         if(profile[@"person"][@"phone_number"]!=(id)[NSNull null])
             tf_mobile.text=profile[@"person"][@"phone_number"];
         if(profile[@"person"][@"image_url"][@"thumb"]!=(id)[NSNull null]){
-            NSURL *image_url=[NSURL URLWithString:[NSString stringWithFormat:@"%s%@",kWebURL,profile[@"person"][@"image_url"][@"thumb"]]];
+            NSURL *image_url=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",kWebURL,profile[@"person"][@"image_url"][@"thumb"]]];
             [imageview setImageWithURL:image_url];
         }
         
@@ -122,14 +129,14 @@ NSMutableDictionary *data_profile;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)bt_close_click:(id)sender {
     [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
@@ -145,46 +152,46 @@ NSMutableDictionary *data_profile;
 }
 
 - (IBAction)bt_save_click:(id)sender {
-//    Data_Text *data_text=[[Data_Text alloc]init];
-//    NSString *aString=[data_text readfile];
-//    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
-//    aString=[aString stringByReplacingOccurrencesOfString:self.delegate.profile withString:cString];
-//    [data_text writefile:aString];
-//    
-//    
-//    NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
-//    [formatter setDateFormat:@"ddMMyyyy-HHmmss"];
-//    NSString *ret = [formatter stringFromDate:[NSDate date]];
-//    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
-//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
+    //    Data_Text *data_text=[[Data_Text alloc]init];
+    //    NSString *aString=[data_text readfile];
+    //    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
+    //    aString=[aString stringByReplacingOccurrencesOfString:self.delegate.profile withString:cString];
+    //    [data_text writefile:aString];
+    //
+    //
+    //    NSDateFormatter *formatter =[[NSDateFormatter alloc] init];
+    //    [formatter setDateFormat:@"ddMMyyyy-HHmmss"];
+    //    NSString *ret = [formatter stringFromDate:[NSDate date]];
+    //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
+    //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
     
     
     //luu voi CoreData
-//    NSString *imageName=[self.delegate friend].photo;
-//    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
-//    [Friend deleteFriends:friends];
-//    
-//    friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
-//    if(friend)
-//    {
-//        [self Alert:@"Full name is exist"];
-//        return;
-//    }
-//    friend=[[Friend alloc]init];
-//    friend.fullName=tf_fullName.text;
-//    friend.mobile=tf_mobile.text;
-//    friend.lastName=tf_lastName.text;
-//    friend.firstName=tf_firstName.text;
-//    friend.photo=imageName;
-//
-//    
-//    friends=[[NSArray alloc]initWithObjects:friend, nil];
-//    [Friend parseFriend:friends forUser:user];
-//    
-//    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
-//    
-//    [self.delegate reload];
-//    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
+    //    NSString *imageName=[self.delegate friend].photo;
+    //    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
+    //    [Friend deleteFriends:friends];
+    //
+    //    friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+    //    if(friend)
+    //    {
+    //        [self Alert:@"Full name is exist"];
+    //        return;
+    //    }
+    //    friend=[[Friend alloc]init];
+    //    friend.fullName=tf_fullName.text;
+    //    friend.mobile=tf_mobile.text;
+    //    friend.lastName=tf_lastName.text;
+    //    friend.firstName=tf_firstName.text;
+    //    friend.photo=imageName;
+    //
+    //
+    //    friends=[[NSArray alloc]initWithObjects:friend, nil];
+    //    [Friend parseFriend:friends forUser:user];
+    //
+    //    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
+    //
+    //    [self.delegate reload];
+    //    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
     
     //luu voi webservice
     
@@ -209,7 +216,7 @@ NSMutableDictionary *data_profile;
         
         [formData appendPartWithFileData:image_data name:@"profile[image]" fileName:filename mimeType:@"image/jpeg"];
     } error:nil];
-                                    
+    
     AFHTTPRequestOperation *op = [manager HTTPRequestOperationWithRequest:request success: ^(AFHTTPRequestOperation *operation, id responseObject) {
         if([responseObject[@"success"]boolValue]){
             [self.delegate reload];

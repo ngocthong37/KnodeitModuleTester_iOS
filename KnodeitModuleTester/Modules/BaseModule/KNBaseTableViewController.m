@@ -29,35 +29,43 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
+    //    self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
     
-
-//    // set font and style for navigation item title
-//    [self.navigationController.navigationBar setTitleTextAttributes:
-//     [NSDictionary
-//      dictionaryWithObjectsAndKeys:
-//      kCommonForegroundColor, NSForegroundColorAttributeName,
-//      [UIFont fontWithName:kRegularFontName size:17.0], NSFontAttributeName, nil]];
-//    
-//    [[UIBarButtonItem appearance] setTitleTextAttributes:
-//     [NSDictionary
-//      dictionaryWithObjectsAndKeys:
-//      kCommonForegroundColor, NSForegroundColorAttributeName,
-//      [UIFont fontWithName:kLightFontName size:14.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
-//    
-//    // Set title of Back button to empty
-//    self.navigationItem.backBarButtonItem =
-//    [[UIBarButtonItem alloc] initWithTitle:@""
-//                                     style:UIBarButtonItemStyleBordered
-//                                    target:nil
-//                                    action:nil];
-//    
-//    self.navigationController.navigationBar.tintColor = kNavigationBarItemColor;
-//    
-//    // Set background color for view
-//    self.view.backgroundColor = kViewBackgroundColor;
-//    
-//    self.appDelegate = (KNAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:18.0f],
+                                                            }];
+    
+    
+    //    // set font and style for navigation item title
+    //    [self.navigationController.navigationBar setTitleTextAttributes:
+    //     [NSDictionary
+    //      dictionaryWithObjectsAndKeys:
+    //      kCommonForegroundColor, NSForegroundColorAttributeName,
+    //      [UIFont fontWithName:kRegularFontName size:17.0], NSFontAttributeName, nil]];
+    //
+    //    [[UIBarButtonItem appearance] setTitleTextAttributes:
+    //     [NSDictionary
+    //      dictionaryWithObjectsAndKeys:
+    //      kCommonForegroundColor, NSForegroundColorAttributeName,
+    //      [UIFont fontWithName:kLightFontName size:14.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
+    //
+    //    // Set title of Back button to empty
+    //    self.navigationItem.backBarButtonItem =
+    //    [[UIBarButtonItem alloc] initWithTitle:@""
+    //                                     style:UIBarButtonItemStyleBordered
+    //                                    target:nil
+    //                                    action:nil];
+    //
+    //    self.navigationController.navigationBar.tintColor = kNavigationBarItemColor;
+    //
+    //    // Set background color for view
+    //    self.view.backgroundColor = kViewBackgroundColor;
+    
+    //    self.appDelegate = (KNAppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning

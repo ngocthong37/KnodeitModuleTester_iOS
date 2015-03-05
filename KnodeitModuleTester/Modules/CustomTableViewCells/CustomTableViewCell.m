@@ -16,10 +16,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.backgroundColor=[UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
-    self.lb_name.textColor=[UIColor blueColor];
-    self.lb_1.textColor=[UIColor blueColor];
-    self.lb_2.textColor=[UIColor blueColor];
+    UIColor *text_color=[UIColor whiteColor];
+    self.lb_name.textColor=text_color;
+    self.lb_1.textColor=text_color;
+    self.lb_2.textColor=text_color;
     }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

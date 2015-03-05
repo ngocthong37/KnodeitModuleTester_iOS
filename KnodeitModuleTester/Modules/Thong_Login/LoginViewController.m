@@ -1,5 +1,5 @@
 //
-//  Login.m
+//  LoginViewController.m
 //  Demo
 //
 //  Created by Ngoc Thong on 1/14/15.
@@ -39,14 +39,34 @@ Data_Text *data_text;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    data_text=[[Data_Text alloc]init];
-    //tf_email.keyboardType=UIKeyboardTypeEmailAddress;
-    
+
     [self BackgroundTap];
+/*
+//    UIImageView *image_mail=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"mail"]];
+//    image_mail.frame=CGRectMake(10, 10, 20, 20);
+//    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+//    [view addSubview:image_mail];
+//    [tf_email setLeftView:view];
+//    [tf_email setLeftViewMode:UITextFieldViewModeAlways];
     
-    tf_email.text=@"test1@gmail.com";
-    tf_password.text=@"thong123";
+//    UIImageView *image_password=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"password"]];
+//    UIView *view2=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+//    image_password.frame=CGRectMake(12, 10, 15, 20);
+//    [view2 addSubview:image_password];
+//    [tf_password setLeftView:view2];
+//    [tf_password setLeftViewMode:UITextFieldViewModeAlways];
+*/
+    
+    CGPoint point_1=CGPointMake(10, 10);
+    CGSize  size_1=CGSizeMake(20, 20);
+    [tf_email setleftImage:@"mail" ImagePoint:point_1 ImageSize:size_1];
+    
+    CGPoint point_2=CGPointMake(12, 10);
+    CGSize  size_2=CGSizeMake(15, 20);
+    [tf_password setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
+    
+//    tf_email.text=@"test1@gmail.com";
+//    tf_password.text=@"thong123";
 }
 
 //-(void)file{
@@ -135,7 +155,7 @@ Data_Text *data_text;
         [self Alert:@"Wrong Email"];
         return;
     }
-    /*login bang core data*/
+    /*login bang core data
 //    bool b=[self login:tf_email.text :tf_password.text];
 //    if(b)
 //    {
@@ -162,7 +182,7 @@ Data_Text *data_text;
 //    {
 //        [self Alert:@"Wrong email or password"];
 //    }
-
+*/
     
     [self login_webservice:tf_email.text :tf_password.text];
 }
@@ -187,7 +207,6 @@ Data_Text *data_text;
             UINavigationController *NVC=(UINavigationController*)TBC.viewControllers[0];
             DetailViewController *DVC=(DetailViewController*)TBC.viewControllers[1];
             ListViewController *LVC=(ListViewController*)NVC.viewControllers[0];
-            
 //            NSLog(@"%@",dic[@"user"]);
             LVC.current_user=dic[@"user"];
             LVC.password=tf_password.text;
@@ -204,8 +223,6 @@ Data_Text *data_text;
     }];
 
 }
-
-
 
 /*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

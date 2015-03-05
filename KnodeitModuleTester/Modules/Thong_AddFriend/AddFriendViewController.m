@@ -22,8 +22,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self BackgroundTap];
-
+    
     [self load_webservice];
+    
+    [self textfield];
+}
+-(void)textfield{
+    [tf_1 setleft:10];
+    [tf_2 setleft:10];
+    [tf_3 setleft:10];
+    [tf_4 setleft:10];
+    
 }
 -(void)BackgroundTap{
     UITapGestureRecognizer *tapRecognizer=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
@@ -45,14 +54,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 -(void)Alert:(NSString*)message{
     UIAlertView  *alert= [[UIAlertView alloc] initWithTitle:@"ERROR"
                                                     message:message
@@ -68,29 +77,29 @@
 }
 
 - (IBAction)bt_save_click:(id)sender {
-//    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
-//    if(friend)
-//    {
-//        [self Alert:@"Friend is exist"];
-//        return;
-//    }
-//    friend=[[Friend alloc]init];
-//    friend.firstName=tf_firstName.text;
-//    friend.fullName=tf_fullName.text;
-//    friend.lastName=tf_lastName.text;
-//    friend.mobile=tf_mobile.text;
-//    
-//    int temp=random(100, 1000);
-//    friend.photo=[NSString stringWithFormat:@"%d.jpeg",temp];
-//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%d.jpeg",temp]];
-//    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
-//    
-//    User *currentUser = [self.delegate user];
-//    NSArray *friends=[[NSArray alloc]initWithObjects:friend, nil];
-//    [Friend parseFriend:friends forUser:currentUser];
-//    
-//    [self.delegate reload];
-//    [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
+    //    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
+    //    if(friend)
+    //    {
+    //        [self Alert:@"Friend is exist"];
+    //        return;
+    //    }
+    //    friend=[[Friend alloc]init];
+    //    friend.firstName=tf_firstName.text;
+    //    friend.fullName=tf_fullName.text;
+    //    friend.lastName=tf_lastName.text;
+    //    friend.mobile=tf_mobile.text;
+    //
+    //    int temp=random(100, 1000);
+    //    friend.photo=[NSString stringWithFormat:@"%d.jpeg",temp];
+    //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%d.jpeg",temp]];
+    //    [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
+    //
+    //    User *currentUser = [self.delegate user];
+    //    NSArray *friends=[[NSArray alloc]initWithObjects:friend, nil];
+    //    [Friend parseFriend:friends forUser:currentUser];
+    //
+    //    [self.delegate reload];
+    //    [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
     
     [self add_profile_webservice];
 }
@@ -112,7 +121,7 @@
                                  @"profile[gender]":tf_3.text,
                                  @"profile[birth_date]":tf_4.text
                                  };
-   [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //do not put image inside parameters dictionary as I did, but append it!
         [formData appendPartWithFileData:imageData name:@"profile[image]" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {

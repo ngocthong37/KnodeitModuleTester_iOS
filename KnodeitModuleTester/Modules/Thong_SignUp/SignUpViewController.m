@@ -1,5 +1,5 @@
 //
-//  SignUp.m
+//  SignUpViewController.h
 //  Demo
 //
 //  Created by Ngoc Thong on 1/13/15.
@@ -38,7 +38,16 @@ NSString *textFromFile;
     
     [self createPickerGender];
     [self BackgroundTap];
-    textFromFile=[data_text readfile];
+//    textFromFile=[data_text readfile];
+    
+    CGPoint point_1=CGPointMake(10, 10);
+    CGSize  size_1=CGSizeMake(20, 20);
+    [tf_email setleftImage:@"mail" ImagePoint:point_1 ImageSize:size_1];
+    
+    CGPoint point_2=CGPointMake(12, 10);
+    CGSize  size_2=CGSizeMake(15, 20);
+    [tf_password setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
+    [tf_confirm setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
 }
 
 -(void)createPickerGender{

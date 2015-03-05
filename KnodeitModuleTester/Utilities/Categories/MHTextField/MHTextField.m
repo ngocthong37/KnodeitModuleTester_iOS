@@ -58,18 +58,36 @@
     [self setup];
 }
 
+-(void)setleft:(float)width{
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0,width, self.frame.size.height)];
+    [self setLeftView:view];
+    [self setLeftViewMode:UITextFieldViewModeAlways];
+}
+
+-(void)setleftImage:(NSString*)imageName ImagePoint:(CGPoint)point ImageSize:(CGSize)size{
+    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:imageName]];
+    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.height)];
+    image.frame=CGRectMake(point.x, point.y,size.width , size.height);
+    [view addSubview:image];
+    [self setLeftView:view];
+    [self setLeftViewMode:UITextFieldViewModeAlways];
+}
+
 - (void)setup
 {
+    //text
+    self.textColor=[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:100/100];
+    [self setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
     
-    [self setTintColor:[UIColor blackColor]];
-    
-    
-    [self setTextAlignment:NSTextAlignmentCenter];
-    self.textColor=[UIColor colorWithRed:0 green:0 blue:1 alpha:1];
+    //placeholder
+    UIColor *color = [UIColor whiteColor];
+    [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
     
     //border
-    self.layer.borderWidth=1;
-    self.layer.borderColor=[[[UIColor colorWithRed:43.0f/255 green:173.0f/255 blue:213.0f/255 alpha:1]colorWithAlphaComponent:0.5]CGColor];
+    self.layer.borderWidth=.5;
+    self.layer.borderColor=[[UIColor whiteColor]CGColor];
+
+    self.clearButtonMode=UITextFieldViewModeWhileEditing;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidEndEditing:) name:UITextFieldTextDidEndEditingNotification object:self];

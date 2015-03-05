@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "ListViewController.h"
 
+
 @interface DetailViewController (){
     NSString *email;
     NSArray *dataPicker;
@@ -23,19 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    email=[self.delegate user].email;
+    //    email=[self.delegate user].email;
     
     //[self createPickerGender];
     [self load];
     [self BackgroundTap];
+    
+    [tf_1 setleft:10];
+    [tf_2 setleft:10];
 }
 -(void)load{
-//    currentUser=[User userAlreadyExistInDB:email];
-//    tf_fullName.text=currentUser.fullName;
-//    tf_gender.text=currentUser.gender;
-
-//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
-//    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    //    currentUser=[User userAlreadyExistInDB:email];
+    //    tf_fullName.text=currentUser.fullName;
+    //    tf_gender.text=currentUser.gender;
+    
+    //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
+    //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
     
     [self load_profile];
@@ -53,7 +57,7 @@
     imageview.hidden=true;
     bt_img.hidden=true;
     bt_save.enabled=false;
-   }
+}
 
 
 -(void)BackgroundTap{
@@ -64,7 +68,7 @@
 -(void)handleBackgroundTap:(UITapGestureRecognizer*)sender{
     [tf_gender resignFirstResponder];
     [tf_fullName resignFirstResponder];
-
+    
 }
 
 
@@ -75,22 +79,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(void)createPickerGender{
-    dataPicker=@[@"Male", @"Female",@"Other"];
-    UIPickerView *picker=[[UIPickerView alloc]init];
-    picker.dataSource=self;
-    picker.delegate=self;
-    tf_gender.inputView=picker;
-}
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return dataPicker.count;
@@ -99,6 +95,14 @@
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return  1;
 }
+/*
+ -(void)createPickerGender{
+ dataPicker=@[@"Male", @"Female",@"Other"];
+ UIPickerView *picker=[[UIPickerView alloc]init];
+ picker.dataSource=self;
+ picker.delegate=self;
+ tf_gender.inputView=picker;
+ }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return dataPicker[row];
@@ -110,14 +114,7 @@
 }
 
 
-- (IBAction)bt_img_click:(id)sender {
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
-    imagePickerController.delegate=self;
-    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
-    //imagePickerController.sourceType=UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [self presentViewController:imagePickerController animated:YES completion:nil];
-    
-}
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -125,7 +122,15 @@
     UIImage *image=[info objectForKey:UIImagePickerControllerOriginalImage];
     imageview.image=image;
 }
-
+ */
+ - (IBAction)bt_img_click:(id)sender {
+ UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+ imagePickerController.delegate=self;
+ imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+ //imagePickerController.sourceType=UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+ [self presentViewController:imagePickerController animated:YES completion:nil];
+ 
+ }
 
 - (IBAction)bt_save_click:(id)sender {
     currentUser.fullName=tf_fullName.text;
@@ -133,7 +138,7 @@
     
     NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
     [UIImageJPEGRepresentation(imageview.image, 0.5f) writeToFile:imagePath atomically:YES];
-
+    
     NSArray *Users=[[NSArray alloc]initWithObjects:currentUser, nil];
     [User parseUser:Users];
     

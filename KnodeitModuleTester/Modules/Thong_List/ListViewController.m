@@ -1,5 +1,5 @@
 //
-//  List.m
+//  ListViewController.m
 //  Demo
 //
 //  Created by Ngoc Thong on 1/15/15.
@@ -21,8 +21,8 @@ Data_Text *data_text;
 
 @implementation ListViewController
 {
-NSArray *data;
-NSInteger index;
+    NSArray *data;
+    NSInteger index;
     //load tu core data
     NSMutableArray *Data_Users;
     NSMutableArray *Data_Friends;
@@ -36,7 +36,7 @@ NSInteger index;
 
 -(void)reload{
     [self load_data];
-//    [self.tableView reloadData];
+    //    [self.tableView reloadData];
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,6 +52,9 @@ NSInteger index;
     [super viewDidLoad];
     Data_Profile=self.current_user[@"profiles"];
     
+    //    self.view.backgroundColor=[UIColor yellowColor];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -61,13 +64,13 @@ NSInteger index;
 
 
 -(void)load_data{
-//    data_text=[[Data_Text alloc]init];
-//    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
+    //    data_text=[[Data_Text alloc]init];
+    //    data=[[data_text readfile] componentsSeparatedByString:@"\n"];
     
     //Data_Users=[User fetchAllUsers];
     
     //load tu code data
-//    Data_Friends=[Friend fetchAllFriends:self.user.email];
+    //    Data_Friends=[Friend fetchAllFriends:self.user.email];
     
     //load tu webservice
     
@@ -85,12 +88,13 @@ NSInteger index;
         if([dic[@"success"] boolValue]){
             self.current_user=dic[@"user"];
             Data_Profile=self.current_user[@"profiles"];
+            
             [self.tableView reloadData];
         }
     }
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               
-    }];
+          }];
 }
 
 
@@ -104,7 +108,7 @@ NSInteger index;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+    //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
@@ -112,7 +116,7 @@ NSInteger index;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //load danh sach friend tu coredata
-//    return [Data_Friends count];
+    //    return [Data_Friends count];
     //load danh sach tu webservice
     return [Data_Profile count];
 }
@@ -123,7 +127,7 @@ NSInteger index;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     static NSString *simpleTableIdentifier = @"CustomTableCell";
     
     CustomTableViewCell *cell =(CustomTableViewCell*) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -133,24 +137,26 @@ NSInteger index;
         cell = [nib objectAtIndex:0];
     }
     
-//    NSArray *profile=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
-//    cell.lb_name.text = profile[2];
-//    cell.lb_gender.text=profile[3];
-
+    //    NSArray *profile=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
+    //    cell.lb_name.text = profile[2];
+    //    cell.lb_gender.text=profile[3];
+    
     //load du lieu tu coredata
-//    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
-//    cell.lb_1.text=@"Mobile: ";
-//    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
-//    
-//    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
-//    
-//    cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    //    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
+    //    cell.lb_1.text=@"Mobile: ";
+    //    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
+    //
+    //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
+    //
+    //    cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
     
     //load du lieu tu webservice
+    cell.lb_name.text=Data_Profile[indexPath.row][@"first_name"];
     cell.lb_1.text=@"id";
     cell.lb_2.text=[Data_Profile[indexPath.row][@"id"]stringValue];
-    cell.imageview.hidden=true;
-    cell.lb_name.hidden=true;
+    NSString *image_url_string=[NSString stringWithFormat:@"%@/development/uploads/person/image/%@/thumb_%d",kWebURL,Data_Profile[indexPath.row][@"id"],rand()];
+    NSURL *image_url=[NSURL URLWithString:image_url_string];
+    [cell.imageview setImageWithURL:image_url];
     
     return cell;
 }
@@ -172,9 +178,9 @@ NSInteger index;
     
     //UINavigationController *NaC=(UINavigationController*)[segue destinationViewController];
     if([[segue identifier] isEqualToString:@"segue_list_profile"]){
-    ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
+        ChangeProfileViewController *cp=(ChangeProfileViewController*)[segue destinationViewController];
         //load tu Coredata
-//        self.friend=Data_Friends[index];
+        //        self.friend=Data_Friends[index];
         //load tu webservice
         cp.profile_id=[Data_Profile[index][@"id"]integerValue];
         
@@ -191,7 +197,7 @@ NSInteger index;
 
 
 - (IBAction)unwindToListViewController:(UIStoryboardSegue *)unwindSegue{
-
+    
 }
 
 - (IBAction)bt_logout_click:(id)sender {

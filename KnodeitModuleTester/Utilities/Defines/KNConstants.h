@@ -20,8 +20,8 @@
 //#define kAPIRegisterDeviceToken     @kBaseURL"/user/token"
 //#define kAPIUpload                  @kBaseURL"/feed/upload"
 
-#define kWebURL                     "http://192.168.1.26:4000"
-#define kBaseURL                    @kWebURL"/api/v1"
+#define kWebURL                     @"http://192.168.1.80:4000"
+#define kBaseURL                    kWebURL"/api/v1"
 
 #define kAPIRegisterMobile          kBaseURL"/user/mobile"
 #define kAPILogin                   kBaseURL"/auth/sign_in"

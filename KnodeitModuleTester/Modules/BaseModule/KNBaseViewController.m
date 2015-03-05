@@ -29,12 +29,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
-
-//**********************************************************************//
-//    can thiet de bo khoang trong giua Navigation Bar va Scroll View   //
-    self.automaticallyAdjustsScrollViewInsets=NO;                       //
-//**********************************************************************//
+    //    self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:18.0f],
+                                                            }];
+    
+    
+    
+    //**********************************************************************//
+    //    can thiet de bo khoang trong giua Navigation Bar va Scroll View   //
+    self.automaticallyAdjustsScrollViewInsets=NO;                           //
+    //**********************************************************************//
 }
 
 - (void)didReceiveMemoryWarning

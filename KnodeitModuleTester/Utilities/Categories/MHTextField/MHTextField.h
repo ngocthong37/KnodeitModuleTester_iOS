@@ -32,4 +32,8 @@
 - (void)textFieldDidEndEditing:(NSNotification *) notification;
 
 - (void)textFieldDidBeginEditing:(NSNotification *) notification;
+
+-(void)setleft:(float)width;
+-(void)setleftImage:(NSString*)imageName ImagePoint:(CGPoint)point ImageSize:(CGSize)size;
+
 @end

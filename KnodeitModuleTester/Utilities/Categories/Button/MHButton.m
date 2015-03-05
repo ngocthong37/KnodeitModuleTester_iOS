@@ -28,7 +28,7 @@
 
 
 -(void)setup{
-    self.backgroundColor=bgColor;
+    //self.backgroundColor=bgColor;
 }
 
 

@@ -47,9 +47,11 @@ Data_Text *data_text;
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     Data_Profile=self.current_user[@"profiles"];
     
     //    self.view.backgroundColor=[UIColor yellowColor];

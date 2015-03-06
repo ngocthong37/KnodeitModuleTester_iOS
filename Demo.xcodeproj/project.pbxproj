@@ -11,8 +11,6 @@
 		330FB0A91A7F2418000FC86D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330FB0A81A7F2418000FC86D /* Login.storyboard */; };
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		33144C0A1A79F4C100C2B7BE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144C081A79F4C100C2B7BE /* DetailViewController.m */; };
-		3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7681A6F549F00638A08 /* Female.jpeg */; };
-		3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3315F7691A6F549F00638A08 /* Male.jpeg */; };
 		33246B1B1A773E7200269287 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B1A1A773E7200269287 /* AddFriendViewController.m */; };
 		33246B1E1A77466500269287 /* Friend+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B1D1A77466500269287 /* Friend+Helper.m */; };
 		33246B211A7777B700269287 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B201A7777B700269287 /* Friend.m */; };
@@ -26,6 +24,7 @@
 		339A411D1A6CA4520001CFFD /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 339A411C1A6CA4520001CFFD /* MHButton.m */; };
 		33A81D671A65205800529EE7 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A81D661A65205800529EE7 /* SignUpViewController.m */; };
 		33A81D691A65262600529EE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A81D681A65262600529EE7 /* CoreData.framework */; };
+		33B64A191AA985A800709AEA /* LoginViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B64A181AA985A800709AEA /* LoginViewControllerTest.m */; };
 		7C57A091195DA75C00F496E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A090195DA75C00F496E6 /* Foundation.framework */; };
 		7C57A093195DA75C00F496E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A092195DA75C00F496E6 /* CoreGraphics.framework */; };
 		7C57A095195DA75C00F496E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A094195DA75C00F496E6 /* UIKit.framework */; };
@@ -40,7 +39,6 @@
 		7C57A0B4195DA75C00F496E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A090195DA75C00F496E6 /* Foundation.framework */; };
 		7C57A0B5195DA75C00F496E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C57A094195DA75C00F496E6 /* UIKit.framework */; };
 		7C57A0BD195DA75C00F496E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C57A0BB195DA75C00F496E6 /* InfoPlist.strings */; };
-		7C57A0BF195DA75C00F496E6 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0BE195DA75C00F496E6 /* DemoTests.m */; };
 		7C57A16A195DA7B800F496E6 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D2195DA7B800F496E6 /* Message.m */; };
 		7C57A16B195DA7B800F496E6 /* MyFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D4195DA7B800F496E6 /* MyFeed.m */; };
 		7C57A16D195DA7B800F496E6 /* EverAfter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C57A0D6195DA7B800F496E6 /* EverAfter.xcdatamodeld */; };
@@ -109,8 +107,6 @@
 		331305021A67C99500165AF9 /* Data_Text.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data_Text.m; sourceTree = "<group>"; };
 		33144C081A79F4C100C2B7BE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		33144C091A79F4C100C2B7BE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		3315F7681A6F549F00638A08 /* Female.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Female.jpeg; sourceTree = "<group>"; };
-		3315F7691A6F549F00638A08 /* Male.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Male.jpeg; sourceTree = "<group>"; };
 		33246B191A773E7200269287 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		33246B1A1A773E7200269287 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		33246B1C1A77466500269287 /* Friend+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friend+Helper.h"; sourceTree = "<group>"; };
@@ -135,6 +131,8 @@
 		33A81D651A65205800529EE7 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		33A81D661A65205800529EE7 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		33A81D681A65262600529EE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		33B64A181AA985A800709AEA /* LoginViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTest.m; sourceTree = "<group>"; };
+		33B64A1A1AA988AE00709AEA /* DemoTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoTest-Prefix.pch"; sourceTree = "<group>"; };
 		7C57A08D195DA75C00F496E6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C57A090195DA75C00F496E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C57A092195DA75C00F496E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -154,7 +152,6 @@
 		7C57A0B2195DA75C00F496E6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7C57A0BA195DA75C00F496E6 /* DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoTests-Info.plist"; sourceTree = "<group>"; };
 		7C57A0BC195DA75C00F496E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7C57A0BE195DA75C00F496E6 /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
 		7C57A0C9195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		7C57A0CB195DA7B800F496E6 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		7C57A0D1195DA7B800F496E6 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -339,15 +336,6 @@
 			path = Thong_Login;
 			sourceTree = "<group>";
 		};
-		3385DEC11A6DE9C40057AF69 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				3315F7681A6F549F00638A08 /* Female.jpeg */,
-				3315F7691A6F549F00638A08 /* Male.jpeg */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
 		3385DEC61A6DF0CF0057AF69 /* CustomTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,7 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				330FB0A71A7F23A4000FC86D /* Storyboard */,
-				3385DEC11A6DE9C40057AF69 /* Image */,
 				7C57A096195DA75C00F496E6 /* Demo */,
 				7C57A0B8195DA75C00F496E6 /* DemoTests */,
 				7C57A08F195DA75C00F496E6 /* Frameworks */,
@@ -475,7 +462,8 @@
 		7C57A0B8195DA75C00F496E6 /* DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				7C57A0BE195DA75C00F496E6 /* DemoTests.m */,
+				33B64A1A1AA988AE00709AEA /* DemoTest-Prefix.pch */,
+				33B64A181AA985A800709AEA /* LoginViewControllerTest.m */,
 				7C57A0B9195DA75C00F496E6 /* Supporting Files */,
 			);
 			name = DemoTests;
@@ -967,9 +955,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3315F76B1A6F549F00638A08 /* Male.jpeg in Resources */,
 				7C57A172195DA7B800F496E6 /* Countries.plist in Resources */,
-				3315F76A1A6F549F00638A08 /* Female.jpeg in Resources */,
 				7C57A0A7195DA75C00F496E6 /* Main_iPad.storyboard in Resources */,
 				7C57A0AC195DA75C00F496E6 /* Images.xcassets in Resources */,
 				7C57A0A4195DA75C00F496E6 /* Main_iPhone.storyboard in Resources */,
@@ -1096,7 +1082,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C57A0BF195DA75C00F496E6 /* DemoTests.m in Sources */,
+				33B64A191AA985A800709AEA /* LoginViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1266,21 +1252,24 @@
 		7C57A0C6195DA75C00F496E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnodeitModuleTester.app/KnodeitModuleTester";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KnodeitModuleTester/KnodeitModuleTester-Prefix.pch";
+				GCC_PREFIX_HEADER = "KnodeitModuleTesterTests/DemoTest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "KnodeitModuleTesterTests/DemoTests-Info.plist";
 				PRODUCT_NAME = DemoTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1288,17 +1277,20 @@
 		7C57A0C7195DA75C00F496E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnodeitModuleTester.app/KnodeitModuleTester";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_LINK_OBJC_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "KnodeitModuleTester/KnodeitModuleTester-Prefix.pch";
+				GCC_PREFIX_HEADER = "KnodeitModuleTesterTests/DemoTest-Prefix.pch";
 				INFOPLIST_FILE = "KnodeitModuleTesterTests/DemoTests-Info.plist";
 				PRODUCT_NAME = DemoTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

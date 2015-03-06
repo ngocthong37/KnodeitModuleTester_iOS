@@ -25,7 +25,11 @@ Data_Text *data_text;
 
 @end
 
+
 @implementation LoginViewController
+
+@synthesize _tf_email=tf_email;
+@synthesize _tf_password=tf_password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -7,9 +7,9 @@ BuilderIdent ProcessPCH\ /Users/hackintosh01/Documents/NgocThong/TaiLieu/laptrin
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk/SDKSettings.plist 0 1421381197 964 33204
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk/System/Library/CoreServices/SystemVersion.plist 0 1421381201 414 33188
 InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/include/module.map 0 1421381396 2678 33188
-InputFile    /Users/hackintosh01/Documents/NgocThong/TaiLieu/laptrinh/Code/KnodeitModuleTester_iOS/KnodeitModuleTester/Demo-Prefix.pch 0 1423553545 627 33261
+InputFile    /Users/hackintosh01/Documents/NgocThong/TaiLieu/laptrinh/Code/KnodeitModuleTester_iOS/KnodeitModuleTester/Demo-Prefix.pch 0 1425612623 660 33261
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk/SDKSettings.plist 0 1421381197 964 33204
-InputFile    /Users/hackintosh01/Documents/NgocThong/TaiLieu/laptrinh/Code/KnodeitModuleTester_iOS/KnodeitModuleTester/Demo-Prefix.pch 0 1423553545 627 33261
+InputFile    /Users/hackintosh01/Documents/NgocThong/TaiLieu/laptrinh/Code/KnodeitModuleTester_iOS/KnodeitModuleTester/Demo-Prefix.pch 0 1425612623 660 33261
 InputFile    /Users/hackintosh01/Library/Developer/Xcode/DerivedData/ModuleCache/1E5IWTUHHFIK9/Darwin-A93YDID5443M.pcm 0 1425355995 3706996 33188
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk/usr/include/module.map 0 1421381294 22366 33204
 InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.1.sdk/usr/include/sys/cdefs.h 0 1421381294 26037 33204

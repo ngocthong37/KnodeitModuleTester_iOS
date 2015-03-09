@@ -77,6 +77,8 @@
 }
 
 - (IBAction)bt_save_click:(id)sender {
+    //luu voi CoreData
+    /*
     //    Friend *friend=[Friend friendAlreadyExistInDB:tf_fullName.text :[self.delegate user]];
     //    if(friend)
     //    {
@@ -100,7 +102,9 @@
     //
     //    [self.delegate reload];
     //    [self performSegueWithIdentifier:@"segue_add_list" sender:nil];
+    */
     
+    //luu voi Webservice
     [self add_profile_webservice];
 }
 -(void)load_webservice{

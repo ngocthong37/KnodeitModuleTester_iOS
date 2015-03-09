@@ -32,14 +32,8 @@
     //    self.view.backgroundColor = [UIColor colorWithRed:35.0/255 green:211.0/255 blue:255.0/255 alpha:1.0];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"na_bg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTranslucent:YES];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:18.0f],
-                                                            }];
-    
     
     
     //**********************************************************************//

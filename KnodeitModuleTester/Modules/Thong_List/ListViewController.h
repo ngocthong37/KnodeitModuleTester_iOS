@@ -17,7 +17,9 @@
 @property NSMutableDictionary *current_user;
 @property NSString* password;
 @end
-@interface ListViewController : KNBaseTableViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
+@interface ListViewController : KNBaseViewController<UITableViewDataSource, UITableViewDelegate, UserDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)bt_logout_click:(id)sender;
 - (IBAction)bt_add_click:(id)sender;

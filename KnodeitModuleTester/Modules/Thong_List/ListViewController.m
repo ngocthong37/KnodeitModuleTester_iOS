@@ -38,19 +38,20 @@ Data_Text *data_text;
     [self load_data];
     //    [self.tableView reloadData];
 }
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+
 
     Data_Profile=self.current_user[@"profiles"];
     
@@ -62,6 +63,8 @@ Data_Text *data_text;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.automaticallyAdjustsScrollViewInsets = false;
 }
 
 
@@ -75,7 +78,6 @@ Data_Text *data_text;
     //    Data_Friends=[Friend fetchAllFriends:self.user.email];
     
     //load tu webservice
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{@"email":self.current_user[@"email"] ,
                              @"password":self.password
@@ -138,12 +140,15 @@ Data_Text *data_text;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
+    //load du lieu tu text
+    /*
     //    NSArray *profile=[[data objectAtIndex:indexPath.row]componentsSeparatedByString:@"\t"];
     //    cell.lb_name.text = profile[2];
     //    cell.lb_gender.text=profile[3];
+    */
     
     //load du lieu tu coredata
+    /*
     //    cell.lb_name.text=((Friend*) Data_Friends[indexPath.row]).fullName;
     //    cell.lb_1.text=@"Mobile: ";
     //    cell.lb_2.text=((Friend*) Data_Friends[indexPath.row]).mobile;
@@ -151,6 +156,7 @@ Data_Text *data_text;
     //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",((Friend*) Data_Friends[indexPath.row]).photo]];
     //
     //    cell.imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    */
     
     //load du lieu tu webservice
     cell.lb_name.text=Data_Profile[indexPath.row][@"first_name"];
@@ -185,8 +191,6 @@ Data_Text *data_text;
         //        self.friend=Data_Friends[index];
         //load tu webservice
         cp.profile_id=[Data_Profile[index][@"id"]integerValue];
-        
-        
         cp.delegate=self;
     }
     else

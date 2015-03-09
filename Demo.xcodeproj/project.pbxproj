@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		13DAF00E58BFC7E0F43F06F9 /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7567DBDC66026D419C9FB4E /* libPods-Demo.a */; };
-		330FB0A91A7F2418000FC86D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330FB0A81A7F2418000FC86D /* Login.storyboard */; };
 		331305031A67C99500165AF9 /* Data_Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 331305021A67C99500165AF9 /* Data_Text.m */; };
 		33144C0A1A79F4C100C2B7BE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144C081A79F4C100C2B7BE /* DetailViewController.m */; };
 		33246B1B1A773E7200269287 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B1A1A773E7200269287 /* AddFriendViewController.m */; };
@@ -16,6 +15,7 @@
 		33246B211A7777B700269287 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B201A7777B700269287 /* Friend.m */; };
 		33246B241A7777B800269287 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 33246B231A7777B800269287 /* User.m */; };
 		333504121A75E7A800A3CEA0 /* User+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 333504111A75E7A800A3CEA0 /* User+Helper.m */; };
+		3341C9B21AADADD900AD2AE7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330FB0A81A7F2418000FC86D /* Login.storyboard */; };
 		334D58FA1A676123004219ED /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 334D58F91A676123004219ED /* ListViewController.m */; };
 		3373A0B21A6660F200A30400 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373A0B11A6660F200A30400 /* LoginViewController.m */; };
 		3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3385DEC71A6DF2480057AF69 /* CustomTableViewCell.xib */; };
@@ -963,7 +963,7 @@
 				7C57A09B195DA75C00F496E6 /* InfoPlist.strings in Resources */,
 				3385DEC81A6DF2480057AF69 /* CustomTableViewCell.xib in Resources */,
 				7C57A173195DA7B800F496E6 /* DiallingCodes.plist in Resources */,
-				330FB0A91A7F2418000FC86D /* Login.storyboard in Resources */,
+				3341C9B21AADADD900AD2AE7 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

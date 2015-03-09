@@ -16,7 +16,11 @@
 {
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"na_bg"] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:18.0f],
+                                                            }];
     return YES;
 }
 							

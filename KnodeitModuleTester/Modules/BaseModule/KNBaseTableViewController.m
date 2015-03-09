@@ -33,11 +33,8 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_3"]];
     [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"na_bg"]]];
+
     
-    [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:18.0f],
-                                                            }];
     
     
     //    // set font and style for navigation item title

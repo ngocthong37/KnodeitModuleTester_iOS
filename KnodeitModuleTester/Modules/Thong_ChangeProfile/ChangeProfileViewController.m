@@ -59,7 +59,8 @@ NSMutableDictionary *data_profile;
 }
 
 -(void)load{
-    
+    //load tu file text
+    /*
     //profile=[self.delegate.user componentsSeparatedByString:@"\t"];
     //    tf_name.text=profile[2];
     //    tf_gender.text=profile[3];
@@ -70,14 +71,17 @@ NSMutableDictionary *data_profile;
     //    tf_gender.text=user.gender;
     //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",user.email]];
     //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    */
     
     //load tu CoreData
+    /*
     //    tf_firstName.text=friend.firstName;
     //    tf_mobile.text=friend.mobile;
     //    tf_lastName.text=friend.lastName;
     //    tf_fullName.text=friend.fullName;
     //    imagePath=[NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@",friend.photo]];
     //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
+    */
     
     //load tu webservice
     [self load_profile_id];
@@ -152,6 +156,8 @@ NSMutableDictionary *data_profile;
 }
 
 - (IBAction)bt_save_click:(id)sender {
+    //luu voi file text
+    /*
     //    Data_Text *data_text=[[Data_Text alloc]init];
     //    NSString *aString=[data_text readfile];
     //    NSString *cString=[NSString stringWithFormat:@"%@\t%@\t%@\t%@",profile[0],profile[1],tf_name.text,tf_gender.text];
@@ -164,9 +170,10 @@ NSMutableDictionary *data_profile;
     //    NSString *ret = [formatter stringFromDate:[NSDate date]];
     //    NSString *imageName = [NSString stringWithFormat:@"%@", ret ];
     //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",imageName]];
-    
+    */
     
     //luu voi CoreData
+    /*
     //    NSString *imageName=[self.delegate friend].photo;
     //    NSArray* friends=[[NSArray alloc]initWithObjects:[self.delegate friend], nil];
     //    [Friend deleteFriends:friends];
@@ -192,6 +199,7 @@ NSMutableDictionary *data_profile;
     //
     //    [self.delegate reload];
     //    [self performSegueWithIdentifier:@"segue_profile_list" sender:nil];
+    */
     
     //luu voi webservice
     

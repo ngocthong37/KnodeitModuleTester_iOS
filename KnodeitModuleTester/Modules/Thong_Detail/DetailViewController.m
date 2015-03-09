@@ -34,13 +34,15 @@
     [tf_2 setleft:10];
 }
 -(void)load{
+    //load voi CoreData
+    /*
     //    currentUser=[User userAlreadyExistInDB:email];
     //    tf_fullName.text=currentUser.fullName;
     //    tf_gender.text=currentUser.gender;
     
     //    NSString *imagePath = [NSHomeDirectory() stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@.jpeg",currentUser.email]];
     //    imageview.image=[UIImage imageWithContentsOfFile:imagePath];
-    
+    */
     
     [self load_profile];
 }
@@ -123,6 +125,7 @@
     imageview.image=image;
 }
  */
+
  - (IBAction)bt_img_click:(id)sender {
  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
  imagePickerController.delegate=self;

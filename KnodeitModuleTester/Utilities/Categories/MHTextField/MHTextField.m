@@ -75,12 +75,14 @@
 
 - (void)setup
 {
+    UIColor *color =[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:100/100];
+    
     //text
-    self.textColor=[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:100/100];
+    self.textColor=color;
+    self.tintColor=color;
     [self setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
     
     //placeholder
-    UIColor *color = [UIColor whiteColor];
     [self setValue:color forKeyPath:@"_placeholderLabel.textColor"];
     
     //border

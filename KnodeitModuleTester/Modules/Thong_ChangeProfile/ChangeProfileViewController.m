@@ -96,7 +96,7 @@ NSMutableDictionary *data_profile;
                              };
     //    NSString *url=[NSString stringWithFormat:@"%@/%d?email=%@&auth_token=%@",kAPIProfile,self.profile_id,[self.delegate current_user][@"email"],[self.delegate current_user][@"authentication_token"]];
     
-    NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
+    NSString *url=[NSString stringWithFormat:@"%@/%ld",kAPIProfile,(long)self.profile_id];
     
     [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSLog(@"JSON: %@", responseObject);
@@ -210,7 +210,7 @@ NSMutableDictionary *data_profile;
     int temp=rand();
     NSString *filename=[NSString stringWithFormat:@"%d.jpg",temp];
     NSData *image_data=UIImageJPEGRepresentation(imageview.image, 0.5);
-    NSString *url=[NSString stringWithFormat:@"%@/%d",kAPIProfile,self.profile_id];
+    NSString *url=[NSString stringWithFormat:@"%@/%ld",kAPIProfile,(long)self.profile_id];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{@"email": [self.delegate current_user][@"email"],
                              @"auth_token":[self.delegate current_user][@"authentication_token"],

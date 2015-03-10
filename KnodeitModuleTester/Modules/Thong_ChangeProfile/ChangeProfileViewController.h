@@ -18,7 +18,7 @@
     __weak IBOutlet MHTextField *tf_fullName;
     __weak IBOutlet UIButton *BT_IMG;
 }
-@property int profile_id;
+@property NSInteger profile_id;
 - (IBAction)bt_close_click:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bt_save;
 - (IBAction)bt_save_click:(id)sender;

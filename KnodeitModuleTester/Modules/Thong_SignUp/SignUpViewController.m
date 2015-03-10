@@ -40,11 +40,11 @@ NSString *textFromFile;
     [self BackgroundTap];
 //    textFromFile=[data_text readfile];
     
-    CGPoint point_1=CGPointMake(10, 10);
+    CGPoint point_1=CGPointMake(15, 15);
     CGSize  size_1=CGSizeMake(20, 20);
     [tf_email setleftImage:@"mail" ImagePoint:point_1 ImageSize:size_1];
     
-    CGPoint point_2=CGPointMake(12, 10);
+    CGPoint point_2=CGPointMake(17, 15);
     CGSize  size_2=CGSizeMake(15, 20);
     [tf_password setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
     [tf_confirm setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
@@ -208,7 +208,7 @@ NSString *textFromFile;
      }];
 }
 
--(NSString*)string_error:(int)error_code{
+-(NSString*)string_error:(NSInteger)error_code{
     NSString *string=@"error";
     switch (error_code) {
         case 102:
@@ -241,13 +241,11 @@ NSString *textFromFile;
 }
 
 - (IBAction)bt_img:(id)sender {
-    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController.delegate=self;
     imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
     //imagePickerController.sourceType=UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     [self presentViewController:imagePickerController animated:YES completion:nil];
-
 }
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
@@ -264,8 +262,6 @@ NSString *textFromFile;
     imgUser.image=image;
 //    NSLog(@"%@",imageURL);
 }
-
-
 
 
 -(void)Alert:(NSString*)message{

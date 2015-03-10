@@ -61,11 +61,11 @@ Data_Text *data_text;
      //    [tf_password setLeftViewMode:UITextFieldViewModeAlways];
      */
     
-    CGPoint point_1=CGPointMake(10, 10);
+    CGPoint point_1=CGPointMake(15, 15);
     CGSize  size_1=CGSizeMake(20, 20);
     [tf_email setleftImage:@"mail" ImagePoint:point_1 ImageSize:size_1];
     
-    CGPoint point_2=CGPointMake(12, 10);
+    CGPoint point_2=CGPointMake(17, 15);
     CGSize  size_2=CGSizeMake(15, 20);
     [tf_password setleftImage:@"password" ImagePoint:point_2 ImageSize:size_2];
     

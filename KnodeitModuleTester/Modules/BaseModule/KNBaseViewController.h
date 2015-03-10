@@ -11,6 +11,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KNBaseViewController : UIViewController
+@interface KNBaseViewController : UIViewController<UINavigationBarDelegate>
 
 @end

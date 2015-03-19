@@ -138,7 +138,6 @@
     }];
 }
 
-
 - (IBAction)bt_img:(id)sender {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
     imagePickerController.delegate=self;
